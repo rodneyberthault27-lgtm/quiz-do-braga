@@ -1,0 +1,3837 @@
+[
+  {
+    "id": 1,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a folga mínima da manga do kimono em toda a sua extensão?",
+    "alternativas": [
+      "5 cm",
+      "7 cm",
+      "10 cm",
+      "6 cm"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.12"
+  },
+  {
+    "id": 2,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Após a primeira luta, a troca de kimono deve ser solicitada a quem?",
+    "alternativas": [
+      "Ao árbitro",
+      "À mesa central",
+      "Ao Coordenador de Ringue",
+      "Ao fiscal de uniformes"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.14"
+  },
+  {
+    "id": 3,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quem faz a escala dos árbitros e a rotação durante o evento?",
+    "alternativas": [
+      "O Supervisor dos Coordenadores de Ringue",
+      "O Coordenador de Mesa Central",
+      "O Diretor Geral de Arbitragem",
+      "O Diretor Geral de Competição"
+    ],
+    "correta": 2,
+    "referencia": "Manual de Formatação, Art. 2º, 2.3"
+  },
+  {
+    "id": 4,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "As faltas graves entre si são:",
+    "alternativas": [
+      "Cumulativas, e infrações diferentes incidem na sequência crescente de punições",
+      "Zeradas a cada interrupção",
+      "Independentes",
+      "Contadas apenas por tipo"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.2"
+  },
+  {
+    "id": 5,
+    "bloco": "FALTAS",
+    "pergunta": "Sair da área de tatames ao final do combate antes da proclamação do resultado é:",
+    "alternativas": [
+      "Falta grave",
+      "Punição administrativa",
+      "Permitido",
+      "Falta gravíssima"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (L)"
+  },
+  {
+    "id": 6,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Quando a contagem é interrompida por finalização encaixada do adversário, o atleta recebe:",
+    "alternativas": [
+      "Uma vantagem para cada posição alcançada",
+      "Apenas os pontos da última posição",
+      "Metade dos pontos",
+      "Nada"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 3º, 3.3.2"
+  },
+  {
+    "id": 7,
+    "bloco": "FALTAS",
+    "pergunta": "Segurar as bocas das mangas do paletó ou da calça do adversário com dedos virados para dentro é:",
+    "alternativas": [
+      "Permitido em qualquer situação",
+      "Vantagem",
+      "Falta gravíssima",
+      "Falta grave"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (H)"
+  },
+  {
+    "id": 8,
+    "bloco": "FALTAS",
+    "pergunta": "A técnica de suplex continua permitida desde que:",
+    "alternativas": [
+      "Seja aplicada apenas na faixa-preta",
+      "O adversário caia sentado",
+      "A movimentação não leve o adversário de cabeça ou pescoço ao solo",
+      "Haja pegada na faixa"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (L), Obs"
+  },
+  {
+    "id": 9,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo regulamentar de luta para adulto faixa-azul?",
+    "alternativas": [
+      "7 minutos",
+      "8 minutos",
+      "5 minutos",
+      "6 minutos"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 10,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Como o árbitro sinaliza uma vantagem?",
+    "alternativas": [
+      "Braço esticado paralelo ao ombro, mão aberta e palma virada para o solo",
+      "Punho fechado à altura do ombro",
+      "Dois dedos levantados",
+      "Mão espalmada balançando na altura da cabeça"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 11,
+    "bloco": "FALTAS",
+    "pergunta": "Prender propositalmente o pé na faixa do adversário é:",
+    "alternativas": [
+      "Falta gravíssima",
+      "Permitido",
+      "Falta grave",
+      "Vantagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (P)"
+  },
+  {
+    "id": 12,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual gesto acompanha a ordem verbal \"Parou!\"?",
+    "alternativas": [
+      "Mão espalmada balançando",
+      "Punhos cruzados acima da cabeça",
+      "Braços abertos e elevados até a altura dos ombros",
+      "Braço esticado à frente"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 13,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Um atleta de kimono branco enfrenta um de kimono azul. Quem fica à direita do árbitro?",
+    "alternativas": [
+      "O primeiro chamado",
+      "O de faixa mais graduada",
+      "O de kimono branco",
+      "O de kimono azul"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.4"
+  },
+  {
+    "id": 14,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quem marca os pontos no placar, cronometra a luta e anuncia o final ao árbitro por apito?",
+    "alternativas": [
+      "O auxiliar de mesa central",
+      "O coordenador de ringue",
+      "O árbitro lateral",
+      "O mesário"
+    ],
+    "correta": 3,
+    "referencia": "Manual de Formatação, Art. 2º, 2.8"
+  },
+  {
+    "id": 15,
+    "bloco": "FALTAS",
+    "pergunta": "O uso de cremes, óleos ou géis que deixem o corpo escorregadio é:",
+    "alternativas": [
+      "Permitido com autorização médica",
+      "Falta gravíssima",
+      "Falta de combatividade",
+      "Falta grave"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (F)"
+  },
+  {
+    "id": 16,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Nas categorias adulto e master existe:",
+    "alternativas": [
+      "Limite mínimo e máximo",
+      "Nenhum limite",
+      "Limite máximo de idade",
+      "Apenas limite mínimo de idade"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 1º, 1.2"
+  },
+  {
+    "id": 17,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Quantas inspeções de uniforme o atleta tem direito antes de ser impedido de competir?",
+    "alternativas": [
+      "2",
+      "1",
+      "3",
+      "5"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.11"
+  },
+  {
+    "id": 18,
+    "bloco": "FALTAS",
+    "pergunta": "A cruzada de perna é falta gravíssima quando o atleta:",
+    "alternativas": [
+      "Tem o pé solto",
+      "Passa o pé do limite vertical do corpo do adversário",
+      "Aplica em pé",
+      "Enfrenta um faixa-branca"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 19,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Punições por falta de combatividade e por falta grave no mesmo placar:",
+    "alternativas": [
+      "Só somam na faixa-preta",
+      "Somam-se entre si",
+      "São contadas separadamente",
+      "Anulam-se"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.3 e 7.3.2"
+  },
+  {
+    "id": 20,
+    "bloco": "FALTAS",
+    "pergunta": "Estrangular sem o auxílio do kimono circundando o pescoço com as mãos, ou pressionar a glote com o polegar, é:",
+    "alternativas": [
+      "Falta disciplinar",
+      "Permitido sem kimono",
+      "Falta grave",
+      "Falta gravíssima"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (I)"
+  },
+  {
+    "id": 21,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Com três árbitros escalados, uma marcação ou retirada de pontos precisa ser confirmada por:",
+    "alternativas": [
+      "Apenas o árbitro central",
+      "Um dos árbitros laterais apenas",
+      "Todos os três árbitros",
+      "Pelo menos dois dos três árbitros"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 22,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a espessura máxima da gola do kimono?",
+    "alternativas": [
+      "1,3 cm",
+      "1,5 cm",
+      "2,0 cm",
+      "1,0 cm"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.12"
+  },
+  {
+    "id": 23,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta por baixo fica em pé mantendo as pegadas da raspagem e derruba o adversário. Ele pontua se:",
+    "alternativas": [
+      "Apenas derrubar",
+      "Passar a guarda",
+      "Encaixar uma finalização",
+      "Estabilizar a posição por cima por 3 segundos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.6.3"
+  },
+  {
+    "id": 24,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando dois atletas estão de kimono da mesma cor, qual recebe a faixa verde e amarela de identificação?",
+    "alternativas": [
+      "O atleta de faixa mais alta",
+      "O mais pesado",
+      "O primeiro atleta a ser chamado",
+      "É sorteado"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.4"
+  },
+  {
+    "id": 25,
+    "bloco": "FALTAS",
+    "pergunta": "Tentar intencionalmente a desqualificação do oponente colocando-o em posição ilegal é:",
+    "alternativas": [
+      "Falta gravíssima",
+      "Falta disciplinar",
+      "Permitido",
+      "Falta grave"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (D)"
+  },
+  {
+    "id": 26,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "No single leg com a cabeça para fora, em categorias até o juvenil e na faixa-branca, o árbitro deve:",
+    "alternativas": [
+      "Desclassificar o atacante",
+      "Não interferir",
+      "Punir o atacante",
+      "Interromper a luta e recomeçar com os dois em pé, sem aplicar punição"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.10"
+  },
+  {
+    "id": 27,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Nas categorias de faixa-preta adulto, a organização pode exigir que o atleta tenha:",
+    "alternativas": [
+      "Dois kimonos de cores diferentes, um azul royal e um branco",
+      "Kimono novo a cada luta",
+      "Apenas kimono preto",
+      "Três kimonos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.5"
+  },
+  {
+    "id": 28,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Com um golpe de finalização encaixado na área de segurança, o árbitro:",
+    "alternativas": [
+      "Recoloca os atletas em pé",
+      "Não interrompe o combate",
+      "Interrompe imediatamente",
+      "Interrompe e dá vantagem"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7"
+  },
+  {
+    "id": 29,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "O resultado de uma luta proclamado pelo árbitro pode ser alterado em qual situação?",
+    "alternativas": [
+      "Sempre que o técnico contestar",
+      "Se houver interpretação errada do placar",
+      "Apenas por decisão da mesa central",
+      "Nunca pode ser alterado"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.3"
+  },
+  {
+    "id": 30,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Na chave de três atletas, o que acontece com o perdedor da primeira luta?",
+    "alternativas": [
+      "Enfrenta o terceiro atleta da chave",
+      "Vai direto para a final",
+      "É eliminado",
+      "Recebe bronze automaticamente"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 2º, 2.3.1"
+  },
+  {
+    "id": 31,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Quando os dois atletas puxam para a guarda ao mesmo tempo, quem recebe a vantagem?",
+    "alternativas": [
+      "O atleta que for para cima primeiro",
+      "Os dois recebem",
+      "O atleta mais pesado",
+      "Ninguém"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 3º, 3.5"
+  },
+  {
+    "id": 32,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Nas categorias Master, a partir de qual idade um atleta se enquadra em Master 1?",
+    "alternativas": [
+      "25 anos",
+      "35 anos",
+      "30 anos",
+      "40 anos"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 33,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Quando um atleta dá duas batidas com a palma da mão no adversário, no chão ou em si próprio, isso caracteriza:",
+    "alternativas": [
+      "Vantagem",
+      "Falta grave",
+      "Interrupção",
+      "Desistência"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 2º, 2.1.1"
+  },
+  {
+    "id": 34,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a largura regulamentar da faixa?",
+    "alternativas": [
+      "4 a 5 cm",
+      "5 a 6 cm",
+      "2 a 3 cm",
+      "3 a 4 cm"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.9"
+  },
+  {
+    "id": 35,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "O que cada mesa de controle de pontuação deve conter?",
+    "alternativas": [
+      "Um placar e um apito",
+      "Três placares",
+      "Apenas um placar eletrônico",
+      "Dois placares de pontuação e um cronômetro"
+    ],
+    "correta": 3,
+    "referencia": "Manual de Formatação, Art. 1º, 1.2.2"
+  },
+  {
+    "id": 36,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Quantos segundos consecutivos o árbitro conta antes de punir por falta de combatividade?",
+    "alternativas": [
+      "15 segundos",
+      "10 segundos",
+      "30 segundos",
+      "20 segundos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 7º, 7.3.1"
+  },
+  {
+    "id": 37,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "O atleta que chega a posições de pontuação estando sob ataque de finalização só recebe os pontos:",
+    "alternativas": [
+      "Nunca, nessa situação",
+      "Quando se livrar do ataque e estabilizar a posição por 3 segundos",
+      "Após o fim da luta",
+      "Imediatamente, se a posição for clara"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 3º, 3.3"
+  },
+  {
+    "id": 38,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "O atleta que grita ou emite som que expressa dor ao ser vítima de um golpe encaixado:",
+    "alternativas": [
+      "Recebe punição",
+      "Caracteriza desistência",
+      "Recebe uma vantagem contra",
+      "Tem a luta interrompida sem resultado"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 2º, 2.1.4"
+  },
+  {
+    "id": 39,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Numa raspagem em que os dois ficam de pé por menos de 3 segundos e o atleta que se defende projeta o adversário, ele:",
+    "alternativas": [
+      "Recebe 2 pontos",
+      "Recebe vantagem",
+      "Não recebe pontos nem vantagem referentes à queda",
+      "Recebe 4 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.4"
+  },
+  {
+    "id": 40,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Nos campeonatos por equipes, havendo empate ao final dos combates:",
+    "alternativas": [
+      "O título é dividido",
+      "As equipes podem escolher um atleta cada para uma luta extra",
+      "Vence quem tiver mais finalizações",
+      "Há sorteio"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 3º, 3.6.1"
+  },
+  {
+    "id": 41,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "No placar manual, a metade verde e amarela fica:",
+    "alternativas": [
+      "À direita do árbitro quando ele está de frente para a mesa",
+      "À esquerda do árbitro",
+      "No centro",
+      "Voltada para o público"
+    ],
+    "correta": 0,
+    "referencia": "Manual de Formatação, Art. 1º, 1.2.4"
+  },
+  {
+    "id": 42,
+    "bloco": "FALTAS",
+    "pergunta": "O atleta faz movimento NÃO intencional que coloca o adversário em posição passível de penalização, sem finalização encaixada. O árbitro deve:",
+    "alternativas": [
+      "Interromper, recolocar em posição regular, reiniciar e punir o infrator",
+      "Dar vantagem ao adversário",
+      "Ignorar",
+      "Desclassificar"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (V) e Art. 1º, 1.3.10"
+  },
+  {
+    "id": 43,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "O comprimento mínimo das mangas do paletó deve alcançar até que distância da articulação dos pulsos?",
+    "alternativas": [
+      "3 cm",
+      "5 cm",
+      "10 cm",
+      "7 cm"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.7"
+  },
+  {
+    "id": 44,
+    "bloco": "FALTAS",
+    "pergunta": "O atleta com domínio de montada ou pegada pelas costas, mantendo as características técnicas da posição:",
+    "alternativas": [
+      "Não configura falta de combatividade",
+      "Deve buscar finalização em 20 segundos",
+      "É punido após 20 segundos",
+      "Recebe vantagem"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1 (E)"
+  },
+  {
+    "id": 45,
+    "bloco": "FALTAS",
+    "pergunta": "Fugir deliberadamente da área de combate para evitar a desistência frente a uma finalização é:",
+    "alternativas": [
+      "Falta de combatividade",
+      "Falta disciplinar",
+      "Falta gravíssima",
+      "Falta grave"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (B)"
+  },
+  {
+    "id": 46,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Na área de luta de 100 m², quanto é área de segurança?",
+    "alternativas": [
+      "36 m²",
+      "64 m²",
+      "32 m²",
+      "28 m²"
+    ],
+    "correta": 0,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.3"
+  },
+  {
+    "id": 47,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta que projeta o adversário para se defender de uma pegada pelas costas com os dois ganchos postos:",
+    "alternativas": [
+      "Não recebe pontos nem vantagem de queda, mesmo estabilizando 3 segundos",
+      "Recebe 2 pontos",
+      "Recebe vantagem",
+      "Recebe 4 pontos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.9"
+  },
+  {
+    "id": 48,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual é o gesto de retirada de pontos?",
+    "alternativas": [
+      "Braços cruzados acima da cabeça",
+      "Braço erguido e balançado com a mão espalmada na altura da cabeça",
+      "Tocar a orelha duas vezes",
+      "Punho fechado à altura do ombro"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 49,
+    "bloco": "FALTAS",
+    "pergunta": "Pular para colocar o adversário em pé na guarda fechada é falta grave em quais casos?",
+    "alternativas": [
+      "Em todas as categorias",
+      "Apenas no infantil",
+      "Nas categorias até 15 anos, todas as faixas, e em todas as idades para a faixa-branca",
+      "Apenas na faixa-preta"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (W)"
+  },
+  {
+    "id": 50,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Se os dois atletas de uma semifinal forem desclassificados por falta DISCIPLINAR:",
+    "alternativas": [
+      "Disputam nova semifinal",
+      "Recebem medalha de bronze",
+      "Não são proclamados terceiros colocados, ficando vagas essas colocações",
+      "São proclamados terceiros colocados"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.1"
+  },
+  {
+    "id": 51,
+    "bloco": "FALTAS",
+    "pergunta": "Levar mais de 20 segundos para arrumar o uniforme resulta em:",
+    "alternativas": [
+      "Perda de uma vantagem",
+      "Punição consecutiva: 20s para paletó e faixa, 20s para faixa de identificação e 20s para amarrar a calça",
+      "Desclassificação imediata",
+      "Nenhuma consequência"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (T)"
+  },
+  {
+    "id": 52,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O joelho na barriga vale quantos pontos?",
+    "alternativas": [
+      "2 pontos",
+      "1 ponto",
+      "3 pontos",
+      "4 pontos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.3"
+  },
+  {
+    "id": 53,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Quando os dois atletas de uma final são desclassificados por falta técnica:",
+    "alternativas": [
+      "Há sorteio",
+      "Os perdedores das semifinais disputam a final e os desclassificados ficam com a prata",
+      "Não há campeão",
+      "A categoria é anulada"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.2"
+  },
+  {
+    "id": 54,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "No single leg com a cabeça para fora, nas demais categorias, o árbitro:",
+    "alternativas": [
+      "Não interfere na luta",
+      "Interrompe e pune",
+      "Concede vantagem ao defensor",
+      "Desclassifica o atacante"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.10"
+  },
+  {
+    "id": 55,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Quantos pontos vale o vice-campeonato na disputa por academias?",
+    "alternativas": [
+      "1 ponto",
+      "2 pontos",
+      "3 pontos",
+      "5 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 3º, 3.2"
+  },
+  {
+    "id": 56,
+    "bloco": "FALTAS",
+    "pergunta": "No Jiu-Jitsu sem kimono, fazer pegada no próprio uniforme ou no do adversário é:",
+    "alternativas": [
+      "Falta disciplinar",
+      "Falta gravíssima",
+      "Falta grave",
+      "Permitido"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (N)"
+  },
+  {
+    "id": 57,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Quando apenas um atleta é desclassificado na final por falta disciplinar, a medalha de prata vai para:",
+    "alternativas": [
+      "O terceiro colocado",
+      "O próprio desclassificado",
+      "O perdedor da semifinal para o atleta campeão",
+      "Ninguém"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.2"
+  },
+  {
+    "id": 58,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Segundo a tabela oficial, quais posições valem 4 pontos?",
+    "alternativas": [
+      "Joelho na barriga e montada",
+      "Passagem de guarda e montada",
+      "Montada, montada pelas costas e pegada pelas costas",
+      "Queda e raspagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.2"
+  },
+  {
+    "id": 59,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Qual é a única exceção à regra do WO sem medalha?",
+    "alternativas": [
+      "Se o atleta já tiver realizado pelo menos uma luta na categoria",
+      "Se o atleta pesar corretamente",
+      "Se a chave tiver três atletas",
+      "Se houver atestado médico"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 4º, 4.2.1"
+  },
+  {
+    "id": 60,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Nas categorias pesadíssimo e absoluto, o atleta sozinho precisa:",
+    "alternativas": [
+      "Lutar uma exibição",
+      "Apenas se inscrever",
+      "Ser pesado e checado",
+      "Ter o uniforme checado e aprovado"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 4º, 4.4.1"
+  },
+  {
+    "id": 61,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quantas placas de 2 m x 1 m compõem a área de combate numa área de 64 m²?",
+    "alternativas": [
+      "14 placas",
+      "18 placas",
+      "32 placas",
+      "36 placas"
+    ],
+    "correta": 1,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.4"
+  },
+  {
+    "id": 62,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo de luta das categorias Mirim I, II e III?",
+    "alternativas": [
+      "2 minutos",
+      "3 minutos",
+      "4 minutos",
+      "5 minutos"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 63,
+    "bloco": "FALTAS",
+    "pergunta": "Após a contagem por puxada simultânea sem evolução, a luta é:",
+    "alternativas": [
+      "Decidida pelo árbitro",
+      "Reiniciada no solo",
+      "Paralisada, os dois atletas punidos e reiniciada em pé",
+      "Encerrada"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1 (C)"
+  },
+  {
+    "id": 64,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Na terceira falta grave, o adversário do atleta punido recebe:",
+    "alternativas": [
+      "A vitória",
+      "Quatro pontos",
+      "Dois pontos",
+      "Uma vantagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.1"
+  },
+  {
+    "id": 65,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Qual é a única posição que vale 3 pontos?",
+    "alternativas": [
+      "Passagem de guarda",
+      "Montada pelas costas",
+      "Raspagem",
+      "Joelho na barriga"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.2"
+  },
+  {
+    "id": 66,
+    "bloco": "VANTAGENS",
+    "pergunta": "A montada com os dois braços do adversário presos sob as pernas resulta em:",
+    "alternativas": [
+      "Vantagem",
+      "Nada",
+      "2 pontos",
+      "4 pontos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.4"
+  },
+  {
+    "id": 67,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Se os dois atletas de uma semifinal forem desclassificados por falta TÉCNICA:",
+    "alternativas": [
+      "Disputam nova semifinal",
+      "São proclamados terceiros colocados e a outra semifinal vale como final",
+      "Recebem prata",
+      "Ficam sem medalha"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.1"
+  },
+  {
+    "id": 68,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "O atleta desclassificado por falta disciplinar:",
+    "alternativas": [
+      "Recebe bronze",
+      "Não tem direito a medalha e não consta na lista final de colocação do campeonato",
+      "Recebe medalha da colocação alcançada",
+      "Consta na lista, mas sem medalha"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 4º, 4.3"
+  },
+  {
+    "id": 69,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Categorias com apenas dois atletas da mesma academia:",
+    "alternativas": [
+      "Contam apenas o ouro",
+      "Não contam pontos para a disputa por academias",
+      "Contam metade dos pontos",
+      "Contam pontos normalmente"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 3º, 3.5"
+  },
+  {
+    "id": 70,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Em caso de WO ou desclassificação em chave de quatro atletas, ela:",
+    "alternativas": [
+      "É cancelada",
+      "Passa a funcionar como chave de três",
+      "Não adota o método da chave de três",
+      "Vira chave de dois"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 2º, 2.3.3"
+  },
+  {
+    "id": 71,
+    "bloco": "FALTAS",
+    "pergunta": "Na mesma situação da cruzada de perna, para atletas das faixas marrom e preta, o árbitro:",
+    "alternativas": [
+      "Interrompe e pune",
+      "Concede vantagem",
+      "Desclassifica o infrator",
+      "Não interrompe o combate e nenhuma penalidade é aplicada"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 72,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Até qual idade o árbitro deve proteger a cervical do atleta retirado do solo em triângulo ou guarda fechada?",
+    "alternativas": [
+      "Até 10 anos",
+      "Até 18 anos",
+      "Até 12 anos",
+      "Até 15 anos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.8"
+  },
+  {
+    "id": 73,
+    "bloco": "FALTAS",
+    "pergunta": "A queda suplex jogando o adversário de cabeça ou pescoço ao solo é:",
+    "alternativas": [
+      "Técnica permitida sem restrições",
+      "Falta gravíssima",
+      "Vantagem para quem aplica",
+      "Falta grave"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (L)"
+  },
+  {
+    "id": 74,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Sobre o uso de camisa por baixo do kimono na categoria masculina:",
+    "alternativas": [
+      "É permitido se for branca",
+      "É permitido apenas no sem kimono",
+      "É obrigatório",
+      "Não é permitido"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.3"
+  },
+  {
+    "id": 75,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Patches descosturados ou em locais não autorizados devem ser:",
+    "alternativas": [
+      "Costurados pelo fiscal",
+      "Retirados antes da checagem do kimono",
+      "Mantidos",
+      "Cobertos com fita"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.4"
+  },
+  {
+    "id": 76,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo de luta das categorias Juvenil I e II?",
+    "alternativas": [
+      "3 minutos",
+      "4 minutos",
+      "5 minutos",
+      "6 minutos"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 77,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "O atleta que abandona voluntariamente uma posição pela qual já recebeu pontos para repeti-la:",
+    "alternativas": [
+      "Não terá os novos pontos assinalados",
+      "Recebe os pontos novamente",
+      "Recebe apenas vantagem",
+      "É punido por falta de combatividade"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 3º, 3.2"
+  },
+  {
+    "id": 78,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo regulamentar de luta para adulto faixa-marrom?",
+    "alternativas": [
+      "10 minutos",
+      "8 minutos",
+      "7 minutos",
+      "6 minutos"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 79,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Quando o árbitro percebe que um golpe encaixado pode expor o atleta a sérios danos físicos, a decisão se dá por:",
+    "alternativas": [
+      "Desclassificação",
+      "Desistência",
+      "Interrupção",
+      "Decisão do árbitro"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 2º, 2.2.2"
+  },
+  {
+    "id": 80,
+    "bloco": "VANTAGENS",
+    "pergunta": "Dominar as costas mantendo os pés cruzados ou triângulo fechado resulta em:",
+    "alternativas": [
+      "4 pontos",
+      "Vantagem",
+      "Punição",
+      "Nada"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.5"
+  },
+  {
+    "id": 81,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Patches com frases ou símbolos ligados a ideologias políticas são:",
+    "alternativas": [
+      "Não permitidos",
+      "Permitidos se pequenos",
+      "Permitidos com autorização",
+      "Permitidos apenas na calça"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.5"
+  },
+  {
+    "id": 82,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quem é a autoridade máxima de cada luta?",
+    "alternativas": [
+      "O árbitro",
+      "O coordenador de ringue",
+      "A mesa central",
+      "O diretor de arbitragem"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.1"
+  },
+  {
+    "id": 83,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "O atleta posicionado à direita do árbitro tem seus pontos marcados:",
+    "alternativas": [
+      "Sempre no placar eletrônico",
+      "Na seção colorida do placar, pelo braço com braçadeira",
+      "Pelo mesário, sem gesto do árbitro",
+      "Na seção sem cores do placar"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.3"
+  },
+  {
+    "id": 84,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Pular por cima das barreiras que separam a área de competição do público pode gerar:",
+    "alternativas": [
+      "Punição administrativa a critério da IBJJF",
+      "Nenhuma consequência",
+      "Punição no placar",
+      "Desclassificação sumária"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 6º, 6.2"
+  },
+  {
+    "id": 85,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Quando o médico declara que um atleta não tem condições de continuar, a luta é decidida por:",
+    "alternativas": [
+      "Contagem do placar",
+      "Interrupção",
+      "Desclassificação",
+      "Sorteio"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 2º, 2.2.3"
+  },
+  {
+    "id": 86,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Nos pontos cumulativos, quantas contagens de 3 segundos o árbitro faz?",
+    "alternativas": [
+      "Nenhuma, os pontos são imediatos",
+      "Uma para cada posição da sequência",
+      "Apenas 3 segundos de domínio ao final da sequência",
+      "Duas contagens"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 3º, 3.4"
+  },
+  {
+    "id": 87,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual gesto sinaliza que houve comunicação do árbitro de vídeo ao árbitro central?",
+    "alternativas": [
+      "Tocar a orelha com a ponta dos dedos duas vezes",
+      "Braços cruzados acima da cabeça",
+      "Mão espalmada balançando",
+      "Punho fechado à altura do ombro"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 88,
+    "bloco": "FALTAS",
+    "pergunta": "Proferir palavras de baixo calão ou gestos obscenos ao árbitro ou ao público é:",
+    "alternativas": [
+      "Falta de combatividade",
+      "Falta grave",
+      "Falta disciplinar",
+      "Falta gravíssima técnica"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.1.1"
+  },
+  {
+    "id": 89,
+    "bloco": "FALTAS",
+    "pergunta": "A falta de combatividade recebe classificação similar a:",
+    "alternativas": [
+      "Faltas graves",
+      "Faltas gravíssimas",
+      "Nenhuma, é apenas advertência",
+      "Faltas disciplinares"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1"
+  },
+  {
+    "id": 90,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "De onde os Coordenadores de Ringue chamam os atletas para as áreas de luta?",
+    "alternativas": [
+      "Da área de pesagem",
+      "Exclusivamente da Área de Aquecimento",
+      "Da mesa central",
+      "Da arquibancada"
+    ],
+    "correta": 1,
+    "referencia": "Manual de Formatação, Art. 1º, 1.3.3"
+  },
+  {
+    "id": 91,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a altura total da ferramenta oficial de medição do uniforme?",
+    "alternativas": [
+      "10 cm",
+      "20 cm",
+      "15 cm",
+      "12 cm"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.12"
+  },
+  {
+    "id": 92,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Para pontuar o joelho na barriga, o atleta deve:",
+    "alternativas": [
+      "Prender um braço do adversário",
+      "Manter-se estável por 3 segundos sem o joelho oposto encostar no chão",
+      "Manter o joelho oposto no chão",
+      "Estar livre da meia-guarda apenas"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.3"
+  },
+  {
+    "id": 93,
+    "bloco": "VANTAGENS",
+    "pergunta": "Dominar as costas aprisionando os dois braços do adversário resulta em:",
+    "alternativas": [
+      "2 pontos",
+      "Falta grave",
+      "Vantagem",
+      "4 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.5"
+  },
+  {
+    "id": 94,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Se os dois atletas de uma semifinal se acidentam com a luta empatada e nenhum pode continuar:",
+    "alternativas": [
+      "A outra semifinal passa a valer como final e os acidentados são terceiros colocados",
+      "A categoria é cancelada",
+      "Há sorteio para a final",
+      "Os dois são eliminados sem medalha"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.1"
+  },
+  {
+    "id": 95,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Na chave de três, se o atleta exceder o peso máximo da categoria, ele:",
+    "alternativas": [
+      "Perde apenas a primeira luta",
+      "Está eliminado da competição sem direito à outra semifinal",
+      "Faz a outra semifinal",
+      "Pode ser repescado"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 2º, 2.3.2"
+  },
+  {
+    "id": 96,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Categorias com apenas um atleta:",
+    "alternativas": [
+      "Não contam pontos para a disputa por academias",
+      "São eliminadas",
+      "Valem pontos em dobro",
+      "Contam pontos normalmente"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 3º, 3.4"
+  },
+  {
+    "id": 97,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta que entra em movimento de queda ANTES de o adversário iniciar a puxada para a guarda:",
+    "alternativas": [
+      "Recebe apenas vantagem, sempre",
+      "Tem assinalados os dois pontos ou a vantagem referentes ao movimento",
+      "É punido",
+      "Não recebe nada"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.10"
+  },
+  {
+    "id": 98,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "A área de aquecimento é destinada:",
+    "alternativas": [
+      "À imprensa",
+      "Ao público e aos atletas",
+      "Exclusivamente aos atletas",
+      "Aos professores"
+    ],
+    "correta": 2,
+    "referencia": "Manual de Formatação, Art. 1º, 1.3.1"
+  },
+  {
+    "id": 99,
+    "bloco": "FALTAS",
+    "pergunta": "A cruzada de perna é considerada falta GRAVE quando o atleta:",
+    "alternativas": [
+      "Cruza abaixo do joelho",
+      "Mantém o pé solto",
+      "Passa seu pé da linha mediana vertical do corpo do adversário",
+      "Passa o pé do limite vertical do corpo"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 100,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Ocorrendo uma desclassificação técnica e uma disciplinar na mesma semifinal:",
+    "alternativas": [
+      "Ninguém recebe bronze",
+      "Há sorteio",
+      "Os dois são terceiros colocados",
+      "O desclassificado por motivo técnico é considerado terceiro colocado"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.1"
+  },
+  {
+    "id": 101,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Com qual agência a IBJJF tem contrato para o controle de doping?",
+    "alternativas": [
+      "WADA",
+      "USADA",
+      "ABCD",
+      "FIFA"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 5º, 5.10"
+  },
+  {
+    "id": 102,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "O movimento correto de defesa de uma finalização leva os dois atletas para fora da área. O árbitro assinala:",
+    "alternativas": [
+      "Punição para quem defendeu",
+      "Nada",
+      "Dois pontos para o atleta que aplicava a finalização",
+      "Vantagem para quem defendeu"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7 e Art. 3º, 3.1.1"
+  },
+  {
+    "id": 103,
+    "bloco": "FALTAS",
+    "pergunta": "Desobedecer uma ordem do árbitro é classificado como:",
+    "alternativas": [
+      "Falta disciplinar",
+      "Falta gravíssima",
+      "Falta de combatividade",
+      "Falta grave"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (K)"
+  },
+  {
+    "id": 104,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "A decisão dos árbitros com acesso a vídeo e replay pode ser contestada por quem?",
+    "alternativas": [
+      "Pelos árbitros laterais",
+      "Pelo árbitro central",
+      "Pelo diretor de arbitragem",
+      "Por ninguém entre central e laterais"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.2"
+  },
+  {
+    "id": 105,
+    "bloco": "VANTAGENS",
+    "pergunta": "Além da posição incompleta, a vantagem também se caracteriza por:",
+    "alternativas": [
+      "Tentativa de queda sem pegada",
+      "Movimentação quase completa de uma posição passível de pontuação, com real perigo ao adversário",
+      "Domínio de tempo",
+      "Controle de pegadas em pé"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 5º, 5.2"
+  },
+  {
+    "id": 106,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "A calça do kimono deve ter comprimento mínimo de quanto acima do maléolo tibial?",
+    "alternativas": [
+      "5 cm",
+      "8 cm",
+      "3 cm",
+      "2 cm"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.8"
+  },
+  {
+    "id": 107,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "No pódio, o degrau do vice-campeão fica:",
+    "alternativas": [
+      "À direita do atleta em primeiro lugar",
+      "À esquerda do campeão",
+      "Atrás do campeão",
+      "No mesmo nível do campeão"
+    ],
+    "correta": 0,
+    "referencia": "Manual de Formatação, Art. 1º, 1.6"
+  },
+  {
+    "id": 108,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "No joelho na barriga, qual perna vai sobre o adversário?",
+    "alternativas": [
+      "Qualquer uma das duas",
+      "A perna mais distante do quadril",
+      "A perna mais próxima do quadril do adversário",
+      "As duas alternadamente"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.3"
+  },
+  {
+    "id": 109,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Nas categorias até 15 anos, na quarta e quinta falta grave, o árbitro:",
+    "alternativas": [
+      "Desclassifica direto",
+      "Aplica apenas vantagem",
+      "Concede dois pontos ao oponente e uma punição ao atleta em cada falta, desclassificando apenas na sexta",
+      "Ignora a falta"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.4"
+  },
+  {
+    "id": 110,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Quando o atleta cai por cima com o triângulo encaixado no adversário que está por baixo:",
+    "alternativas": [
+      "Recebe vantagem de montada",
+      "Não serão assinalados pontos referentes à montada",
+      "Recebe 4 pontos de montada",
+      "Recebe 2 pontos"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.4.1"
+  },
+  {
+    "id": 111,
+    "bloco": "FALTAS",
+    "pergunta": "Na situação da cruzada de perna descrita para atletas até a faixa-roxa, quando o atleta por cima se levanta após uma raspagem, o árbitro deve:",
+    "alternativas": [
+      "Desclassificar",
+      "Punir imediatamente",
+      "Aguardar 3 segundos, interromper e assinalar 2 pontos ao atleta que está por cima",
+      "Não interferir"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 112,
+    "bloco": "VANTAGENS",
+    "pergunta": "O árbitro só pode assinalar a vantagem quando:",
+    "alternativas": [
+      "O atleta não tiver mais possibilidade de chegar à posição de pontuação",
+      "O atleta pedir",
+      "A luta for interrompida",
+      "O adversário se defender"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 5º, 5.5"
+  },
+  {
+    "id": 113,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual é o gesto de desclassificação?",
+    "alternativas": [
+      "Braços abertos na altura dos ombros",
+      "Mão espalmada balançando",
+      "Braços acima da cabeça com punhos cruzados, seguido da indicação do atleta",
+      "Punho fechado com braço elevado"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 114,
+    "bloco": "FALTAS",
+    "pergunta": "Morder, puxar cabelo ou aplicar golpe nos órgãos genitais é classificado como:",
+    "alternativas": [
+      "Falta técnica leve",
+      "Falta disciplinar",
+      "Vantagem para o adversário",
+      "Falta de combatividade"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.1.3"
+  },
+  {
+    "id": 115,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Esgotados todos os critérios de desempate entre academias, o que se faz?",
+    "alternativas": [
+      "Realiza-se sorteio",
+      "Vence a academia com mais atletas",
+      "Vence a academia mais antiga",
+      "Divide-se o título"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 3º, 3.3.1"
+  },
+  {
+    "id": 116,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Quando um atleta de uma semifinal é desclassificado sem ter efetuado luta alguma:",
+    "alternativas": [
+      "A quarta de final do mesmo lado da chave passa a valer como semifinal",
+      "O adversário é campeão automaticamente",
+      "A categoria tem apenas um medalhista",
+      "A final é cancelada"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.1"
+  },
+  {
+    "id": 117,
+    "bloco": "FALTAS",
+    "pergunta": "O \"single leg com a cabeça para fora\" é técnica proibida, mas segundo a tabela de golpes proibidos:",
+    "alternativas": [
+      "Apesar de proibida, o atleta não será punido",
+      "O atleta é sempre punido",
+      "É falta gravíssima em todas as categorias",
+      "Só é proibida para faixa-preta"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Tabela de Golpes Proibidos, item 11"
+  },
+  {
+    "id": 118,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Quem tem poder soberano sobre a inscrição dos atletas de uma academia?",
+    "alternativas": [
+      "O coordenador de ringue",
+      "O professor responsável pela academia ou associação",
+      "O atleta",
+      "A IBJJF"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 5º, 5.3"
+  },
+  {
+    "id": 119,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Sobre a premiação, é correto afirmar que:",
+    "alternativas": [
+      "Pode haver troca de posições no pódio",
+      "Não haverá troca de posições no pódio no momento da premiação",
+      "O professor pode contestar o pódio",
+      "O árbitro decide o pódio"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 4º, 4.1.1"
+  },
+  {
+    "id": 120,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Na montada com um braço preso, o atleta só pontua se:",
+    "alternativas": [
+      "O joelho da perna que aprisiona o braço não ultrapassar a linha do ombro do adversário",
+      "Houver pegada na gola",
+      "O adversário estiver de costas",
+      "Os dois pés estiverem no chão"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.4.1"
+  },
+  {
+    "id": 121,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "A raspagem se caracteriza quando o atleta por baixo:",
+    "alternativas": [
+      "Escapa para as costas em pé",
+      "Inverte a posição forçando o adversário a ficar por baixo e o mantém por 3 segundos",
+      "Passa a guarda do adversário",
+      "Se levanta e sai da guarda"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.6.1"
+  },
+  {
+    "id": 122,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Quem está proibido de dar instrução a atletas dentro da área de competição?",
+    "alternativas": [
+      "Os familiares",
+      "Os árbitros laterais",
+      "Os professores",
+      "Qualquer pessoa que esteja exercendo função oficial na organização"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 7º, 7.2"
+  },
+  {
+    "id": 123,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "O atleta desclassificado por WO em uma categoria:",
+    "alternativas": [
+      "Fica em terceiro",
+      "Recebe prata",
+      "Recebe medalha normalmente",
+      "Não tem direito a medalha e não consta na lista final de colocação"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 4º, 4.2"
+  },
+  {
+    "id": 124,
+    "bloco": "FALTAS",
+    "pergunta": "Se o atleta está se defendendo de uma queda ou raspagem e pula na guarda, a punição vem acompanhada de:",
+    "alternativas": [
+      "Desclassificação",
+      "Uma vantagem para o adversário",
+      "Nada",
+      "2 pontos para o adversário"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (W), Obs"
+  },
+  {
+    "id": 125,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Na segunda falta grave, o adversário do atleta punido recebe:",
+    "alternativas": [
+      "Nada",
+      "Uma vantagem",
+      "Quatro pontos",
+      "Dois pontos"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.1"
+  },
+  {
+    "id": 126,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Se o oponente puxa para guarda fechada e fica suspenso no ar, o atleta precisa colocá-lo com as costas no solo em até:",
+    "alternativas": [
+      "3 segundos",
+      "2 segundos",
+      "5 segundos",
+      "10 segundos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.12, Obs"
+  },
+  {
+    "id": 127,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual gesto o árbitro faz para sinalizar 3 (três) pontos?",
+    "alternativas": [
+      "Braços cruzados acima da cabeça",
+      "Dedos indicador e médio levantados",
+      "Punho fechado",
+      "Dedos indicador, médio e anelar levantados"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 128,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "A correção de pontuação pelos árbitros com acesso a vídeo e replay só acontece:",
+    "alternativas": [
+      "Se o árbitro central concordar",
+      "Por decisão da mesa central",
+      "Em caso de concordância entre os dois árbitros de vídeo",
+      "A pedido do atleta"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.2"
+  },
+  {
+    "id": 129,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Sobre a touca permitida nas categorias femininas, é correto afirmar que:",
+    "alternativas": [
+      "Pode ter inscrições da academia",
+      "Pode ter cordões para fixação",
+      "Pode ser de qualquer cor",
+      "Não pode possuir nenhuma parte rígida"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.8"
+  },
+  {
+    "id": 130,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a largura da ferramenta oficial de medição do uniforme?",
+    "alternativas": [
+      "7 cm",
+      "5 cm",
+      "4 cm",
+      "3,5 cm"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.12"
+  },
+  {
+    "id": 131,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual gesto indica que o atleta segurou nas bocas das mangas ou da calça com dedos virados para dentro?",
+    "alternativas": [
+      "Dedo indicador fazendo movimentos circulares",
+      "Uma das mãos virada para cima sobre o braço oposto, segurando a braçadeira",
+      "Braços cruzados na altura da cintura",
+      "Punho fechado à altura do ombro"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 132,
+    "bloco": "FALTAS",
+    "pergunta": "Fazer pegada no lado interno do paletó ou da calça do adversário é:",
+    "alternativas": [
+      "Falta grave",
+      "Permitido",
+      "Falta disciplinar",
+      "Falta gravíssima"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (I)"
+  },
+  {
+    "id": 133,
+    "bloco": "FALTAS",
+    "pergunta": "Utilizar substância que aumente a aderência em qualquer parte do corpo é:",
+    "alternativas": [
+      "Permitido",
+      "Falta grave",
+      "Falta gravíssima",
+      "Falta disciplinar"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (G)"
+  },
+  {
+    "id": 134,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "A ordem verbal \"Lute!\" indica:",
+    "alternativas": [
+      "Punição por falta de combatividade",
+      "Reinício do combate",
+      "Fim da luta",
+      "Punição por falta grave"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 135,
+    "bloco": "VANTAGENS",
+    "pergunta": "O atleta sofre uma queda e consegue rolar terminando o movimento por cima. O adversário:",
+    "alternativas": [
+      "Recebe 2 pontos",
+      "Recebe vantagem",
+      "Não recebe mais vantagem assinalada pelo árbitro",
+      "Recebe 2 pontos e vantagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.3"
+  },
+  {
+    "id": 136,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "No Master 1, qual é o tempo de luta para as faixas roxa, marrom e preta?",
+    "alternativas": [
+      "7 minutos",
+      "6 minutos",
+      "5 minutos",
+      "8 minutos"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 137,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Quem tem a palavra final sobre a liberação de um atleta com lesão de pele?",
+    "alternativas": [
+      "O diretor geral de competição",
+      "O árbitro",
+      "O médico do campeonato",
+      "O fiscal de uniformes"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.2.5"
+  },
+  {
+    "id": 138,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Segundo a tabela oficial, quais posições valem 2 pontos?",
+    "alternativas": [
+      "Montada e raspagem",
+      "Apenas a queda",
+      "Passagem de guarda e queda",
+      "Queda, raspagem e joelho na barriga"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.2"
+  },
+  {
+    "id": 139,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Se o atleta vomita ou apresenta micção ou evacuação involuntária, a luta:",
+    "alternativas": [
+      "É decidida por interrupção",
+      "É reiniciada do zero",
+      "É decidida por sorteio",
+      "Continua após limpeza do tatame"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 2º, 2.2.5"
+  },
+  {
+    "id": 140,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Se durante um ataque por cima o atleta cai por baixo e não usa as pernas para impedir o controle lateral:",
+    "alternativas": [
+      "Não devem ser atribuídos pontos nem vantagem pela passagem de guarda",
+      "O atleta é punido",
+      "O adversário recebe 3 pontos de passagem",
+      "O adversário recebe vantagem"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.2"
+  },
+  {
+    "id": 141,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Na modalidade sem kimono, a camisa deve ter pelo menos qual percentual na cor da graduação do atleta?",
+    "alternativas": [
+      "10%",
+      "25%",
+      "50%",
+      "5%"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.16"
+  },
+  {
+    "id": 142,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta que entra em movimento de queda APÓS o adversário iniciar a puxada para a guarda:",
+    "alternativas": [
+      "Recebe 2 pontos se estabilizar",
+      "Recebe vantagem",
+      "Não recebe os dois pontos nem a vantagem",
+      "Recebe 2 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.11"
+  },
+  {
+    "id": 143,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Nos campeonatos por equipes, quantas equipes recebem medalhas no pódio oficial?",
+    "alternativas": [
+      "As duas primeiras",
+      "Todas as participantes",
+      "As três primeiras",
+      "Apenas a primeira"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 4º, 4.1.2"
+  },
+  {
+    "id": 144,
+    "bloco": "VANTAGENS",
+    "pergunta": "Há vantagem de joelho na barriga quando o atleta:",
+    "alternativas": [
+      "Está preso na meia-guarda",
+      "Coloca a canela no peito",
+      "Mantém a posição por 2 segundos apenas",
+      "Mantém o joelho da outra perna no solo"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.3"
+  },
+  {
+    "id": 145,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quem toma as decisões finais sobre organização e andamento do evento?",
+    "alternativas": [
+      "O árbitro central",
+      "O Diretor Geral de Arbitragem",
+      "O Diretor Geral de Competição",
+      "O Coordenador de Mesa Central"
+    ],
+    "correta": 2,
+    "referencia": "Manual de Formatação, Art. 2º, 2.1"
+  },
+  {
+    "id": 146,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Para alterar um resultado proclamado, de quem é a decisão final?",
+    "alternativas": [
+      "Do diretor geral de competição",
+      "Do diretor de arbitragem",
+      "Da mesa central",
+      "Do árbitro"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.4"
+  },
+  {
+    "id": 147,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Numa baiana ou single leg em que o oponente senta e aplica contragolpe bem sucedido, quem pontua?",
+    "alternativas": [
+      "Ninguém",
+      "Os dois atletas",
+      "Apenas o atleta que contragolpeou, se estabilizar 3 segundos",
+      "Apenas quem iniciou o ataque"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.7"
+  },
+  {
+    "id": 148,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando o árbitro interrompe a luta por qualquer motivo, os atletas devem:",
+    "alternativas": [
+      "Voltar ao centro por conta própria",
+      "Soltar todas as pegadas",
+      "Sempre que possível manter a posição e aguardar instruções",
+      "Ficar imediatamente em pé"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.6, Obs"
+  },
+  {
+    "id": 149,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Se ao término do combate os atletas empatam em pontos, vantagens e punições, quem decide o vencedor?",
+    "alternativas": [
+      "Sorteio",
+      "Repete-se a luta",
+      "O árbitro, ou os árbitros quando forem três",
+      "A academia com mais medalhas"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 2º, 2.6.1"
+  },
+  {
+    "id": 150,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo regulamentar de luta para adulto faixa-branca?",
+    "alternativas": [
+      "7 minutos",
+      "6 minutos",
+      "5 minutos",
+      "8 minutos"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 151,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "A partir de qual idade o atleta se enquadra em Master 2?",
+    "alternativas": [
+      "40 anos",
+      "38 anos",
+      "35 anos",
+      "36 anos"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 152,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Na modalidade sem kimono, a bermuda masculina deve ter comprimento:",
+    "alternativas": [
+      "Sempre até o tornozelo",
+      "Acima da metade da coxa apenas",
+      "Livre, sem restrição",
+      "No mínimo abaixo da metade da coxa e no máximo até o joelho"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.16"
+  },
+  {
+    "id": 153,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Qual das opções NÃO é uma forma prevista de decisão das lutas?",
+    "alternativas": [
+      "Decisão do árbitro",
+      "Sorteio",
+      "Perda dos sentidos",
+      "Prorrogação"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 2º"
+  },
+  {
+    "id": 154,
+    "bloco": "FALTAS",
+    "pergunta": "As faltas técnicas se dividem em:",
+    "alternativas": [
+      "Falta de combatividade, faltas graves e faltas gravíssimas",
+      "Leves, médias e graves",
+      "Punições e desclassificações",
+      "Disciplinares e técnicas"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2"
+  },
+  {
+    "id": 155,
+    "bloco": "FALTAS",
+    "pergunta": "Correr em volta da área de luta sem buscar contato com o adversário é:",
+    "alternativas": [
+      "Falta grave",
+      "Falta de combatividade apenas",
+      "Falta gravíssima",
+      "Permitido para recuperar o fôlego"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (U)"
+  },
+  {
+    "id": 156,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Qual é o tamanho máximo de uma área de luta?",
+    "alternativas": [
+      "81 m²",
+      "64 m²",
+      "120 m²",
+      "100 m²"
+    ],
+    "correta": 3,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.3"
+  },
+  {
+    "id": 157,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Quantos atendimentos médicos cada atleta tem direito por contusão?",
+    "alternativas": [
+      "Três",
+      "Ilimitados, a critério do médico",
+      "Um",
+      "Dois"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 2º, 2.2.4"
+  },
+  {
+    "id": 158,
+    "bloco": "VANTAGENS",
+    "pergunta": "A vantagem pode ser assinalada pelo árbitro em qual momento?",
+    "alternativas": [
+      "Apenas durante a luta",
+      "Somente antes do início da luta",
+      "Nunca após o comando \"Parou!\"",
+      "Mesmo após o término do tempo de luta e antes da proclamação do resultado"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 5º, 5.4"
+  },
+  {
+    "id": 159,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Qual é o tamanho mínimo de uma área de luta?",
+    "alternativas": [
+      "100 m²",
+      "64 m²",
+      "81 m²",
+      "36 m²"
+    ],
+    "correta": 1,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.2"
+  },
+  {
+    "id": 160,
+    "bloco": "FALTAS",
+    "pergunta": "Ao ser atacado por uma finalização, o atleta comete falta que obriga o árbitro a interromper o combate. Isso é:",
+    "alternativas": [
+      "Falta grave",
+      "Falta de combatividade",
+      "Sem consequência",
+      "Falta gravíssima"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (C)"
+  },
+  {
+    "id": 161,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Como é definida a categoria de idade do atleta?",
+    "alternativas": [
+      "Pela idade no dia da competição",
+      "Pela idade registrada na IBJJF",
+      "Pela idade que completou ou completará no ano de realização do campeonato",
+      "Pela idade na data da inscrição"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 1º, 1.1"
+  },
+  {
+    "id": 162,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Qual é a única exceção ao sistema de eliminação simples?",
+    "alternativas": [
+      "A final de faixa-preta",
+      "A categoria absoluto",
+      "A chave de quatro",
+      "A chave de três"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 2º, 2.3"
+  },
+  {
+    "id": 163,
+    "bloco": "VANTAGENS",
+    "pergunta": "O atleta conduz o adversário para fora da área de luta tentando completar uma raspagem, sem ter ficado por cima em momento algum. Ele:",
+    "alternativas": [
+      "É punido por falta grave",
+      "Recebe 2 pontos",
+      "Não recebe vantagem",
+      "Recebe vantagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.7"
+  },
+  {
+    "id": 164,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo regulamentar de luta para adulto faixa-roxa?",
+    "alternativas": [
+      "7 minutos",
+      "5 minutos",
+      "8 minutos",
+      "6 minutos"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 165,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "O atleta que perde os sentidos por trauma:",
+    "alternativas": [
+      "Pode lutar na categoria absoluto",
+      "Pode voltar após liberação do professor",
+      "Não poderá retornar a lutar na mesma competição e deve ser encaminhado ao atendimento médico",
+      "Perde apenas a luta em questão, sem outras restrições"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 2º, 2.4.1, Obs"
+  },
+  {
+    "id": 166,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "A passagem de guarda exige que o atleta por cima transponha as pernas e mantenha:",
+    "alternativas": [
+      "Qualquer controle por 3 segundos",
+      "Controle transversal ou longitudinal do adversário de costas ou de lado por 3 segundos",
+      "Os dois joelhos no solo",
+      "O adversário de quatro apoios"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.2"
+  },
+  {
+    "id": 167,
+    "bloco": "FALTAS",
+    "pergunta": "Comunicar-se com qualquer pessoa contestando decisão do árbitro durante a luta é:",
+    "alternativas": [
+      "Permitido ao professor apenas",
+      "Falta gravíssima",
+      "Falta grave",
+      "Falta disciplinar"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (J)"
+  },
+  {
+    "id": 168,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Para decidir um empate total, o árbitro deve observar:",
+    "alternativas": [
+      "Quem controlou mais tempo a posição por cima",
+      "Quem tem mais experiência",
+      "Quem começou a luta atacando",
+      "Que atleta foi mais ofensivo e chegou mais perto de pontuar ou finalizar"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 2º, 2.6.2"
+  },
+  {
+    "id": 169,
+    "bloco": "VANTAGENS",
+    "pergunta": "A meia-guarda também não gera vantagem para quem está por cima quando:",
+    "alternativas": [
+      "O tempo estiver acabando",
+      "Não estiver vindo de uma tentativa de passagem de guarda",
+      "O adversário estiver defendendo",
+      "O atleta estiver em pé"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.2"
+  },
+  {
+    "id": 170,
+    "bloco": "FALTAS",
+    "pergunta": "Tapar o nariz ou a boca do adversário com as mãos é:",
+    "alternativas": [
+      "Falta gravíssima",
+      "Falta grave",
+      "Falta de combatividade",
+      "Permitido em defesa"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (J)"
+  },
+  {
+    "id": 171,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando a saída da área de combate é motivada pelo movimento do próprio atleta que ataca a finalização, o árbitro:",
+    "alternativas": [
+      "Pune o atacante",
+      "Reinicia sem qualquer marcação possível",
+      "Assinala os dois pontos normalmente",
+      "Não assinala os dois pontos e avalia apenas a vantagem pela quase finalização"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7"
+  },
+  {
+    "id": 172,
+    "bloco": "FALTAS",
+    "pergunta": "Simular combate ou desrespeitar a seriedade da competição é:",
+    "alternativas": [
+      "Falta de combatividade",
+      "Punição administrativa apenas",
+      "Falta grave",
+      "Falta disciplinar"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.1.5"
+  },
+  {
+    "id": 173,
+    "bloco": "VANTAGENS",
+    "pergunta": "A vantagem se caracteriza quando o atleta:",
+    "alternativas": [
+      "Conquista posição passível de pontuação mas não consegue manter o domínio pelos 3 segundos",
+      "Marca ponto e o adversário desiste",
+      "Aplica uma finalização completa",
+      "Vence no tempo regulamentar"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 5º, 5.1"
+  },
+  {
+    "id": 174,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Para se inscrever em qualquer campeonato, o atleta precisa:",
+    "alternativas": [
+      "Estar afiliado a uma academia sujeita à aprovação da IBJJF",
+      "Ter faixa registrada em qualquer federação",
+      "Ter registro individual apenas",
+      "Comprovar tempo de treino"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 5º, 5.1"
+  },
+  {
+    "id": 175,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Com três árbitros, para desclassificar por acúmulo de quatro punições, o árbitro central precisa:",
+    "alternativas": [
+      "Ter a confirmação de pelo menos um dos árbitros laterais",
+      "Consultar a mesa central",
+      "Ter a confirmação dos dois laterais",
+      "Apenas paralisar a luta"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 176,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Quantos pontos vale o terceiro lugar na disputa por academias?",
+    "alternativas": [
+      "2 pontos",
+      "3 pontos",
+      "Nenhum",
+      "1 ponto"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 3º, 3.2"
+  },
+  {
+    "id": 177,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Qual é o primeiro critério de desempate na disputa por academias?",
+    "alternativas": [
+      "Campeão mais graduado",
+      "Maior número de medalhas de prata",
+      "Maior número de medalhas de ouro",
+      "Sorteio"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 3º, 3.3.1"
+  },
+  {
+    "id": 178,
+    "bloco": "FALTAS",
+    "pergunta": "Retirar propositalmente o próprio kimono ou a própria faixa, causando a interrupção da luta, é:",
+    "alternativas": [
+      "Falta disciplinar",
+      "Falta grave",
+      "Sem consequência",
+      "Falta gravíssima"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (G)"
+  },
+  {
+    "id": 179,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Quantas vezes o atleta sobe na balança oficial do evento?",
+    "alternativas": [
+      "Três vezes",
+      "Quantas forem necessárias",
+      "Uma única vez",
+      "Duas vezes"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.1"
+  },
+  {
+    "id": 180,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Após puxada simultânea para a guarda, se o atleta sobe diretamente para a imobilização lateral, ele:",
+    "alternativas": [
+      "Recebe uma vantagem de passagem",
+      "Não recebe pontos ou vantagem pela passagem de guarda",
+      "Recebe 2 pontos",
+      "Recebe 3 pontos de passagem"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 3º, 3.5, Obs"
+  },
+  {
+    "id": 181,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Movimentos que acontecem após o limite da área de segurança:",
+    "alternativas": [
+      "São desconsiderados",
+      "Geram punição",
+      "Valem apenas vantagem",
+      "Valem pontos normalmente"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7"
+  },
+  {
+    "id": 182,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Quais cores de kimono são aceitas?",
+    "alternativas": [
+      "Branco e azul apenas",
+      "Branco, azul, preto e cinza",
+      "Qualquer cor lisa",
+      "Branco, azul royal ou preto, inteiramente"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.3"
+  },
+  {
+    "id": 183,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quem pesa os atletas antes da primeira luta e os conduz até a área de luta?",
+    "alternativas": [
+      "O Coordenador de Ringue",
+      "O fiscal de uniformes",
+      "O mesário",
+      "O anunciador"
+    ],
+    "correta": 0,
+    "referencia": "Manual de Formatação, Art. 2º, 2.7"
+  },
+  {
+    "id": 184,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Na área de luta mínima de 64 m², quanto é área de combate?",
+    "alternativas": [
+      "46 m²",
+      "28 m²",
+      "36 m²",
+      "64 m²"
+    ],
+    "correta": 2,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.2"
+  },
+  {
+    "id": 185,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Ao final da luta, o árbitro levanta o braço:",
+    "alternativas": [
+      "Do atleta escolhido pelos professores",
+      "Do atleta mais graduado",
+      "Somente do vencedor, mesmo em acordo entre atletas da mesma academia",
+      "Dos dois atletas em caso de acordo"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.14"
+  },
+  {
+    "id": 186,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo regulamentar de luta para adulto faixa-preta?",
+    "alternativas": [
+      "12 minutos",
+      "10 minutos",
+      "8 minutos",
+      "5 minutos"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 187,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "A ordem verbal \"Falta!\" é usada pelo árbitro em qual situação?",
+    "alternativas": [
+      "Punição por falta de combatividade",
+      "Retirada de pontos",
+      "Desclassificação",
+      "Punição por falta grave"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 188,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Numa disputa vinda da guarda, a partir de quantos segundos em pé o combate passa a ser considerado luta em pé?",
+    "alternativas": [
+      "2 segundos",
+      "10 segundos",
+      "5 segundos",
+      "3 segundos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.5"
+  },
+  {
+    "id": 189,
+    "bloco": "VANTAGENS",
+    "pergunta": "Não há vantagem de raspagem quando:",
+    "alternativas": [
+      "A raspagem começa e termina em situação de guarda 50/50",
+      "O adversário está com finalização encaixada",
+      "O atleta está de faixa preta",
+      "A luta passa de 3 minutos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.5"
+  },
+  {
+    "id": 190,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Com os atletas em posição de solo estabilizada e 2/3 do corpo fora da área de combate, o árbitro:",
+    "alternativas": [
+      "Anula os pontos da sequência",
+      "Aguarda a saída total da área de segurança",
+      "Reinicia com os dois em pé",
+      "Reinicia no centro com os atletas em posições idênticas às da interrupção"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7"
+  },
+  {
+    "id": 191,
+    "bloco": "FALTAS",
+    "pergunta": "Usar a faixa desamarrada como auxílio em estrangulamento é:",
+    "alternativas": [
+      "Falta gravíssima",
+      "Falta grave",
+      "Falta disciplinar",
+      "Permitido"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (S)"
+  },
+  {
+    "id": 192,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Onde fica localizada a mesa central?",
+    "alternativas": [
+      "Na entrada do ginásio",
+      "Em posição central em relação a todas as áreas de luta",
+      "Junto ao pódio",
+      "Ao lado da área de aquecimento"
+    ],
+    "correta": 1,
+    "referencia": "Manual de Formatação, Art. 1º, 1.5"
+  },
+  {
+    "id": 193,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Qual é a ordem verbal para o início da luta?",
+    "alternativas": [
+      "Lute!",
+      "Combate!",
+      "Parou!",
+      "Vai!"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.4.1"
+  },
+  {
+    "id": 194,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Em caso de empate em pontos, vantagens e punições com três árbitros, como se declara o vencedor?",
+    "alternativas": [
+      "Vence o atleta de faixa mais graduada",
+      "Os três árbitros levantam o braço do atleta que consideram vencedor e vale a maioria",
+      "Prorrogação de dois minutos",
+      "Sorteio imediato"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 195,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Quantos pontos vale a passagem de guarda?",
+    "alternativas": [
+      "1 ponto",
+      "2 pontos",
+      "4 pontos",
+      "3 pontos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.2"
+  },
+  {
+    "id": 196,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Para pontuar a montada, o atleta pode manter presos sob suas pernas:",
+    "alternativas": [
+      "Um braço e a cabeça",
+      "Nenhum braço",
+      "Os dois braços do adversário",
+      "Até um braço do adversário"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.4.1"
+  },
+  {
+    "id": 197,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Como é composto o pódio oficial?",
+    "alternativas": [
+      "Quatro degraus",
+      "Dois degraus",
+      "Um único nível",
+      "Três degraus, com o mais alto ao centro"
+    ],
+    "correta": 3,
+    "referencia": "Manual de Formatação, Art. 1º, 1.6"
+  },
+  {
+    "id": 198,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "O edital publicado de cada competição:",
+    "alternativas": [
+      "Não tem valor normativo",
+      "Tem o mesmo peso do Livro de Regras",
+      "Se sobrepõe ao Regulamento Geral quando necessário",
+      "Está subordinado ao Regulamento Geral"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 7º, 7.1"
+  },
+  {
+    "id": 199,
+    "bloco": "VANTAGENS",
+    "pergunta": "Numa tentativa de single leg em que o atleta leva o adversário a andar para fora da área de luta:",
+    "alternativas": [
+      "Recebe 2 pontos",
+      "Não será mais concedida vantagem",
+      "O adversário é punido",
+      "Recebe vantagem"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.6"
+  },
+  {
+    "id": 200,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Qual é o sistema de disputa das chaves?",
+    "alternativas": [
+      "Pontos corridos",
+      "Melhor de três",
+      "Eliminação simples",
+      "Grupos e mata-mata"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 2º, 2.2"
+  },
+  {
+    "id": 201,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Como o Livro de Regras define guarda?",
+    "alternativas": [
+      "A posição sentada de frente ao adversário",
+      "O controle das pegadas por baixo",
+      "O uso de uma ou das duas pernas para impedir que o adversário atinja o controle transversal ou longitudinal",
+      "Qualquer posição por baixo"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.2, Obs 1"
+  },
+  {
+    "id": 202,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta derruba, cai na guarda e sofre raspagem imediata bem sucedida. O resultado é:",
+    "alternativas": [
+      "4 pontos para o adversário",
+      "Nada para nenhum dos dois",
+      "2 pontos de queda para ele e nada para o adversário",
+      "Vantagem de queda para ele e 2 pontos de raspagem para o adversário"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.8"
+  },
+  {
+    "id": 203,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "A queda vale quantos pontos?",
+    "alternativas": [
+      "1 ponto",
+      "4 pontos",
+      "2 pontos",
+      "3 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.1"
+  },
+  {
+    "id": 204,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quem solicita a entrada do atendimento médico na área de luta?",
+    "alternativas": [
+      "O coordenador de ringue",
+      "O árbitro",
+      "O professor do atleta",
+      "O mesário"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.11"
+  },
+  {
+    "id": 205,
+    "bloco": "FALTAS",
+    "pergunta": "NÃO se configura falta de combatividade quando o atleta:",
+    "alternativas": [
+      "Abraça as costas do adversário na guarda",
+      "Segura a faixa do adversário em pé",
+      "Fica parado na guarda fechada",
+      "Está defendendo ataques a partir da montada, da pegada das costas ou das imobilizações"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1 (D)"
+  },
+  {
+    "id": 206,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Uma sequência de passagem de guarda seguida de montada soma quantos pontos cumulativos?",
+    "alternativas": [
+      "8 pontos",
+      "4 pontos",
+      "6 pontos",
+      "7 pontos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 3º, 3.4"
+  },
+  {
+    "id": 207,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Quando os dois atletas são punidos por falta de combatividade resultando na terceira falta para ambos, a luta:",
+    "alternativas": [
+      "É reiniciada em pé",
+      "Vai para decisão do árbitro",
+      "Continua no solo",
+      "É encerrada"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.1, Obs"
+  },
+  {
+    "id": 208,
+    "bloco": "VANTAGENS",
+    "pergunta": "A meia-guarda NÃO gera vantagem para quem está por cima quando:",
+    "alternativas": [
+      "A passagem é concretizada na sequência do movimento",
+      "O atleta está de faixa preta",
+      "A luta passa de 3 minutos",
+      "Há pegada na gola"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.1"
+  },
+  {
+    "id": 209,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Como a faixa deve ser amarrada?",
+    "alternativas": [
+      "Uma volta com nó simples",
+      "Duas voltas com nó simples",
+      "Duas voltas na altura da cintura com nó duplo",
+      "Três voltas com nó simples"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.9"
+  },
+  {
+    "id": 210,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "O atleta que chega a várias posições cumulativas sob ataque de finalização e não se livra até o fim da luta terá:",
+    "alternativas": [
+      "Uma vantagem por posição",
+      "Apenas uma vantagem assinalada",
+      "Nada assinalado",
+      "Todos os pontos"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 3º, 3.3.3"
+  },
+  {
+    "id": 211,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Quantas medalhas de bronze são entregues por categoria?",
+    "alternativas": [
+      "Duas",
+      "Nenhuma",
+      "Três",
+      "Uma"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 4º, 4.1.1"
+  },
+  {
+    "id": 212,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Um atleta de kimono preto enfrenta um de kimono branco. Quem fica à direita do árbitro?",
+    "alternativas": [
+      "O de kimono preto",
+      "É indiferente",
+      "O de kimono branco",
+      "O primeiro chamado"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.4"
+  },
+  {
+    "id": 213,
+    "bloco": "FALTAS",
+    "pergunta": "Defendendo um single leg com a cabeça para fora, projetar o adversário segurando na faixa para que ele atinja o solo com a cabeça é:",
+    "alternativas": [
+      "Falta grave",
+      "Defesa legítima",
+      "Vantagem",
+      "Falta gravíssima"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (K)"
+  },
+  {
+    "id": 214,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando os árbitros laterais concordam com o árbitro central, eles:",
+    "alternativas": [
+      "Fazem o mesmo gesto do central",
+      "Permanecem sentados nas cadeiras",
+      "Apitam uma vez",
+      "Levantam o braço confirmando"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 215,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Se um atleta alega estar sentindo câimbras durante o combate, o que acontece?",
+    "alternativas": [
+      "Ele recebe tempo de descanso",
+      "A luta continua normalmente",
+      "Ele é declarado perdedor da luta",
+      "A luta é interrompida sem resultado"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 2º, 2.2.1"
+  },
+  {
+    "id": 216,
+    "bloco": "VANTAGENS",
+    "pergunta": "O atleta inicia uma raspagem mas desiste deliberadamente de permanecer por cima para preservar sua defesa. Ele:",
+    "alternativas": [
+      "Recebe 2 pontos",
+      "É punido",
+      "Recebe vantagem",
+      "Não recebe a vantagem referente à raspagem"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 5º, 5.7.4"
+  },
+  {
+    "id": 217,
+    "bloco": "FALTAS",
+    "pergunta": "Colocar o pé na lapela atrás do pescoço do adversário, com ou sem pegada, é:",
+    "alternativas": [
+      "Falta grave",
+      "Permitido com pegada",
+      "Falta gravíssima",
+      "Vantagem"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (R)"
+  },
+  {
+    "id": 218,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo de luta das categorias Pré-Mirim?",
+    "alternativas": [
+      "2 minutos",
+      "4 minutos",
+      "5 minutos",
+      "3 minutos"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 219,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Após o nó duplo, cada ponta da faixa deve ter comprimento entre:",
+    "alternativas": [
+      "30 cm e 40 cm",
+      "20 cm e 30 cm",
+      "10 cm e 20 cm",
+      "15 cm e 25 cm"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.9"
+  },
+  {
+    "id": 220,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Um faixa-preta de judô com experiência comprovada em wrestling ou MMA pode competir como faixa-branca?",
+    "alternativas": [
+      "Sim, sempre",
+      "Sim, apenas na primeira competição",
+      "Depende do professor",
+      "Não, está proibido"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 5º, 5.5"
+  },
+  {
+    "id": 221,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Um árbitro marca passagem de guarda, o segundo marca vantagem e o terceiro pede retirada dos pontos. O que é assinalado?",
+    "alternativas": [
+      "Três pontos",
+      "Dois pontos",
+      "Nada",
+      "Uma vantagem"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 222,
+    "bloco": "FALTAS",
+    "pergunta": "As faltas previstas na regra podem ser cometidas:",
+    "alternativas": [
+      "Apenas após o combate",
+      "Somente dentro da área de luta",
+      "Apenas durante o combate",
+      "Antes, durante e depois dos combates"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º"
+  },
+  {
+    "id": 223,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Na chave de três, o atleta que perde a primeira luta por não comparecimento:",
+    "alternativas": [
+      "É repescado",
+      "Recebe bronze",
+      "Pode fazer a outra semifinal",
+      "Perde o direito de fazer a outra semifinal"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 2º, 2.3.4"
+  },
+  {
+    "id": 224,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Onde ficam posicionados os árbitros laterais?",
+    "alternativas": [
+      "Sentados em cadeiras em cantos opostos da área de luta",
+      "Na mesa de controle de pontuação",
+      "Atrás da mesa central",
+      "Em pé nas laterais da área de combate"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 225,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Na raspagem em que o adversário vira de quatro apoios, o atleta pontua se:",
+    "alternativas": [
+      "Montar em 3 segundos",
+      "Passar a guarda em seguida",
+      "Controlar as costas sem necessidade de ganchos, mantendo pelo menos um joelho do adversário no solo por 3 segundos",
+      "Colocar os dois ganchos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.6.2"
+  },
+  {
+    "id": 226,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Nas categorias juvenil, adulto e master, é obrigatório o uso de:",
+    "alternativas": [
+      "Kimono trançado",
+      "Kimono importado",
+      "Kimono com EVA na gola",
+      "Kimono simples"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.1"
+  },
+  {
+    "id": 227,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "O atleta tem pegada na calça e o oponente puxa para a guarda. Ele recebe 2 pontos de queda se:",
+    "alternativas": [
+      "Passar a guarda em seguida",
+      "O oponente cair de costas",
+      "A pegada for mantida por 3 segundos",
+      "Conseguir estabilizar a posição por cima na luta de chão por 3 segundos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.12"
+  },
+  {
+    "id": 228,
+    "bloco": "FALTAS",
+    "pergunta": "Comemorar a vitória com danças ou exercícios que sugiram superioridade física, sem se enquadrar como falta disciplinar, é:",
+    "alternativas": [
+      "Punição administrativa apenas",
+      "Falta gravíssima",
+      "Permitido",
+      "Falta grave"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (X)"
+  },
+  {
+    "id": 229,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a área máxima permitida para a etiqueta do fabricante na perna da calça?",
+    "alternativas": [
+      "50 cm²",
+      "16 cm²",
+      "36 cm²",
+      "25 cm²"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.6"
+  },
+  {
+    "id": 230,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Ao projetar o adversário para a área de segurança com o golpe iniciado dentro da área, o árbitro deve:",
+    "alternativas": [
+      "Dar apenas vantagem",
+      "Parar somente após a contagem dos 3 segundos, assinalar os pontos e reiniciar na mesma posição no centro",
+      "Parar imediatamente e anular",
+      "Punir o atleta que projetou"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.3"
+  },
+  {
+    "id": 231,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Cada academia tem direito a inscrever quantos atletas por categoria de peso, faixa, idade e sexo?",
+    "alternativas": [
+      "1",
+      "Ilimitado",
+      "2",
+      "3"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 5º, 5.2"
+  },
+  {
+    "id": 232,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Na transição direta da montada pelas costas para a montada pela frente, o atleta recebe:",
+    "alternativas": [
+      "4 pontos e uma vantagem",
+      "4 pontos no total",
+      "4 pontos por cada montada, respeitando os 3 segundos de cada posição",
+      "Nada, por ser a mesma posição"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.4.1"
+  },
+  {
+    "id": 233,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Interpretações subjetivas do árbitro na marcação de pontos, vantagens ou punições:",
+    "alternativas": [
+      "Podem ser revistas pelo diretor de arbitragem",
+      "São revistas sempre que houver vídeo",
+      "Não serão alteradas",
+      "Podem ser contestadas pelo professor"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.3, Obs"
+  },
+  {
+    "id": 234,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual destes itens é permitido em competição?",
+    "alternativas": [
+      "Joelheiras que não aumentem o volume do corpo",
+      "Protetores de orelha",
+      "Coquilha",
+      "Óculos esportivos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.7 e 8.3.9"
+  },
+  {
+    "id": 235,
+    "bloco": "FALTAS",
+    "pergunta": "Na guarda 50/50, girar para dentro com o adversário pisando no solo com o pé que está na guarda é:",
+    "alternativas": [
+      "Falta grave",
+      "Falta gravíssima",
+      "Vantagem",
+      "Permitido"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 236,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Faltas disciplinares resultam em:",
+    "alternativas": [
+      "Punição no placar sem outra consequência",
+      "Apenas advertência verbal",
+      "Desclassificação sumária da luta e da competição",
+      "Perda de uma vantagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 7º, 7.1"
+  },
+  {
+    "id": 237,
+    "bloco": "FALTAS",
+    "pergunta": "Quando os dois atletas puxam para a guarda ao mesmo tempo, a contagem para falta de combatividade é de:",
+    "alternativas": [
+      "15 segundos",
+      "20 segundos",
+      "30 segundos",
+      "10 segundos"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1 (C)"
+  },
+  {
+    "id": 238,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "O atleta pode subir na balança:",
+    "alternativas": [
+      "Apenas de kimono completo",
+      "Sem cotoveleiras e joelheiras, colocando-as depois para a checagem de kimono",
+      "Com qualquer acessório",
+      "De calçado"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.2"
+  },
+  {
+    "id": 239,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Após a pesagem, trocar de kimono para a primeira luta implica em:",
+    "alternativas": [
+      "Nova checagem apenas",
+      "Desclassificação",
+      "Advertência",
+      "Punição no placar"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.13"
+  },
+  {
+    "id": 240,
+    "bloco": "FALTAS",
+    "pergunta": "Colocar a mão ou o pé sobre a parte frontal do rosto do adversário é:",
+    "alternativas": [
+      "Permitido para criar espaço",
+      "Falta gravíssima",
+      "Falta disciplinar",
+      "Falta grave"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (O)"
+  },
+  {
+    "id": 241,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "O atleta graduado antes do tempo mínimo de permanência na faixa anterior ou da idade mínima:",
+    "alternativas": [
+      "Compete na faixa nova",
+      "Compete na faixa anterior",
+      "Compete apenas no absoluto",
+      "Não poderá competir na faixa atual nem na anterior"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 5º, 5.8"
+  },
+  {
+    "id": 242,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Em caso de empate em pontos ao final do tempo regulamentar, o primeiro critério de desempate é:",
+    "alternativas": [
+      "Maior número de vantagens",
+      "Graduação do atleta",
+      "Menor número de punições",
+      "Peso do atleta"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.3"
+  },
+  {
+    "id": 243,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Na desclassificação técnica dos dois atletas de uma final de chave de três:",
+    "alternativas": [
+      "Não há campeão",
+      "A chave é refeita",
+      "Há sorteio",
+      "O perdedor da segunda semifinal se torna o campeão"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 2º, 2.4.2"
+  },
+  {
+    "id": 244,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Atletas inscritos na faixa-preta só podem lutar:",
+    "alternativas": [
+      "Com a graduação declarada pelo professor",
+      "Em qualquer faixa acima da azul",
+      "Com a graduação registrada na IBJJF no momento da inscrição",
+      "Na faixa anterior, se preferirem"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 5º, 5.7"
+  },
+  {
+    "id": 245,
+    "bloco": "FALTAS",
+    "pergunta": "O atleta foge deliberadamente da área de luta para evitar posição de inferioridade. O árbitro deve:",
+    "alternativas": [
+      "Desclassificar",
+      "Assinalar dois pontos ao adversário e marcar punição no placar para o infrator",
+      "Reiniciar sem marcação",
+      "Apenas punir"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (M)"
+  },
+  {
+    "id": 246,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "O atleta graduado durante uma competição, após o término de sua categoria, fica:",
+    "alternativas": [
+      "Proibido de competir na categoria absoluto",
+      "Obrigado a disputar o absoluto na faixa nova",
+      "Desclassificado do campeonato",
+      "Livre para disputar o absoluto"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 5º, 5.9"
+  },
+  {
+    "id": 247,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Em que situação a luta é decidida por sorteio?",
+    "alternativas": [
+      "Quando os dois atletas se acidentam numa final de categoria, com a luta empatada, e nenhum pode continuar",
+      "Quando o árbitro não consegue decidir",
+      "Empate em pontos e vantagens",
+      "Quando o placar apresenta erro"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 2º, 2.7.1"
+  },
+  {
+    "id": 248,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Quantos pontos vale o título de campeão na disputa por academias?",
+    "alternativas": [
+      "7 pontos",
+      "9 pontos",
+      "10 pontos",
+      "5 pontos"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 3º, 3.2"
+  },
+  {
+    "id": 249,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Na categoria feminina, o uso de camisa de tecido elástico por baixo do kimono é:",
+    "alternativas": [
+      "Permitido apenas na faixa-preta",
+      "Proibido",
+      "Opcional",
+      "Obrigatório"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.4"
+  },
+  {
+    "id": 250,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Em kimono preto contra kimono azul, quem fica à direita do árbitro?",
+    "alternativas": [
+      "O de kimono preto",
+      "O de kimono azul",
+      "O mais graduado",
+      "O mais leve"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.4"
+  },
+  {
+    "id": 251,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "O diretor de arbitragem só poderá autorizar a alteração de um resultado caso:",
+    "alternativas": [
+      "A chave não tenha avançado para a fase posterior",
+      "O árbitro concorde com o professor",
+      "O atleta apresente recurso por escrito",
+      "Existam imagens de vídeo do combate"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.4"
+  },
+  {
+    "id": 252,
+    "bloco": "FALTAS",
+    "pergunta": "O atleta por baixo na guarda fechada abraça as costas do adversário para mantê-lo colado ao peito sem intuito de finalizar ou pontuar. Isso é:",
+    "alternativas": [
+      "Posição legítima de defesa",
+      "Exemplo de falta de combatividade",
+      "Vantagem para o de cima",
+      "Falta gravíssima"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.1"
+  },
+  {
+    "id": 253,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Havendo empate em pontos e vantagens, vence o atleta que tiver:",
+    "alternativas": [
+      "Mais tempo de domínio",
+      "Menor número de punições",
+      "Maior número de punições",
+      "Faixa mais graduada"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.4"
+  },
+  {
+    "id": 254,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "O atleta sozinho em uma categoria, para receber medalha, precisa:",
+    "alternativas": [
+      "Lutar no absoluto",
+      "Apenas comparecer",
+      "Ter o uniforme checado, ser pesado e aprovado",
+      "Ser aprovado pelo professor"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 4º, 4.4"
+  },
+  {
+    "id": 255,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Faltas técnicas gravíssimas resultam em:",
+    "alternativas": [
+      "Vantagem ao adversário",
+      "Dois pontos ao adversário",
+      "Desclassificação da competição inteira",
+      "Desclassificação sumária da luta no momento da infração"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 7º, 7.1"
+  },
+  {
+    "id": 256,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Na pegada pelas costas, quantos braços do adversário podem ser aprisionados sem perder a pontuação?",
+    "alternativas": [
+      "Até um, sem que a perna passe da linha dos ombros",
+      "Os dois",
+      "Nenhum",
+      "Os dois, se houver gancho"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.5"
+  },
+  {
+    "id": 257,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "A contagem dos 3 segundos de estabilização é interrompida quando:",
+    "alternativas": [
+      "O atleta sai da área de combate",
+      "O árbitro apita",
+      "O tempo de luta chega ao fim",
+      "O adversário encaixa uma posição de finalização"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 3º, 3.3.2"
+  },
+  {
+    "id": 258,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "O atleta conquista posições de pontuação sob finalização encaixada e só se livra do golpe quando já não está mais nessas posições. Ele recebe:",
+    "alternativas": [
+      "Duas vantagens",
+      "Apenas uma vantagem",
+      "Nem pontos nem vantagens por essas movimentações",
+      "Todos os pontos acumulados"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 3º, 3.3.1"
+  },
+  {
+    "id": 259,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "O atleta que apresenta pintura nos cabelos que suje o kimono do adversário durante a luta:",
+    "alternativas": [
+      "Deve lavar os cabelos",
+      "Recebe punição no placar",
+      "Recebe advertência",
+      "É desclassificado"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.2.3"
+  },
+  {
+    "id": 260,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "Quantos segundos de estabilização são necessários para que uma posição de pontuação seja assinalada?",
+    "alternativas": [
+      "1 segundo",
+      "5 segundos",
+      "2 segundos",
+      "3 segundos"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 3º, 3.1"
+  },
+  {
+    "id": 261,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Ao projetar um adversário que está com um ou dois joelhos no chão, os pontos só são assinalados se:",
+    "alternativas": [
+      "Houver pegada na gola",
+      "O atleta que projetou estiver em pé no momento da projeção, salvo defesa de raspagem",
+      "O movimento vier da guarda",
+      "O adversário cair de costas"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.6"
+  },
+  {
+    "id": 262,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Em caso de interrupção do combate por contusão dos dois atletas, vence:",
+    "alternativas": [
+      "O atleta mais graduado",
+      "O atleta que tiver mais pontos que o adversário",
+      "Ninguém, a luta é anulada",
+      "O atleta com mais vantagens apenas"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 2º, 2.5.1"
+  },
+  {
+    "id": 263,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "A área de luta é composta por:",
+    "alternativas": [
+      "Três zonas concêntricas",
+      "Área de combate e área técnica",
+      "Área de combate e área de segurança, demarcadas por cores diferentes",
+      "Apenas área de combate"
+    ],
+    "correta": 2,
+    "referencia": "Manual de Formatação, Art. 1º, 1.1.1"
+  },
+  {
+    "id": 264,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "A raspagem vale quantos pontos?",
+    "alternativas": [
+      "1 ponto",
+      "3 pontos",
+      "2 pontos",
+      "4 pontos"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 4º, 4.6"
+  },
+  {
+    "id": 265,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Quando o atleta projeta o adversário e o faz cair de quatro apoios, os pontos só são assinalados se:",
+    "alternativas": [
+      "Controlar as costas sem necessidade de ganchos, mantendo o adversário com pelo menos um joelho no solo por 3 segundos",
+      "Colocar os dois ganchos",
+      "Estabilizar por 5 segundos",
+      "Passar a guarda em seguida"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.2"
+  },
+  {
+    "id": 266,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Um atleta é desclassificado por golpe considerado permitido, e a interrupção ocorreu antes de o adversário bater. O que acontece?",
+    "alternativas": [
+      "O combate reinicia do zero",
+      "O combate retorna ao centro e quem aplicou o golpe recebe dois pontos",
+      "A luta é encerrada com o resultado mantido",
+      "O atleta desclassificado é declarado vencedor"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.3"
+  },
+  {
+    "id": 267,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Quantos pontos valem a montada e a pegada pelas costas?",
+    "alternativas": [
+      "3 pontos",
+      "4 pontos",
+      "5 pontos",
+      "2 pontos"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 4º, 4.4 e 4.5"
+  },
+  {
+    "id": 268,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Para caracterizar a pegada pelas costas com pontuação, os calcanhares devem estar:",
+    "alternativas": [
+      "Cruzados",
+      "Fora do quadril do adversário",
+      "Apenas um deles preso",
+      "Na parte interna das coxas do adversário, sem cruzar os pés"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.5"
+  },
+  {
+    "id": 269,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Na meia-guarda, o atleta por baixo:",
+    "alternativas": [
+      "Está sempre sentado",
+      "Mantém os dois ganchos",
+      "Aprisiona as duas pernas do adversário",
+      "Está deitado de costas ou de lado e aprisiona apenas uma das pernas do adversário"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.2, Obs 2"
+  },
+  {
+    "id": 270,
+    "bloco": "FORMATAÇÃO DO EVENTO",
+    "pergunta": "Quem é responsável pelo controle de inscrição e confecção das chaves do absoluto?",
+    "alternativas": [
+      "O Supervisor dos Coordenadores de Ringue",
+      "O Coordenador de Mesa Central",
+      "O anunciador",
+      "O Diretor Geral de Competição"
+    ],
+    "correta": 1,
+    "referencia": "Manual de Formatação, Art. 2º, 2.4"
+  },
+  {
+    "id": 271,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando um atleta pisa na área de segurança durante a luta em pé, sem queda iniciada, o árbitro:",
+    "alternativas": [
+      "Interrompe e reinicia com os dois atletas em pé no centro",
+      "Concede vantagem ao adversário",
+      "Pune o atleta",
+      "Não interrompe"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 1º, 1.3.7"
+  },
+  {
+    "id": 272,
+    "bloco": "VANTAGENS",
+    "pergunta": "Uma tentativa de finalização gera vantagem quando:",
+    "alternativas": [
+      "Durar mais de 5 segundos",
+      "Houver qualquer encaixe",
+      "Expuser o adversário ao perigo real de desistência, a critério do árbitro",
+      "For aplicada em pé"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 5º, 5.3"
+  },
+  {
+    "id": 273,
+    "bloco": "FALTAS",
+    "pergunta": "Ter o kimono inutilizado e não conseguir trocá-lo no prazo determinado pelo árbitro é:",
+    "alternativas": [
+      "Punição administrativa",
+      "Falta gravíssima",
+      "Falta grave",
+      "Falta de combatividade"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (A)"
+  },
+  {
+    "id": 274,
+    "bloco": "FALTAS",
+    "pergunta": "Na cruzada de perna, com um atleta em pé, o pé do joelho em perigo pisando no chão é considerado:",
+    "alternativas": [
+      "Pé preso ou obstruído",
+      "Pé solto",
+      "Situação legal em todas as faixas",
+      "Posição neutra"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 275,
+    "bloco": "FALTAS",
+    "pergunta": "Na cruzada de perna, quando qualquer dos dois atletas está com finalização encaixada, cruzar a perna nas características descritas é:",
+    "alternativas": [
+      "Permitido",
+      "Vantagem",
+      "Falta grave",
+      "Falta gravíssima"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"
+  },
+  {
+    "id": 276,
+    "bloco": "FALTAS",
+    "pergunta": "Ajoelhar, sentar ou pular na guarda sem que haja uma pegada estabelecida é:",
+    "alternativas": [
+      "Falta disciplinar",
+      "Falta gravíssima",
+      "Falta grave",
+      "Falta de combatividade"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.2 (A)"
+  },
+  {
+    "id": 277,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Se o atleta que sofreu o golpe bateu antes da interrupção e da desclassificação indevida:",
+    "alternativas": [
+      "O combate retorna ao centro",
+      "Ambos são desclassificados",
+      "O atleta que aplicou o golpe será declarado vencedor",
+      "A luta é anulada"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.1.3"
+  },
+  {
+    "id": 278,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Para iniciar a contagem dos 3 segundos que caracterizam luta em pé, é necessário que:",
+    "alternativas": [
+      "Um atleta esteja com os dois pés no chão e o outro com pelo menos um pé no chão e sem o joelho oposto no solo",
+      "Nenhum atleta toque o solo com as mãos",
+      "Os dois estejam fora da guarda",
+      "Os dois atletas estejam com os dois pés no chão"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.5, Obs"
+  },
+  {
+    "id": 279,
+    "bloco": "POSIÇÕES DE PONTUAÇÃO",
+    "pergunta": "Para pontuar a queda, o movimento inicial deve partir de:",
+    "alternativas": [
+      "Qualquer posição",
+      "Um joelho no chão",
+      "Posição sentada",
+      "Os dois pés no chão"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 4º, 4.1.1"
+  },
+  {
+    "id": 280,
+    "bloco": "CHAVES E PREMIAÇÃO",
+    "pergunta": "Para participar da cerimônia de premiação, o atleta deve estar:",
+    "alternativas": [
+      "Livre para escolher",
+      "Com camisa da academia",
+      "Uniformizado exclusivamente com kimono permitido em campeonatos com kimono",
+      "Com roupa de treino"
+    ],
+    "correta": 2,
+    "referencia": "Regulamento Geral, Art. 4º, 4.1.1"
+  },
+  {
+    "id": 281,
+    "bloco": "FALTAS",
+    "pergunta": "Não estar usando roupa de baixo conforme o item 8.3.10 e o fato ser percebido pelo árbitro é:",
+    "alternativas": [
+      "Falta gravíssima",
+      "Falta disciplinar",
+      "Advertência",
+      "Falta grave"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 6º, 6.2.3 (E)"
+  },
+  {
+    "id": 282,
+    "bloco": "DECISÃO DAS LUTAS",
+    "pergunta": "Com os braços presos pelo adversário, como o atleta pode manifestar desistência?",
+    "alternativas": [
+      "Batendo duas vezes com os pés no chão",
+      "Gritando o nome do árbitro",
+      "Virando de costas",
+      "Fechando os olhos"
+    ],
+    "correta": 0,
+    "referencia": "Livro de Regras, Art. 2º, 2.1.2"
+  },
+  {
+    "id": 283,
+    "bloco": "VANTAGENS",
+    "pergunta": "Há vantagem de queda quando o atleta projeta o adversário e este:",
+    "alternativas": [
+      "Bate imediatamente",
+      "Se levanta em menos de 3 segundos",
+      "Fica no solo por mais de 3 segundos",
+      "É passado de guarda"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.1"
+  },
+  {
+    "id": 284,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo mínimo de descanso entre lutas até a semifinal?",
+    "alternativas": [
+      "Igual ao tempo regulamentar de luta da categoria",
+      "10 minutos fixos",
+      "Metade do tempo regulamentar",
+      "Dobro do tempo regulamentar"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 1º, 1.4"
+  },
+  {
+    "id": 285,
+    "bloco": "ARBITRAGEM",
+    "pergunta": "Quando os três árbitros marcam pontuações diferentes para um mesmo movimento, vale:",
+    "alternativas": [
+      "A maior marcação",
+      "A marcação do árbitro central",
+      "A marcação intermediária",
+      "Repete-se o movimento"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 1º, 1.2.1"
+  },
+  {
+    "id": 286,
+    "bloco": "VANTAGENS",
+    "pergunta": "O atleta desequilibra o adversário numa raspagem, chega a ficar por cima mas não estabiliza por 3 segundos. Isso é:",
+    "alternativas": [
+      "Dois pontos",
+      "Falta grave",
+      "Nada é assinalado",
+      "Vantagem de raspagem"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.6"
+  },
+  {
+    "id": 287,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "A partir de qual idade o atleta se enquadra em Master 7?",
+    "alternativas": [
+      "61 anos",
+      "65 anos",
+      "58 anos",
+      "56 anos"
+    ],
+    "correta": 0,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 288,
+    "bloco": "VANTAGENS",
+    "pergunta": "O atleta na guarda do adversário emborca e o adversário controla suas costas em 4 apoios com um joelho no chão. O adversário recebe:",
+    "alternativas": [
+      "Nada",
+      "4 pontos de pegada pelas costas",
+      "Vantagem de passagem de guarda",
+      "3 pontos de passagem"
+    ],
+    "correta": 2,
+    "referencia": "Livro de Regras, Art. 5º, 5.6.2"
+  },
+  {
+    "id": 289,
+    "bloco": "ACADEMIAS E INSCRIÇÃO",
+    "pergunta": "Persistindo o empate em ouros e pratas entre academias, o critério seguinte é:",
+    "alternativas": [
+      "Tempo total de lutas",
+      "Número de atletas inscritos",
+      "Sorteio imediato",
+      "Maior número de campeões mais graduados"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 3º, 3.3.1"
+  },
+  {
+    "id": 290,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo mínimo de descanso antes das lutas finais?",
+    "alternativas": [
+      "Igual ao tempo regulamentar",
+      "Dobro do tempo regulamentar de luta da categoria",
+      "15 minutos fixos",
+      "Metade do tempo regulamentar"
+    ],
+    "correta": 1,
+    "referencia": "Regulamento Geral, Art. 1º, 1.4"
+  },
+  {
+    "id": 291,
+    "bloco": "CATEGORIAS E TEMPO",
+    "pergunta": "Qual é o tempo de luta das categorias Infantil I, II e III?",
+    "alternativas": [
+      "2 minutos",
+      "5 minutos",
+      "3 minutos",
+      "4 minutos"
+    ],
+    "correta": 3,
+    "referencia": "Regulamento Geral, Art. 1º, 1.3"
+  },
+  {
+    "id": 292,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "É obrigatório que os atletas usem roupa íntima em modelo:",
+    "alternativas": [
+      "Livre, qualquer modelo",
+      "\"Box\" ou \"sunga\"",
+      "Não é obrigatório",
+      "Apenas cueca boxer"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 8º, 8.3.10"
+  },
+  {
+    "id": 293,
+    "bloco": "PUNIÇÕES",
+    "pergunta": "Qual é a sequência de punições por falta grave?",
+    "alternativas": [
+      "Não existe sequência, é critério do árbitro",
+      "1ª marca no placar; 2ª vantagem ao adversário; 3ª dois pontos ao adversário; 4ª desclassificação",
+      "Vantagem, 2 pontos e desclassificação direta",
+      "Sempre desclassificação na segunda falta"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 7º, 7.2.1"
+  },
+  {
+    "id": 294,
+    "bloco": "PONTUAÇÃO",
+    "pergunta": "A luta deve seguir qual lógica, segundo o Artigo 3º?",
+    "alternativas": [
+      "Preservação do placar",
+      "Sequência crescente de domínio técnico em direção à finalização",
+      "Domínio por tempo total",
+      "Alternância de posições"
+    ],
+    "correta": 1,
+    "referencia": "Livro de Regras, Art. 3º, 3.2"
+  },
+  {
+    "id": 295,
+    "bloco": "UNIFORME E HIGIENE",
+    "pergunta": "Qual é a largura máxima da gola do kimono?",
+    "alternativas": [
+      "4 cm",
+      "3 cm",
+      "6 cm",
+      "5 cm"
+    ],
+    "correta": 3,
+    "referencia": "Livro de Regras, Art. 8º, 8.1.12"
+  }
+]
