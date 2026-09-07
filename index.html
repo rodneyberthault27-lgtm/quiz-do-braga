@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz do Braga</title>
-<link rel="icon" type="image/png" href="assets/logo.png">
-<link rel="apple-touch-icon" href="assets/logo.png">
 <meta name="theme-color" content="#0B0F13">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +33,6 @@ button{font-family:inherit;}
 .crest{display:flex;align-items:center;gap:10px;margin-bottom:26px;}
 .crest .bar{width:34px;height:3px;background:var(--gold);border-radius:2px;}
 .crest .lbl{font-size:11px;letter-spacing:.22em;color:var(--gold-dim);font-weight:700;text-transform:uppercase;}
-.brandmark{width:88px;height:88px;border-radius:50%;display:block;margin:0 0 22px;object-fit:cover;
-  background:#000;box-shadow:0 0 0 1px var(--line2),0 10px 34px rgba(0,0,0,.55),0 0 46px rgba(217,164,65,.13);}
 .intro h1{font-family:var(--head);font-weight:700;font-size:clamp(40px,12vw,58px);line-height:.94;
   margin:0 0 12px;letter-spacing:-.01em;}
 .intro h1 em{font-style:normal;color:var(--gold);}
@@ -92,11 +88,8 @@ button{font-family:inherit;}
 .hud{background:rgba(18,24,30,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
   padding:12px 18px 10px;position:sticky;top:0;z-index:20;}
 .hud-row{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
-.hud-brand{font-family:var(--head);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;
-  display:flex;align-items:center;gap:8px;}
-.hud-brand-txt>span{color:var(--gold);}
-.hud-mark{width:22px;height:22px;border-radius:50%;object-fit:cover;background:#000;
-  box-shadow:0 0 0 1px var(--line2);flex:0 0 auto;}
+.hud-brand{font-family:var(--head);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;}
+.hud-brand span{color:var(--gold);}
 .belt-chip{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--dim);margin-left:auto;}
 .belt-chip i{width:22px;height:8px;border-radius:2px;background:#EDEDED;display:block;
@@ -212,6 +205,58 @@ button{font-family:inherit;}
   .mode .num{font-size:29px;min-width:50px;}
   .grid{grid-template-columns:1fr 1fr;}
 }
+
+/* ---------- CARREIRA ---------- */
+.career{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 16px;margin-bottom:30px;}
+.career-top{display:flex;align-items:center;gap:11px;margin-bottom:12px;}
+.career-belt{width:54px;height:15px;border-radius:3px;flex:0 0 auto;position:relative;}
+.career-deg{position:absolute;right:4px;top:50%;transform:translateY(-50%);display:flex;gap:2px;}
+.career-deg i{width:2px;height:9px;background:var(--gold2);border-radius:1px;display:block;}
+.career-name{font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;line-height:1;}
+.career-name small{display:block;font-family:var(--body);font-size:10.5px;letter-spacing:.1em;
+  color:var(--dim);font-weight:600;margin-top:4px;text-transform:none;}
+.career-hits{margin-left:auto;text-align:right;font-family:var(--head);font-weight:700;font-size:21px;color:var(--gold);line-height:1;}
+.career-hits small{display:block;font-family:var(--body);font-size:9.5px;letter-spacing:.09em;
+  color:var(--dim);font-weight:600;text-transform:uppercase;margin-top:4px;}
+.career-bar{height:5px;background:var(--panel2);border-radius:3px;overflow:hidden;margin-bottom:8px;}
+.career-bar i{display:block;height:100%;background:var(--gold);border-radius:3px;transition:width .6s ease;}
+.career-next{font-size:11.5px;color:var(--dim);line-height:1.5;}
+.career-next b{color:var(--gold2);font-weight:600;}
+
+/* ---------- GRADUACAO ---------- */
+.grad{border:1px solid var(--gold-dim);background:linear-gradient(180deg,rgba(217,164,65,.17),rgba(217,164,65,.04));
+  border-radius:12px;padding:17px 16px;margin-bottom:24px;text-align:center;animation:gradIn .5s ease both;}
+.grad h3{margin:0 0 7px;font-family:var(--head);font-weight:700;font-size:23px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--gold2);}
+.grad p{margin:0;font-size:13px;color:var(--text);line-height:1.6;}
+.grad p b{color:var(--gold2);font-weight:600;}
+@keyframes gradIn{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:none}}
+
+/* ---------- RANKING ---------- */
+.rank{display:flex;flex-direction:column;margin-bottom:10px;}
+#rankTitle{margin-top:30px;}
+.rrow{display:flex;align-items:center;gap:11px;padding:10px 6px;border-bottom:1px solid var(--line);}
+.rank .rrow:last-child{border-bottom:none;}
+.rpos{font-family:var(--head);font-weight:700;font-size:16px;color:var(--dim);width:20px;flex:0 0 auto;text-align:center;}
+.rrow.top .rpos{color:var(--gold);}
+.rname{flex:1;min-width:0;font-size:13.5px;font-weight:600;}
+.rname .rmeta{display:block;font-size:11px;color:var(--dim);font-weight:400;margin-top:2px;}
+.rpts{font-family:var(--head);font-weight:700;font-size:17px;color:var(--gold2);flex:0 0 auto;}
+.rrow.me{background:rgba(217,164,65,.09);border-radius:7px;}
+.rank-empty{font-size:12.5px;color:var(--dim);padding:11px 6px;line-height:1.55;}
+.rank-clear{display:block;margin:0 auto 4px;background:none;border:none;color:var(--dim);
+  font-family:inherit;font-size:11px;cursor:pointer;padding:5px;text-decoration:underline;}
+.rank-clear:hover{color:var(--err);}
+.newrec{border:1px solid var(--gold-dim);background:rgba(217,164,65,.08);border-radius:12px;padding:15px 16px;margin-bottom:24px;}
+.newrec b{display:block;font-family:var(--head);font-weight:700;font-size:18px;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--gold2);margin-bottom:10px;}
+.newrec-in{display:flex;gap:8px;}
+.newrec input{flex:1;min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:8px;
+  color:var(--text);font-family:inherit;font-size:14px;padding:11px 12px;}
+.newrec input:focus{outline:none;border-color:var(--gold-dim);}
+.newrec button{background:var(--gold);color:#141414;border:none;border-radius:8px;font-weight:700;
+  font-size:13px;padding:0 18px;cursor:pointer;flex:0 0 auto;}
+.newrec button:hover{background:var(--gold2);}
 </style>
 
 </head>
@@ -220,11 +265,13 @@ button{font-family:inherit;}
 
   <!-- INTRO -->
   <section class="intro" id="intro">
-    <img class="brandmark" src="assets/logo.png" alt="Quiz do Braga" onerror="this.remove()">
     <div class="crest"><span class="bar"></span><span class="lbl">Livro de Regras IBJJF</span></div>
     <h1>Quiz do <em>Braga</em></h1>
     <div class="sub">IBJJF · Regras de Competição</div>
     <p class="desc">Banco de <b id="bankN">0</b> perguntas extraídas do Livro de Regras, do Regulamento Geral de Competições e do Manual de Formatação. Arbitragem, pontuação, vantagens, faltas, punições, uniformes, categorias, chaves e premiação. Cada resposta traz o artigo exato.</p>
+
+    <h2 class="sec-title">Sua graduação</h2>
+    <div class="career" id="career"></div>
 
     <h2 class="sec-title">Escolha a rodada</h2>
     <div class="modes" id="modes">
@@ -255,6 +302,10 @@ button{font-family:inherit;}
 
     <button class="start-btn" id="startBtn">Combate</button>
     <div class="record" id="record"></div>
+
+    <h2 class="sec-title" id="rankTitle">Melhores colocados</h2>
+    <div class="rank" id="rankList"></div>
+    <button class="rank-clear hidden" id="rankClear">Limpar este ranking</button>
     <div class="bank-note">Base: Livro de Regras IBJJF, versão 5.2 · Janeiro 2021</div>
   </section>
 
@@ -262,7 +313,7 @@ button{font-family:inherit;}
   <section class="hidden" id="quiz">
     <div class="hud">
       <div class="hud-row">
-        <div class="hud-brand"><img class="hud-mark" src="assets/logo.png" alt="" onerror="this.remove()"><span class="hud-brand-txt">QUIZ DO <span>BRAGA</span></span></div>
+        <div class="hud-brand">QUIZ DO <span>BRAGA</span></div>
         <div class="belt-chip" id="beltChip"><i id="beltInk"></i><span id="beltName">Branca</span></div>
       </div>
       <div class="hud-row">
@@ -297,6 +348,14 @@ button{font-family:inherit;}
         <div class="res-belt" id="resBeltName">FAIXA BRANCA</div>
         <p class="res-verdict" id="resMsg"></p>
       </div>
+      <div class="grad hidden" id="grad"></div>
+      <div class="newrec hidden" id="newrec">
+        <b id="newrecTtl">Você entrou no ranking</b>
+        <div class="newrec-in">
+          <input id="nameIn" maxlength="18" placeholder="Seu nome" autocomplete="off" spellcheck="false">
+          <button id="saveRank">Salvar</button>
+        </div>
+      </div>
       <div class="grid">
         <div class="cell"><b id="cScore">0</b><span>Pontos</span></div>
         <div class="cell"><b id="cAcc">0%</b><span>Aproveitamento</span></div>
@@ -304,6 +363,8 @@ button{font-family:inherit;}
         <div class="cell"><b id="cStreak">0</b><span>Maior sequência</span></div>
       </div>
       <div class="badges" id="badges"></div>
+      <h2 class="sec-title" id="rankTitleRes">Melhores colocados</h2>
+      <div class="rank" id="rankResult"></div>
       <h2 class="sec-title">Desempenho por bloco</h2>
       <div class="blocks" id="blocks"></div>
       <button class="ghost" id="revBtn">Ver o que você errou</button>
@@ -638,7 +699,7 @@ const paintBelt=(el,b)=>{el.style.background=b.c;el.style.boxShadow='inset -6px 
 $('bankN').textContent=BANK.length;
 document.querySelectorAll('#modes .mode').forEach(m=>m.addEventListener('click',()=>{
   document.querySelectorAll('#modes .mode').forEach(x=>x.classList.remove('on'));
-  m.classList.add('on');cfg.size=+m.dataset.size;showRecord();
+  m.classList.add('on');cfg.size=+m.dataset.size;showRecord();showRank();
 }));
 document.querySelectorAll('.tog').forEach(t=>t.addEventListener('click',()=>{
   t.classList.toggle('on');cfg[t.dataset.k]=t.classList.contains('on');
@@ -657,7 +718,90 @@ function showRecord(){
   const r=store('braga_rec_'+cfg.size);
   $('record').innerHTML=r?('Seu recorde nesta rodada: <b>'+r+' pts</b>'):'Nenhuma partida registrada nesta rodada.';
 }
-showRecord();
+
+/* ---------- carreira ---------- */
+const CAREER=[
+ {n:'Branca',c:'#EDEDED',t:'#141414',at:0},
+ {n:'Azul'  ,c:'#1E5FBF',t:'#141414',at:300},
+ {n:'Roxa'  ,c:'#6B3FA0',t:'#141414',at:900},
+ {n:'Marrom',c:'#7A4A28',t:'#141414',at:1800},
+ {n:'Preta' ,c:'#141414',t:'#B8232A',at:3000},
+ {n:'Coral' ,c:'#C0392B',t:'#EDEDED',at:6000}
+];
+const ORD=['sem grau','1º grau','2º grau','3º grau','4º grau'];
+const esc=t=>String(t).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+function career(){
+  let c={};try{c=JSON.parse(store('braga_career')||'{}')||{};}catch(e){c={};}
+  return {hits:+c.hits||0,answered:+c.answered||0,matches:+c.matches||0};
+}
+function rankOf(h){
+  let i=0;for(let k=0;k<CAREER.length;k++)if(h>=CAREER[k].at)i=k;
+  const belt=CAREER[i],nx=CAREER[i+1];
+  if(!nx)return {i,belt,deg:4,pct:100,left:0,target:null};
+  const step=(nx.at-belt.at)/5,deg=Math.min(4,Math.floor((h-belt.at)/step));
+  const from=belt.at+deg*step,to=belt.at+(deg+1)*step;
+  return {i,belt,deg,pct:Math.max(0,Math.min(100,Math.round((h-from)/step*100))),
+          left:Math.max(0,Math.ceil(to-h)),target:deg===4?('Faixa '+nx.n):ORD[deg+1]};
+}
+function renderCareer(){
+  const c=career(),r=rankOf(c.hits);
+  const dg=r.deg?'<span class="career-deg">'+'<i></i>'.repeat(r.deg)+'</span>':'';
+  $('career').innerHTML=
+   '<div class="career-top">'+
+     '<span class="career-belt" style="background:'+r.belt.c+';box-shadow:inset -20px 0 0 '+r.belt.t+'">'+dg+'</span>'+
+     '<span class="career-name">Faixa '+r.belt.n+'<small>'+ORD[r.deg]+'</small></span>'+
+     '<span class="career-hits">'+c.hits+'<small>acertos na carreira</small></span>'+
+   '</div>'+
+   '<div class="career-bar"><i style="width:'+r.pct+'%"></i></div>'+
+   '<div class="career-next">'+(r.target
+     ? 'Faltam <b>'+r.left+'</b> '+(r.left===1?'acerto':'acertos')+' para '+(r.deg===4?'a ':'o ')+'<b>'+r.target+'</b>'
+     : 'Graduação máxima alcançada. '+c.matches+' partidas disputadas.')+'</div>';
+}
+
+/* ---------- ranking ---------- */
+function rkKey(){return 'braga_rank_'+cfg.size;}
+function loadRank(){
+  try{const a=JSON.parse(store(rkKey())||'[]');return Array.isArray(a)?a:[];}catch(e){return [];}
+}
+function drawRank(el,me){
+  const a=loadRank();
+  if(!a.length){el.innerHTML='<div class="rank-empty">Ainda não há placar nesta rodada. '+
+    'Termine uma partida de '+cfg.size+' perguntas para abrir o ranking.</div>';return;}
+  el.innerHTML=a.map((e,n)=>
+   '<div class="rrow'+(n<3?' top':'')+(me===n?' me':'')+'">'+
+   '<span class="rpos">'+(n+1)+'</span>'+
+   '<span class="rname">'+esc(e.name)+'<span class="rmeta">'+e.acc+'% de acerto · '+esc(e.date)+'</span></span>'+
+   '<span class="rpts">'+e.pts+'</span></div>').join('');
+}
+function showRank(){
+  drawRank($('rankList'),-1);
+  $('rankTitle').textContent='Melhores colocados · '+cfg.size+' perguntas';
+  $('rankClear').classList.toggle('hidden',!loadRank().length);
+}
+let pending=null;
+function saveEntry(){
+  if(!pending)return;
+  const nm=($('nameIn').value||'').trim().slice(0,18)||'Anônimo';
+  store('braga_name',nm);
+  const a=loadRank();
+  a.push({name:nm,pts:pending.pts,acc:pending.acc,date:pending.date});
+  a.sort((x,y)=>y.pts-x.pts);
+  const cut=a.slice(0,10);
+  const me=cut.findIndex(e=>e.name===nm&&e.pts===pending.pts&&e.date===pending.date);
+  store(rkKey(),JSON.stringify(cut));
+  pending=null;
+  $('newrec').classList.add('hidden');
+  drawRank($('rankResult'),me);
+}
+$('saveRank').addEventListener('click',saveEntry);
+$('nameIn').addEventListener('keydown',e=>{if(e.key==='Enter')saveEntry();});
+$('rankClear').addEventListener('click',()=>{
+  if(!confirm('Apagar o ranking da rodada de '+cfg.size+' perguntas? Não dá para desfazer.'))return;
+  store(rkKey(),'[]');showRank();
+});
+
+showRecord();renderCareer();showRank();
 
 /* ---------- game ---------- */
 function start(){
@@ -811,6 +955,31 @@ function finish(dq){
   const prev=parseInt(store(rk)||'0',10);
   if(!dq&&pts>prev)store(rk,String(pts));
 
+  /* carreira */
+  const cv=career(),was=rankOf(cv.hits);
+  cv.hits+=hits;cv.answered+=total;cv.matches+=1;
+  store('braga_career',JSON.stringify(cv));
+  const now=rankOf(cv.hits);
+  const up=now.i>was.i,deg=!up&&now.deg>was.deg;
+  $('grad').classList.toggle('hidden',!(up||deg));
+  if(up||deg){
+    $('grad').innerHTML=up
+     ? '<h3>Graduação</h3><p>Você subiu para a <b>Faixa '+now.belt.n+'</b>. São <b>'+cv.hits+'</b> acertos acumulados em '+cv.matches+' partidas.</p>'
+     : '<h3>'+ORD[now.deg]+'</h3><p>Novo grau na <b>Faixa '+now.belt.n+'</b>. São <b>'+cv.hits+'</b> acertos acumulados na carreira.</p>';
+  }
+
+  /* ranking */
+  pending=null;$('newrec').classList.add('hidden');
+  const board=loadRank();
+  if(!dq&&total>0&&(board.length<10||pts>board[board.length-1].pts)){
+    pending={pts:pts,acc:acc,date:new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'})};
+    $('newrecTtl').textContent=board.length?'Você entrou no ranking':'Primeiro nome no ranking';
+    $('nameIn').value=store('braga_name')||'';
+    $('newrec').classList.remove('hidden');
+  }
+  $('rankTitleRes').textContent='Melhores colocados · '+cfg.size+' perguntas';
+  drawRank($('rankResult'),-1);
+
   /* blocos */
   const map={};
   log.forEach(l=>{(map[l.b]=map[l.b]||{n:0,h:0}).n++;if(l.ok)map[l.b].h++;});
@@ -849,7 +1018,7 @@ function finish(dq){
 function reset(){
   $('result').classList.add('hidden');
   $('intro').classList.remove('hidden');
-  showRecord();
+  showRecord();renderCareer();showRank();
   window.scrollTo({top:0,behavior:'instant'});
 }
 </script>
