@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quiz do Braga</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta name="theme-color" content="#0B0F13">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -32,6 +35,8 @@ button{font-family:inherit;}
 .crest{display:flex;align-items:center;gap:10px;margin-bottom:26px;}
 .crest .bar{width:34px;height:3px;background:var(--gold);border-radius:2px;}
 .crest .lbl{font-size:11px;letter-spacing:.22em;color:var(--gold-dim);font-weight:700;text-transform:uppercase;}
+.brandmark{width:88px;height:88px;border-radius:50%;display:block;margin:0 0 22px;object-fit:cover;
+  background:#000;box-shadow:0 0 0 1px var(--line2),0 10px 34px rgba(0,0,0,.55),0 0 46px rgba(217,164,65,.13);}
 .intro h1{font-family:var(--head);font-weight:700;font-size:clamp(40px,12vw,58px);line-height:.94;
   margin:0 0 12px;letter-spacing:-.01em;}
 .intro h1 em{font-style:normal;color:var(--gold);}
@@ -87,8 +92,11 @@ button{font-family:inherit;}
 .hud{background:rgba(18,24,30,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
   padding:12px 18px 10px;position:sticky;top:0;z-index:20;}
 .hud-row{display:flex;align-items:center;gap:12px;margin-bottom:9px;}
-.hud-brand{font-family:var(--head);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;}
-.hud-brand span{color:var(--gold);}
+.hud-brand{font-family:var(--head);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;}
+.hud-brand-txt>span{color:var(--gold);}
+.hud-mark{width:22px;height:22px;border-radius:50%;object-fit:cover;background:#000;
+  box-shadow:0 0 0 1px var(--line2);flex:0 0 auto;}
 .belt-chip{display:flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--dim);margin-left:auto;}
 .belt-chip i{width:22px;height:8px;border-radius:2px;background:#EDEDED;display:block;
@@ -212,6 +220,7 @@ button{font-family:inherit;}
 
   <!-- INTRO -->
   <section class="intro" id="intro">
+    <img class="brandmark" src="assets/logo.png" alt="Quiz do Braga" onerror="this.remove()">
     <div class="crest"><span class="bar"></span><span class="lbl">Livro de Regras IBJJF</span></div>
     <h1>Quiz do <em>Braga</em></h1>
     <div class="sub">IBJJF · Regras de Competição</div>
@@ -253,7 +262,7 @@ button{font-family:inherit;}
   <section class="hidden" id="quiz">
     <div class="hud">
       <div class="hud-row">
-        <div class="hud-brand">QUIZ DO <span>BRAGA</span></div>
+        <div class="hud-brand"><img class="hud-mark" src="assets/logo.png" alt="" onerror="this.remove()"><span class="hud-brand-txt">QUIZ DO <span>BRAGA</span></span></div>
         <div class="belt-chip" id="beltChip"><i id="beltInk"></i><span id="beltName">Branca</span></div>
       </div>
       <div class="hud-row">
