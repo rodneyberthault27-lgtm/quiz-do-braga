@@ -2,7 +2,7 @@
 
 Quiz gamificado sobre as regras de competição da IBJJF. Aplicação de arquivo único, sem dependências, sem build e sem servidor: abre no navegador e funciona offline.
 
-**[Abrir o quiz](https://SEU-USUARIO.github.io/quiz-do-braga/)**
+**[Abrir o quiz](https://rodneyberthault27-lgtm.github.io/quiz-do-braga/)**
 
 ---
 
