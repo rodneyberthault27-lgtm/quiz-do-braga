@@ -1,0 +1,25 @@
+{
+  "name": "quiz-do-braga",
+  "version": "2.0.0",
+  "description": "Quiz de arbitragem IBJJF com controle de acesso e pagamento unico",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node src/db/migrate.js",
+    "seed:questions": "python scripts/gera_seed.py index.html src/db/migrations/003_seed_questions.sql"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.12.0"
+  }
+}

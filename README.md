@@ -1,102 +1,200 @@
 # Quiz do Braga
 
-Quiz gamificado sobre as regras de competição da IBJJF. Aplicação de arquivo único, sem dependências, sem build e sem servidor: abre no navegador e funciona offline.
+Simulador de prova de arbitragem sobre as regras de competição da IBJJF, com
+controle de acesso e pagamento único via Mercado Pago.
 
-**[Abrir o quiz](https://rodneyberthault27-lgtm.github.io/quiz-do-braga/)**
+São **295 perguntas** de múltipla escolha mais **58 casos de interpretação**
+(modo Banca), cada uma com a referência exata do artigo que fundamenta a
+resposta.
 
 ---
 
-## O que é
+## Como o acesso funciona
 
-Um simulador de prova de arbitragem construído sobre o Livro de Regras da IBJJF (versão 5.2, janeiro de 2021), o Regulamento Geral de Competições e o Manual de Formatação de Competições.
-
-São **295 perguntas** de múltipla escolha, cada uma com quatro alternativas e a referência exata do artigo e item que fundamenta a resposta. A cada partida o app sorteia um recorte diferente do banco, então duas rodadas seguidas nunca são iguais.
-
-## Modos de partida
-
-| Rodada | Perguntas | Duração aproximada |
-|---|---|---|
-| Aquecimento | 50 | 12 minutos |
-| Competição | 100 | 25 minutos |
-| Absoluto | 150 | 40 minutos |
-
-## Gamificação
-
-- **Pontuação**: 100 pontos por acerto, mais bônus de velocidade de até 50 pontos.
-- **Multiplicador de sequência**: ×1,5 a partir de 3 acertos seguidos, ×2 aos 6, ×3 aos 10.
-- **Cronômetro**: 30 segundos por pergunta, com alerta visual nos últimos 7 segundos. Pode ser desligado.
-- **Graduação por faixa**: a faixa no topo da tela muda de cor em tempo real conforme o aproveitamento, de Branca a Coral.
-- **Modo desclassificação**: opcional. Quatro erros encerram a partida, replicando a lógica das quatro punições do Artigo 7º.
-- **Relatório final**: aproveitamento por bloco de regra, conquistas, revisão apenas dos erros com o artigo de cada um, e recorde salvo por rodada.
-
-## Cobertura do banco
-
-| Bloco de regra | Perguntas |
+| Situação | O que a pessoa pode jogar |
 |---|---|
-| Faltas | 50 |
-| Arbitragem | 43 |
-| Posições de pontuação | 34 |
-| Uniforme e higiene | 30 |
-| Chaves e premiação | 23 |
-| Academias e inscrição | 20 |
-| Vantagens | 19 |
-| Formatação do evento | 18 |
-| Categorias e tempo | 17 |
-| Decisão das lutas | 16 |
-| Pontuação | 15 |
-| Punições | 10 |
+| Sem cadastro | Nada. A tela inicial é login/cadastro. |
+| Cadastrada, sem pagar | Amostra grátis de 10 perguntas. |
+| Cadastrada e paga | Rodadas de 50, 100, 150 e o modo Banca. |
+
+O pagamento é **único**, não recorrente. Quem libera o acesso é o webhook do
+Mercado Pago, não o retorno do navegador: se a pessoa fechar a aba logo após
+pagar o Pix, o acesso é liberado do mesmo jeito.
+
+---
+
+## Por que as perguntas ficam no banco
+
+Na versão anterior o quiz era um arquivo único e todas as perguntas viajavam
+dentro do HTML. Isso torna qualquer paywall decorativo: bastava abrir o
+código-fonte da página para ler o banco inteiro.
+
+Agora as questões vivem no PostgreSQL e saem apenas pela rota
+`POST /api/quiz/partida`, que confere sessão e permissão antes de sortear o
+lote. A página servida ao usuário (`src/public/app.html`) não contém nenhuma
+pergunta.
+
+> **O repositório precisa ser privado.** O arquivo `index.html` na raiz continua
+> sendo a fonte do banco de questões (é dele que as migrations são geradas) e
+> `src/db/migrations/003_seed_questions.sql` contém todas as perguntas com o
+> gabarito. Em repositório público, o conteúdo vendido fica aberto para
+> qualquer um, e nenhuma proteção no servidor resolve isso.
+
+---
+
+## Serviços no Railway
+
+Dois serviços, dentro do **mesmo projeto**:
+
+| Serviço | O que é | Observações |
+|---|---|---|
+| **App** | Este repositório | Deploy a partir do GitHub. O Nixpacks detecta Node pelo `package.json`. |
+| **Postgres** | Banco de dados | `New` → `Database` → `PostgreSQL`. |
+
+Depois de criar os dois, vincule o Postgres ao App (aba **Variables** do App →
+**Add Reference** → o Postgres). Isso injeta a `DATABASE_URL` automaticamente;
+não copie a string de conexão na mão.
+
+O `railway.json` já define o start command como `npm run migrate && npm start`,
+então as migrations rodam sozinhas a cada deploy, e o healthcheck aponta para
+`/healthz`.
+
+---
+
+## Variáveis de ambiente
+
+Cadastre no painel do Railway, no serviço do **App**, aba **Variables**:
+
+| Variável | Obrigatória | O que é |
+|---|---|---|
+| `DATABASE_URL` | sim | Vem do vínculo com o Postgres. Não digite à mão. |
+| `JWT_SECRET` | sim | Segredo que assina a sessão. Valor aleatório longo. |
+| `APP_URL` | sim | URL pública do app, sem barra no fim. Base do `notification_url` do Mercado Pago. |
+| `MERCADO_PAGO_ACCESS_TOKEN` | sim | Access token do painel do Mercado Pago. |
+| `MERCADO_PAGO_WEBHOOK_SECRET` | sim | Assinatura secreta gerada ao cadastrar o webhook. |
+| `PRECO_CENTAVOS` | não | Preço em centavos. Padrão `4990` (R$ 49,90). |
+| `PRODUTO_NOME` | não | Nome que aparece no checkout. |
+| `AMOSTRA_GRATIS` | não | Tamanho da amostra gratuita. Padrão `10`. |
+| `ADMIN_EMAIL` | não | Esse e-mail vira administrador ao se cadastrar. |
+| `NODE_ENV` | não | Use `production`. |
+| `PORT` | não | O Railway injeta sozinho. |
+
+Para gerar o `JWT_SECRET`:
+
+```bash
+node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+```
+
+Nada disso aparece para quem abre o código no navegador — o frontend só recebe
+o que a rota `/api/config` devolve, que não inclui credencial alguma.
+
+---
+
+## Configurar o Mercado Pago
+
+1. No painel do Mercado Pago, em **Suas integrações**, crie uma aplicação.
+2. Copie o **Access Token** para `MERCADO_PAGO_ACCESS_TOKEN`.
+3. Em **Webhooks**, cadastre a URL:
+   `https://SEU-APP.up.railway.app/api/webhooks/mercadopago`
+4. Marque o evento **Pagamentos**.
+5. Copie a **assinatura secreta** gerada para `MERCADO_PAGO_WEBHOOK_SECRET`.
+
+Use as credenciais de **teste** enquanto valida o fluxo. O webhook confere a
+assinatura de toda notificação e, mesmo assim, nunca acredita no corpo dela:
+consulta o pagamento na API do Mercado Pago antes de liberar qualquer acesso.
+
+---
+
+## Fluxo do pagamento
+
+```
+Usuário cria conta            → linha em users, access_enabled = false
+Usuário faz login             → cookie httpOnly com JWT
+Usuário joga a amostra        → 10 perguntas, sem pagar
+Usuário clica em liberar      → POST /api/pagamentos/checkout
+Backend cria a preferência    → external_reference = user_id
+Usuário paga (Pix ou cartão)  → checkout do Mercado Pago
+Mercado Pago chama o webhook  → POST /api/webhooks/mercadopago
+Webhook confere a assinatura  → HMAC-SHA256 do manifesto
+Webhook consulta o pagamento  → GET /v1/payments/{id}
+Status approved               → users.payment_status = 'paid'
+                                users.access_enabled = true
+                                users.access_granted_at = now()
+Acesso permanente liberado
+```
+
+Estorno e chargeback revertem o acesso automaticamente.
+
+---
+
+## Rodar localmente
+
+Requer **Node 20+** e um PostgreSQL.
+
+```bash
+npm install
+cp .env.example .env    # preencha DATABASE_URL, JWT_SECRET, APP_URL e as do Mercado Pago
+npm run migrate
+npm run dev
+```
+
+O app sobe em `http://localhost:3000`.
+
+Para virar administrador, coloque seu e-mail em `ADMIN_EMAIL` **antes** de se
+cadastrar. Quem já tem conta pode ser promovido direto no banco:
+
+```sql
+UPDATE users SET is_admin = true WHERE email = 'voce@exemplo.com';
+```
+
+---
+
+## Painel administrativo
+
+Em `/admin`, restrito a `is_admin`:
+
+- Contagem de cadastrados, liberados, aguardando e pagamentos.
+- Busca por nome ou e-mail.
+- Liberar ou bloquear acesso na mão (Pix por fora, cortesia, estorno).
+- Últimos 50 webhooks recebidos, com estado da assinatura e erro — é por aqui
+  que se descobre por que um pagamento não liberou.
+
+---
+
+## Alterar o banco de questões
+
+O `index.html` na raiz é a fonte. Depois de editar as perguntas nele:
+
+```bash
+python scripts/gera_seed.py index.html src/db/migrations/003_seed_questions.sql
+python scripts/gera_app.py index.html src/public/app.html
+```
+
+O primeiro regenera o seed do banco; o segundo regenera a página do quiz sem as
+perguntas. A migration de seed começa com `DELETE FROM questions`, então
+recriar é idempotente — mas ela só roda uma vez, porque o `schema_migrations`
+guarda o que já foi aplicado. Para reaplicar depois de mudar as questões, crie
+uma migration nova (`004_...`) ou apague a linha correspondente da tabela.
+
+---
 
 ## Estrutura
 
 ```
-index.html            aplicação completa: HTML, CSS, JavaScript e banco de perguntas
-data/perguntas.json   banco exportado, para quem quiser reaproveitar em outro projeto
+src/
+├── server.js              Express, rotas de página, arquivos estáticos
+├── config.js              Variáveis de ambiente, falha rápido se faltar alguma
+├── db/
+│   ├── pool.js            Pool do Postgres e helper de transação
+│   ├── migrate.js         Roda as migrations em ordem, uma vez cada
+│   └── migrations/        001 schema · 002 questões · 003 seed
+├── middleware/auth.js     Sessão JWT em cookie, exigeLogin/Acesso/Admin
+├── routes/                auth · quiz · pagamentos · webhooks · admin
+├── services/mercadopago.js  Preferência, consulta e validação de assinatura
+└── public/                entrada · app · pagamento · admin
 ```
 
-O `index.html` é autossuficiente. A única requisição externa é a das fontes do Google Fonts, e o app funciona normalmente sem elas, caindo para as fontes do sistema.
+---
 
-## Como rodar localmente
-
-Baixe o `index.html` e abra no navegador. Não há passo de instalação.
-
-Para servir por HTTP durante o desenvolvimento:
-
-```bash
-python3 -m http.server 8000
-```
-
-## Como adicionar ou editar perguntas
-
-Todas as perguntas vivem no array `BANK`, no topo do bloco `<script>` do `index.html`. O formato de cada item:
-
-```js
-{
-  b: "PONTUAÇÃO",                                    // bloco de regra
-  q: "Quantos pontos vale a passagem de guarda?",    // enunciado
-  o: ["2 pontos","3 pontos","4 pontos","1 ponto"],   // quatro alternativas
-  c: 1,                                              // índice da correta, de 0 a 3
-  r: "Livro de Regras, Art. 4º, 4.2"                 // referência obrigatória
-}
-```
-
-Três regras ao contribuir:
-
-1. Toda pergunta precisa de referência rastreável ao artigo e item de origem.
-2. As quatro alternativas devem ser distintas entre si e plausíveis. Alternativa obviamente absurda não ensina nada.
-3. Distribua o índice da correta entre 0, 1, 2 e 3. O banco atual está balanceado em 74 / 74 / 74 / 73.
-
-## Publicar no GitHub Pages
-
-O repositório já traz o workflow `.github/workflows/pages.yml`. Depois do primeiro push, vá em `Settings` › `Pages` e defina **Source** como `GitHub Actions`. O deploy roda sozinho a cada push na branch `main` e o link fica ativo em cerca de um minuto.
-
-Feito isso, atualize o link no topo deste README trocando `SEU-USUARIO` pelo seu usuário do GitHub.
-
-## Aviso
-
-Projeto de estudo, **não oficial** e sem vínculo com a International Brazilian Jiu-Jitsu Federation. O conteúdo das regras pertence à IBJJF. Em caso de divergência entre este quiz e o documento oficial, vale sempre o documento oficial, disponível em [ibjjf.com](https://ibjjf.com).
-
-O banco foi construído sobre a versão 5.2 do Livro de Regras, de janeiro de 2021. Confira se há edição mais recente antes de usar como preparação para arbitragem.
-
-## Licença
-
-Código sob licença MIT, conforme o arquivo [LICENSE](LICENSE). O texto das regras da IBJJF permanece de titularidade da federação e é citado aqui em caráter educacional.
+Base: Livro de Regras IBJJF, versão 5.2 · Janeiro 2021, Regulamento Geral de
+Competições e Manual de Formatação de Competições.

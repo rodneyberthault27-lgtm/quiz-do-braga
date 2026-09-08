@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz do Braga · Entrar</title>
+<meta name="theme-color" content="#0B0F13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="crest"><span class="bar"></span><span class="lbl">Livro de Regras IBJJF</span></div>
+  <h1>Quiz do <em>Braga</em></h1>
+  <div class="sub">IBJJF · Regras de Competição</div>
+  <p class="desc">Simulador de prova de arbitragem sobre o Livro de Regras, o Regulamento Geral de Competições e o Manual de Formatação. Cada resposta traz o artigo exato que a fundamenta.</p>
+
+  <div class="abas">
+    <button class="aba on" id="abaEntrar" type="button">Entrar</button>
+    <button class="aba" id="abaCriar" type="button">Criar conta</button>
+  </div>
+
+  <div class="card">
+    <div class="aviso" id="aviso"></div>
+
+    <form id="form" autocomplete="on">
+      <div id="campoNome" hidden>
+        <label for="nome">Nome</label>
+        <input id="nome" name="name" type="text" maxlength="80" autocomplete="name">
+      </div>
+
+      <label for="email">E-mail</label>
+      <input id="email" name="username" type="email" required autocomplete="email" inputmode="email">
+
+      <label for="senha">Senha</label>
+      <input id="senha" name="password" type="password" required autocomplete="current-password" minlength="8">
+
+      <button class="primary" id="enviar" type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <p class="desc" id="chamada" style="text-align:center;font-size:13px;">
+    Criando a conta você já joga a <b>amostra grátis</b> de 10 perguntas.
+  </p>
+
+  <div class="rodape">Base: Livro de Regras IBJJF, versão 5.2 · Janeiro 2021</div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let modo = 'login';
+
+const destino = new URLSearchParams(location.search).get('destino') || '/app';
+
+function trocar(novo) {
+  modo = novo;
+  const criando = modo === 'cadastro';
+  $('abaEntrar').classList.toggle('on', !criando);
+  $('abaCriar').classList.toggle('on', criando);
+  $('campoNome').hidden = !criando;
+  $('enviar').textContent = criando ? 'Criar conta' : 'Entrar';
+  $('senha').autocomplete = criando ? 'new-password' : 'current-password';
+  $('chamada').style.display = criando ? 'none' : '';
+  esconderAviso();
+}
+
+function mostrarAviso(texto, tipo) {
+  const el = $('aviso');
+  el.textContent = texto;
+  el.className = 'aviso ' + tipo;
+}
+function esconderAviso() {
+  $('aviso').className = 'aviso';
+}
+
+$('abaEntrar').addEventListener('click', () => trocar('login'));
+$('abaCriar').addEventListener('click', () => trocar('cadastro'));
+
+$('form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  esconderAviso();
+
+  const corpo = {
+    email: $('email').value.trim(),
+    senha: $('senha').value,
+  };
+  if (modo === 'cadastro') corpo.nome = $('nome').value.trim();
+
+  if (modo === 'cadastro' && corpo.senha.length < 8) {
+    return mostrarAviso('A senha precisa de ao menos 8 caracteres.', 'erro');
+  }
+
+  const btn = $('enviar');
+  const rotulo = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Aguarde...';
+
+  try {
+    const r = await fetch('/api/auth/' + (modo === 'cadastro' ? 'cadastro' : 'login'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(corpo),
+    });
+    const dados = await r.json().catch(() => ({}));
+    if (!r.ok) {
+      mostrarAviso(dados.erro || 'Não foi possível continuar.', 'erro');
+      return;
+    }
+    location.href = destino;
+  } catch {
+    mostrarAviso('Falha de conexão. Tente de novo.', 'erro');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = rotulo;
+  }
+});
+</script>
+</body>
+</html>

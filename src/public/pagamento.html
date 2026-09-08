@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz do Braga · Liberar acesso</title>
+<meta name="theme-color" content="#0B0F13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/base.css">
+<style>
+.preco{font-family:var(--head);font-weight:700;font-size:52px;color:var(--gold);line-height:1;margin-bottom:4px;}
+.preco small{display:block;font-family:var(--body);font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim);font-weight:600;margin-top:7px;}
+ul.itens{list-style:none;padding:0;margin:0 0 4px;}
+ul.itens li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;}
+ul.itens li:last-child{border-bottom:none;}
+ul.itens li::before{content:'✓';color:var(--ok);font-weight:700;flex:0 0 auto;}
+.espera{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--dim);margin-top:14px;}
+.giro{width:14px;height:14px;border:2px solid var(--line2);border-top-color:var(--gold);
+  border-radius:50%;animation:girar .8s linear infinite;flex:0 0 auto;}
+@keyframes girar{to{transform:rotate(360deg)}}
+.topo{display:flex;gap:14px;margin-bottom:20px;font-size:12.5px;}
+.topo a,.topo button{background:none;border:none;padding:0;color:var(--gold);
+  font-family:inherit;font-size:12.5px;cursor:pointer;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topo">
+    <a href="/app">← Voltar ao quiz</a>
+    <button id="btnSair" type="button" style="margin-left:auto;">Sair</button>
+  </div>
+
+  <div class="crest"><span class="bar"></span><span class="lbl">Acesso completo</span></div>
+  <h1>Libere o <em>banco inteiro</em></h1>
+
+  <div class="card" id="cartaoLiberado" hidden>
+    <div class="aviso ok" style="display:block;">
+      Seu acesso já está liberado. Bom treino.
+    </div>
+    <button class="primary" onclick="location.href='/app'">Ir para o quiz</button>
+  </div>
+
+  <div id="cartaoCompra">
+    <div class="card">
+      <div class="preco" id="preco">—<small>Pagamento único, sem mensalidade</small></div>
+    </div>
+
+    <h2 class="sec-title">O que entra</h2>
+    <div class="card">
+      <ul class="itens">
+        <li>As <b id="totalPadrao">295</b> perguntas do banco completo</li>
+        <li>Rodadas de 50, 100 e 150 perguntas</li>
+        <li>Modo Banca: <b id="totalBanca">58</b> casos de interpretação de arbitragem</li>
+        <li>Faixa de carreira, ranking e revisão dos erros com o artigo</li>
+        <li>Acesso permanente, sem renovação</li>
+      </ul>
+    </div>
+
+    <div class="aviso" id="aviso"></div>
+
+    <button class="primary" id="btnPagar" type="button">Pagar com Pix ou cartão</button>
+    <div class="espera" id="espera" hidden>
+      <span class="giro"></span>
+      <span>Aguardando a confirmação do Mercado Pago. Pode deixar esta página aberta.</span>
+    </div>
+
+    <p class="desc" style="margin-top:22px;font-size:12.5px;">
+      O pagamento é processado pelo Mercado Pago. Assim que a confirmação chegar, o acesso é
+      liberado automaticamente — mesmo que você feche o navegador.
+    </p>
+  </div>
+
+  <div class="rodape">Quiz do Braga · IBJJF Regras de Competição</div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let sondagem = null;
+
+function moeda(centavos) {
+  return (centavos / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function aviso(texto, tipo) {
+  const el = $('aviso');
+  el.textContent = texto;
+  el.className = 'aviso ' + tipo;
+}
+
+function mostrarLiberado() {
+  clearInterval(sondagem);
+  $('cartaoCompra').hidden = true;
+  $('cartaoLiberado').hidden = false;
+}
+
+async function verStatus() {
+  try {
+    const r = await fetch('/api/pagamentos/status');
+    if (!r.ok) return null;
+    const s = await r.json();
+    $('preco').firstChild.textContent = moeda(s.precoCentavos);
+    if (s.acessoLiberado) mostrarLiberado();
+    return s;
+  } catch {
+    return null;
+  }
+}
+
+$('btnSair').addEventListener('click', async () => {
+  await fetch('/api/auth/logout', { method: 'POST' });
+  location.href = '/';
+});
+
+$('btnPagar').addEventListener('click', async () => {
+  const btn = $('btnPagar');
+  btn.disabled = true;
+  btn.textContent = 'Abrindo o checkout...';
+  try {
+    const r = await fetch('/api/pagamentos/checkout', { method: 'POST' });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || !d.url) {
+      aviso(d.erro || 'Não consegui abrir o checkout. Tente de novo em instantes.', 'erro');
+      return;
+    }
+    // Quem confirma o pagamento e libera o acesso é o webhook, não este retorno.
+    $('espera').hidden = false;
+    sondagem = setInterval(verStatus, 5000);
+    location.href = d.url;
+  } catch {
+    aviso('Falha de conexão. Tente de novo.', 'erro');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Pagar com Pix ou cartão';
+  }
+});
+
+// Volta do checkout: fica sondando até o webhook liberar.
+const status = new URLSearchParams(location.search).get('status');
+if (status === 'sucesso' || status === 'pendente') {
+  $('espera').hidden = false;
+  sondagem = setInterval(verStatus, 4000);
+} else if (status === 'falha') {
+  aviso('O pagamento não foi concluído. Você pode tentar de novo.', 'erro');
+}
+
+fetch('/api/quiz/tamanho-banco').then((r) => r.json()).then((t) => {
+  if (t.padrao) $('totalPadrao').textContent = t.padrao;
+  if (t.banca) $('totalBanca').textContent = t.banca;
+}).catch(() => {});
+
+verStatus();
+</script>
+</body>
+</html>
