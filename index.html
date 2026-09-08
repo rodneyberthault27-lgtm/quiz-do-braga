@@ -257,6 +257,14 @@ button{font-family:inherit;}
 .newrec button{background:var(--gold);color:#141414;border:none;border-radius:8px;font-weight:700;
   font-size:13px;padding:0 18px;cursor:pointer;flex:0 0 auto;}
 .newrec button:hover{background:var(--gold2);}
+.mode.banca .num{color:var(--err);font-size:30px;}
+.mode.banca.on{border-color:var(--err);background:linear-gradient(180deg,rgba(204,87,68,.13),rgba(204,87,68,.03));}
+.mode.banca.on .num{color:#E8735C;}
+.mode.banca.on .tick{border-color:var(--err);background:var(--err);}
+.tog.locked{opacity:.5;cursor:default;}
+.banca-tag{display:inline-block;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--err);border:1px solid var(--err);border-radius:4px;
+  padding:3px 8px;margin-bottom:12px;}
 </style>
 
 </head>
@@ -288,6 +296,11 @@ button{font-family:inherit;}
       <button class="mode" data-size="150">
         <span class="num">150</span>
         <span class="meta"><b>Absoluto</b><span>Prova completa de arbitragem. Cerca de 40 minutos.</span></span>
+        <span class="tick"></span>
+      </button>
+      <button class="mode banca" data-size="30" data-mode="banca">
+        <span class="num">30</span>
+        <span class="meta"><b>Banca</b><span>Interpretação de casos de tatame. 45s por questão, desclassificação sempre ligada. Aprova com 80%.</span></span>
         <span class="tick"></span>
       </button>
     </div>
@@ -676,6 +689,66 @@ const BANK=[
 {b:"PONTUAÇÃO",q:"A luta deve seguir qual lógica, segundo o Artigo 3º?",o:["Preservação do placar","Sequência crescente de domínio técnico em direção à finalização","Domínio por tempo total","Alternância de posições"],c:1,r:"Livro de Regras, Art. 3º, 3.2"},
 {b:"UNIFORME E HIGIENE",q:"Qual é a largura máxima da gola do kimono?",o:["4 cm","3 cm","6 cm","5 cm"],c:3,r:"Livro de Regras, Art. 8º, 8.1.12"},];
 
+const CASES=[
+{b:"PONTUAÇÃO",q:"A passa a guarda de B e estabiliza o controle lateral. Sem parar, sobe para a montada e ali permanece imóvel por 3 segundos completos. Entre a passagem e a montada não houve 3 segundos de domínio em nenhuma posição isolada. O árbitro assinala:",o:["7 pontos, contando 3 segundos apenas ao final da sequência","3 pontos, pois só a passagem se completou","4 pontos, pois a montada absorve a passagem","Nada, pois nenhuma posição isolada teve 3 segundos"],c:0,r:"Livro de Regras, Art. 3º, 3.4"},
+{b:"PONTUAÇÃO",q:"A monta em B, o árbitro assinala os 4 pontos. Em seguida A desce voluntariamente para a imobilização lateral e logo torna a montar, estabilizando novamente por 3 segundos. O placar de A deve ficar em:",o:["8 pontos, pois foram duas montadas estabilizadas","4 pontos, pois abandonou a posição voluntariamente para repeti-la","4 pontos mais uma vantagem pela segunda montada","7 pontos, somando montada e imobilização"],c:1,r:"Livro de Regras, Art. 3º, 3.2"},
+{b:"PONTUAÇÃO",q:"B encaixa um armlock em A. Já sob o ataque, A gira, passa a guarda e chega à montada, mas só consegue se livrar do armlock quando já não está mais em nenhuma dessas posições. A recebe:",o:["7 pontos, pois alcançou as duas posições","Duas vantagens, uma para cada posição","Nem pontos nem vantagens por essas movimentações","Uma vantagem apenas"],c:2,r:"Livro de Regras, Art. 3º, 3.3.1"},
+{b:"PONTUAÇÃO",q:"A passa a guarda de B e monta. Durante a contagem dos 3 segundos da montada, B encaixa um triângulo, interrompendo a contagem. A soltará o golpe segundos depois, quando A já não está mais montado. O árbitro deve assinalar para A:",o:["Apenas os 3 pontos da passagem","Nada, pois a contagem foi interrompida","Os 7 pontos, pois as posições foram alcançadas","Uma vantagem para cada posição que ele alcançou"],c:3,r:"Livro de Regras, Art. 3º, 3.3.2"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A projeta B, que cai apoiado nas mãos e nos joelhos, de quatro apoios. A não coloca os ganchos, mas controla as costas de B e o mantém com um joelho no solo por 3 segundos. O árbitro assinala:",o:["Os 2 pontos da queda","Nada, pois B não caiu de costas nem de lado","4 pontos pela pegada pelas costas","Apenas uma vantagem de queda"],c:0,r:"Livro de Regras, Art. 4º, 4.1.1"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"Numa movimentação de raspagem os dois atletas chegam a ficar de pé, mas por menos de 3 segundos. Nesse intervalo, o atleta que estava se defendendo projeta o adversário ao solo de costas. Sobre a queda, o árbitro deve:",o:["Assinalar 2 pontos ao que projetou","Não assinalar pontos nem vantagem referentes à queda","Assinalar uma vantagem ao que projetou","Assinalar 2 pontos ao que iniciou a raspagem"],c:1,r:"Livro de Regras, Art. 4º, 4.1.3"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A disputa vem da guarda e os dois atletas ficam de pé. Para que o árbitro comece a contar os 3 segundos que transformam o combate em luta em pé, é necessário que:",o:["Os dois atletas estejam com os dois pés no chão","Ambos soltem todas as pegadas","Um esteja com os dois pés no chão e o outro com ao menos um pé no chão e sem o joelho oposto no solo","O árbitro dê o comando verbal de luta em pé"],c:2,r:"Livro de Regras, Art. 4º, 4.1.4, Obs"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"Vindo de uma situação de guarda, A derruba B, que estava com os dois joelhos no solo. A estabiliza por cima por 3 segundos. O árbitro assinala:",o:["2 pontos de queda","Uma vantagem de queda","3 pontos de passagem","Nada, pois não se atribuem pontos derrubando adversário de joelhos vindo da guarda"],c:3,r:"Livro de Regras, Art. 4º, 4.1.5, Obs"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A entra numa baiana em B. B senta no solo e aplica um contragolpe bem sucedido, ficando por cima e estabilizando por 3 segundos. O placar correto é:",o:["2 pontos apenas para B, que contragolpeou","2 pontos para cada atleta","2 pontos para A e vantagem para B","Vantagem para cada atleta"],c:0,r:"Livro de Regras, Art. 4º, 4.1.6"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A projeta B ao solo de costas, mas cai na meia-guarda e imediatamente sofre uma raspagem bem sucedida de B. O árbitro assinala:",o:["2 pontos de queda para A e 2 pontos de raspagem para B","Vantagem de queda para A e 2 pontos de raspagem para B","Nada para A e 2 pontos para B","2 pontos de queda para A e vantagem para B"],c:1,r:"Livro de Regras, Art. 4º, 4.1.7"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"B tem as costas de A com os dois ganchos postos. Para escapar, A projeta B ao solo e estabiliza por cima por 3 segundos. Quanto à queda, A recebe:",o:["2 pontos, pois estabilizou por 3 segundos","Uma vantagem","Nem os 2 pontos nem a vantagem referentes à queda","4 pontos, invertendo a pegada pelas costas"],c:2,r:"Livro de Regras, Art. 4º, 4.1.8"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A e B disputam a pegada em pé. A inicia claramente o movimento de queda e só depois B começa a puxar para a guarda. Sobre o movimento de A, o árbitro deve:",o:["Não assinalar nada, pois B foi para a guarda","Punir B por puxar a guarda sem pegada","Assinalar apenas uma vantagem, nunca os pontos","Assinalar os 2 pontos ou a vantagem referentes à queda"],c:3,r:"Livro de Regras, Art. 4º, 4.1.9"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A tem uma pegada firme na calça de B. B puxa para a guarda fechada e fica suspenso no ar, pendurado em A. Para ter os 2 pontos da queda assinalados, A precisa:",o:["Colocar as costas de B no solo em até 3 segundos e daí estabilizar por mais 3 segundos","Apenas manter a pegada na calça por 3 segundos","Abrir a guarda fechada antes de qualquer contagem","Nada, a posição não pontua em hipótese alguma"],c:0,r:"Livro de Regras, Art. 4º, 4.1.11, Obs"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A está livre da guarda e coloca o joelho na barriga de B, que está de costas. A se mantém firme por 3 segundos, porém com o joelho da outra perna apoiado no solo. O árbitro assinala:",o:["2 pontos de joelho na barriga","Uma vantagem de joelho na barriga","Nada, a posição é inválida","3 pontos de passagem de guarda"],c:1,r:"Livro de Regras, Art. 5º, 5.6.3"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A senta sobre o tronco de B, livre da meia-guarda, virado para a cabeça, com os dois joelhos no solo, e permanece 3 segundos. Nessa montada, os dois braços de B estão presos sob as pernas de A. O árbitro assinala:",o:["4 pontos de montada","4 pontos de montada e uma vantagem","Uma vantagem de montada","Nada, a posição é irregular"],c:2,r:"Livro de Regras, Art. 5º, 5.6.4"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A monta em B mantendo um dos braços de B preso sob a perna. Para que os 4 pontos da montada sejam assinalados, é necessário que:",o:["O braço preso seja o do lado oposto ao da cabeça de A","Os dois pés de A estejam cruzados nas costas de B","A mantenha as duas mãos no solo","O joelho da perna que aprisiona o braço não ultrapasse a linha do ombro do adversário"],c:3,r:"Livro de Regras, Art. 4º, 4.4.1"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A finaliza a passagem e cai por cima já com o triângulo encaixado em B, permanecendo assim por mais de 3 segundos sobre o tronco do adversário. Quanto à montada, o árbitro deve:",o:["Não assinalar pontos referentes à montada","Assinalar uma vantagem de montada","Assinalar os 4 pontos, pois o domínio existiu","Assinalar 4 pontos apenas se o triângulo for desfeito"],c:0,r:"Livro de Regras, Art. 4º, 4.4"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A conquista a montada pelas costas e estabiliza por 3 segundos. Em seguida faz a transição direta para a montada pela frente e novamente estabiliza por 3 segundos. O placar de A soma:",o:["4 pontos, pois é uma única sequência de domínio","8 pontos, pois são posições distintas","4 pontos e uma vantagem","6 pontos"],c:1,r:"Livro de Regras, Art. 4º, 4.4"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A domina as costas de B por 3 segundos com os calcanhares na parte interna das coxas, porém mantém os pés cruzados. O árbitro assinala:",o:["4 pontos da pegada pelas costas","Nada, e ainda pune A","Uma vantagem","4 pontos e uma punição a A"],c:2,r:"Livro de Regras, Art. 5º, 5.6.5"},
+{b:"VANTAGENS",q:"O tempo regulamentar se encerra e o árbitro ainda não proclamou o resultado. Ele percebe que deixou de marcar uma vantagem clara ocorrida nos segundos finais. O árbitro:",o:["Não pode mais alterar nada após o fim do tempo","Deve reiniciar a luta por 10 segundos","Só pode alterar com autorização da mesa central","Pode assinalar a vantagem, pois isso é permitido até a proclamação do resultado"],c:3,r:"Livro de Regras, Art. 5º, 5.4"},
+{b:"VANTAGENS",q:"A inicia uma tentativa de raspagem e chega a ficar por cima, mas deliberadamente desiste de permanecer nessa posição para preservar sua estrutura de defesa. Quanto à raspagem, A recebe:",o:["Nenhuma vantagem referente à raspagem","2 pontos, pois chegou a ficar por cima","Uma vantagem, pois inverteu a posição","Uma vantagem apenas se o adversário reclamar"],c:0,r:"Livro de Regras, Art. 5º, 5.7.4"},
+{b:"VANTAGENS",q:"Numa guarda 50/50, A executa um movimento de raspagem que começa e termina na própria 50/50. O árbitro deve:",o:["Assinalar uma vantagem de raspagem","Não conceder vantagem de raspagem nesse caso","Assinalar 2 pontos se estabilizar 3 segundos","Punir os dois atletas por falta de combatividade"],c:1,r:"Livro de Regras, Art. 5º, 5.7.5"},
+{b:"VANTAGENS",q:"A sofre uma queda de B, mas consegue rolar no meio do movimento e termina por cima. Quanto à queda de B, o árbitro deve:",o:["Assinalar uma vantagem para B","Assinalar 2 pontos para B","Não assinalar mais vantagem para B","Assinalar vantagem para os dois"],c:2,r:"Livro de Regras, Art. 5º, 5.7.3"},
+{b:"VANTAGENS",q:"A ataca um single leg, aprisiona a perna de B e o conduz caminhando até fora da área de luta, obrigando o árbitro a interromper o combate. Quanto a essa movimentação, A recebe:",o:["Uma vantagem pela tentativa de queda","Uma vantagem e ainda pune B por fuga","2 pontos, pois dominou a perna","Nenhuma vantagem nesse caso"],c:3,r:"Livro de Regras, Art. 5º, 5.7.6"},
+{b:"VANTAGENS",q:"A está por cima e alcança o controle da meia-guarda de B, mas essa posição não veio de nenhuma tentativa de passagem de guarda. Quanto à meia-guarda, A recebe:",o:["Nenhuma vantagem, pois não vinha de tentativa de passagem","Uma vantagem de passagem","3 pontos de passagem de guarda","Uma vantagem apenas se estabilizar 3 segundos"],c:0,r:"Livro de Regras, Art. 5º, 5.7.2"},
+{b:"FALTAS",q:"Faltando 40 segundos, A está perdendo por 2 pontos e, para evitar que B consolide a montada, sai deliberadamente da área de luta. O árbitro deve:",o:["Apenas marcar uma punição a A e reiniciar no centro","Marcar 2 pontos para B e uma punição a A, seguindo a sequência de penalidades","Desclassificar A sumariamente","Marcar uma vantagem para B e reiniciar em pé"],c:1,r:"Livro de Regras, Art. 6º, 6.2.2 (M)"},
+{b:"FALTAS",q:"B tem um armlock encaixado e A, para não bater, foge deliberadamente da área de combate. Essa conduta configura:",o:["Falta grave, com 2 pontos para B","Falta de combatividade, com punição na sequência","Falta gravíssima, levando à desclassificação","Nenhuma falta, pois defender-se é legítimo"],c:2,r:"Livro de Regras, Art. 6º, 6.2.3 (B)"},
+{b:"FALTAS",q:"Numa luta de faixa branca adulto, A pula para colocar B, que está em pé, na guarda fechada. Não se tratava de defesa de queda ou raspagem. O árbitro deve:",o:["Permitir, pois é técnica legítima na faixa branca","Conceder 2 pontos a B e seguir a luta no solo","Desclassificar A por falta gravíssima","Punir A e reiniciar a luta com os dois atletas em pé"],c:3,r:"Livro de Regras, Art. 6º, 6.2.2 (W)"},
+{b:"FALTAS",q:"Mesma situação anterior, mas A pulou na guarda enquanto se defendia de uma queda de B. Além da punição a A, o árbitro deve:",o:["Conceder 2 pontos a B","Nada mais, apenas a punição","Conceder uma vantagem a B","Reiniciar no solo mantendo a posição"],c:0,r:"Livro de Regras, Art. 6º, 6.2.2 (W), Obs"},
+{b:"FALTAS",q:"Na cruzada de perna, A passa o pé além da linha mediana vertical do corpo de B. Nenhum dos dois tem golpe de finalização encaixado. O árbitro deve:",o:["Desclassificar A por falta gravíssima","Paralisar o combate, retornar os atletas à posição permitida e punir A antes de reiniciar","Apenas advertir verbalmente e seguir a luta","Conceder 2 pontos a B sem punir A"],c:1,r:"Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"},
+{b:"FALTAS",q:"Mesma cruzada de perna além da linha mediana, mas agora um dos dois atletas está com um golpe de finalização encaixado. A conduta de quem cruzou a perna passa a ser:",o:["Falta grave, com punição na sequência","Falta de combatividade","Falta gravíssima","Movimento permitido enquanto houver finalização"],c:2,r:"Livro de Regras, Art. 6º, 6.2.3, Cruzada de Perna"},
+{b:"FALTAS",q:"A segura a boca da manga do paletó de B com dois dedos virados para dentro, e o faz para completar uma raspagem. Isso é:",o:["Permitido, pois há intenção técnica clara","Permitido apenas nas faixas marrom e preta","Falta gravíssima","Falta grave, independentemente da intenção"],c:3,r:"Livro de Regras, Art. 6º, 6.2.2 (H)"},
+{b:"PUNIÇÕES",q:"A já tem duas punições marcadas por falta de combatividade. Ele então comete uma falta grave por desobedecer uma ordem do árbitro. Essa terceira punição implica:",o:["Concessão de 2 pontos para B e marcação da terceira punição","Apenas a marcação no placar, pois as contagens são separadas","Concessão de uma vantagem para B","Desclassificação imediata de A"],c:0,r:"Livro de Regras, Art. 7º, 7.2.1 e 7.2.3"},
+{b:"PUNIÇÕES",q:"Numa categoria até 15 anos, A chega à sua quarta falta grave na luta. O árbitro deve:",o:["Desclassificar A imediatamente","Conceder 2 pontos ao oponente e marcar mais uma punição a A","Conceder uma vantagem ao oponente","Encerrar a luta por contagem de placar"],c:1,r:"Livro de Regras, Art. 7º, 7.2.4"},
+{b:"PUNIÇÕES",q:"Ainda nas categorias até 15 anos, a desclassificação por acúmulo de faltas ocorre apenas na:",o:["Quarta falta","Quinta falta","Sexta falta","Não há desclassificação por acúmulo nessas idades"],c:2,r:"Livro de Regras, Art. 7º, 7.2.4"},
+{b:"PUNIÇÕES",q:"Ao comemorar a vitória, antes da proclamação do resultado, A dirige um gesto obsceno à torcida adversária. Essa falta disciplinar acarreta:",o:["Desclassificação sumária apenas da luta","Advertência verbal, pois a luta já acabou","Punição no placar e perda de 2 pontos","Desclassificação sumária da luta e da competição"],c:3,r:"Livro de Regras, Art. 7º, 7.1"},
+{b:"PUNIÇÕES",q:"A comete uma falta técnica gravíssima ao usar creme escorregadio no corpo, percebido pelo árbitro durante a luta. A consequência é:",o:["Desclassificação sumária da luta no momento da infração","Desclassificação sumária da luta e da competição","Quatro punições marcadas de uma só vez","Perda de todos os pontos já assinalados"],c:0,r:"Livro de Regras, Art. 7º, 7.1"},
+{b:"PUNIÇÕES",q:"A e B puxam para a guarda ao mesmo tempo. O árbitro inicia a contagem de 20 segundos. Ao final, nenhum dos dois foi para cima, nenhum tem finalização encaixada nem está na iminência de pontuar, embora os dois estejam se movimentando. O árbitro deve:",o:["Deixar a luta seguir, pois há movimentação","Paralisar, punir os dois atletas e reiniciar a luta em pé","Punir apenas o atleta que puxou primeiro","Conceder uma vantagem para cada um e seguir no solo"],c:1,r:"Livro de Regras, Art. 6º, 6.2.1"},
+{b:"ARBITRAGEM",q:"Os dois atletas estão em posição de solo estabilizada, com 2/3 do corpo fora da área de combate. O árbitro deve:",o:["Deixar a luta seguir até a saída total","Interromper e reiniciar no centro com os atletas em pé","Interromper e reiniciar no centro com os atletas em posições idênticas às da interrupção","Interromper e conceder 2 pontos a quem está por cima"],c:2,r:"Livro de Regras, Art. 1º, 1.3.7"},
+{b:"ARBITRAGEM",q:"Mesma saída de 2/3 do corpo da área de combate, porém a luta no solo não está estabilizada. Agora o árbitro deve:",o:["Reiniciar no centro nas mesmas posições","Punir os dois por falta de combatividade","Deixar seguir até a estabilização","Reiniciar no centro com os dois atletas em pé"],c:3,r:"Livro de Regras, Art. 1º, 1.3.7"},
+{b:"ARBITRAGEM",q:"A tem um golpe de finalização encaixado e a movimentação leva os dois atletas para a área de segurança. O árbitro deve:",o:["Não interromper o combate","Interromper imediatamente e reiniciar no centro","Interromper e conceder 2 pontos a A","Interromper e punir B por fuga"],c:0,r:"Livro de Regras, Art. 1º, 1.3.7"},
+{b:"ARBITRAGEM",q:"A tem uma finalização encaixada e, no movimento de defesa iniciado por B, os dois saem para fora da área de segurança. Sendo clara para o árbitro a origem do movimento, ele deve reiniciar no centro com os atletas em pé e ainda:",o:["Punir B por fuga da área de luta","Assinalar 2 pontos para A","Assinalar uma vantagem para A","Não assinalar nada, apenas reiniciar"],c:1,r:"Livro de Regras, Art. 1º, 1.3.7 e Art. 3º, 3.1.1"},
+{b:"ARBITRAGEM",q:"Numa luta com três árbitros, um marca passagem de guarda, o segundo marca vantagem e o terceiro pede a retirada dos pontos. O placar deve registrar:",o:["Os 3 pontos da passagem","Nada, prevalecendo a retirada","Uma vantagem","A decisão do árbitro central"],c:2,r:"Livro de Regras, Art. 1º, 1.1.4"},
+{b:"ARBITRAGEM",q:"O árbitro central conclui que A acumulou a quarta punição e deve ser desclassificado. Antes de paralisar a luta, ele:",o:["Paralisa de imediato e comunica a mesa central","Pede a revisão dos árbitros de vídeo","Consulta o coordenador de ringue","Faz o gesto de punição grave e aguarda a confirmação de ao menos um árbitro lateral"],c:3,r:"Livro de Regras, Art. 1º, 1.2.1"},
+{b:"DECISÃO DAS LUTAS",q:"Encerrado o tempo, A e B têm o mesmo número de pontos e o mesmo número de vantagens. A tem uma punição e B tem duas. O vencedor é:",o:["A, por ter menos punições","B, pois punição não desempata","Definido pela decisão do árbitro","Definido por sorteio"],c:0,r:"Livro de Regras, Art. 2º, 2.5.4"},
+{b:"DECISÃO DAS LUTAS",q:"Faltando 1 minuto e vencendo por 2 pontos, A avisa o árbitro que está com cãibra na perna e não consegue seguir. O árbitro deve:",o:["Declarar A vencedor pelo placar","Declarar A perdedor da luta","Parar o cronômetro e conceder atendimento médico","Reiniciar a luta em pé após 2 minutos"],c:1,r:"Livro de Regras, Art. 2º, 2.2.1"},
+{b:"DECISÃO DAS LUTAS",q:"Com uma chave de braço encaixada de B, A não bate, mas emite um grito claro de dor. O árbitro deve:",o:["Aguardar a batida ou a perda dos sentidos","Conceder uma vantagem a B e seguir a luta","Considerar caracterizada a desistência de A","Interromper e reiniciar em pé"],c:2,r:"Livro de Regras, Art. 2º, 2.1.4"},
+{b:"DECISÃO DAS LUTAS",q:"A perde os sentidos por um estrangulamento legal aplicado por B. Além de ser declarado perdedor, A:",o:["Pode voltar a lutar após liberação médica no mesmo dia","Pode competir normalmente nas lutas seguintes","Fica suspenso apenas do absoluto","Não poderá retornar a lutar na mesma competição e deve ser encaminhado para atendimento médico"],c:3,r:"Livro de Regras, Art. 2º, 2.4.1, Obs"},
+{b:"DECISÃO DAS LUTAS",q:"Numa luta final de categoria, os dois atletas se acidentam simultaneamente com a luta empatada e nenhum tem condição de continuar. A luta será decidida por:",o:["Sorteio","Decisão do árbitro","Dupla desclassificação","Nova luta após intervalo médico"],c:0,r:"Livro de Regras, Art. 2º, 2.7.1"},
+{b:"FALTAS",q:"O árbitro determina que A arrume o uniforme. A leva mais de 20 segundos para ajustar o paletó e a faixa, e depois mais de 20 segundos para colocar a faixa de identificação. O árbitro deve:",o:["Marcar uma única punição pelo conjunto","Punir de forma consecutiva, uma punição por cada prazo estourado","Desclassificar A por falta gravíssima","Apenas advertir, pois o kimono não estava inutilizado"],c:1,r:"Livro de Regras, Art. 6º, 6.2.2 (T)"},
+{b:"FALTAS",q:"Durante a luta, A está por baixo na guarda fechada e abraça as costas de B, mantendo-o colado ao peito, sem buscar finalização nem pontuação. Isso configura:",o:["Posição defensiva legítima","Falta grave por amarração de pegada","Falta de combatividade","Falta gravíssima"],c:2,r:"Livro de Regras, Art. 6º, 6.2.1"},
+{b:"FALTAS",q:"A está com a montada consolidada sobre B e permanece ali controlando, mantendo as características técnicas da posição, sem evoluir para uma finalização. O árbitro deve:",o:["Punir A por falta de combatividade após 20 segundos","Reiniciar a luta em pé","Punir os dois atletas","Não configurar falta de combatividade nessa situação"],c:3,r:"Livro de Regras, Art. 6º, 6.2.1"},
+{b:"FALTAS",q:"B está atacando a partir da montada e A se defende sem conseguir progredir na luta por mais de 20 segundos. Quanto a A, o árbitro deve:",o:["Não configurar falta de combatividade, pois A se defende a partir da montada","Punir A por falta de combatividade","Punir os dois atletas","Interromper e reiniciar em pé"],c:0,r:"Livro de Regras, Art. 6º, 6.2.1"},
+{b:"FALTAS",q:"Ao ser atacado por uma chave de pé, A comete uma falta que obriga o árbitro a interromper o combate. Essa conduta é classificada como:",o:["Falta grave, com punição na sequência","Falta gravíssima","Falta de combatividade","Falta disciplinar"],c:1,r:"Livro de Regras, Art. 6º, 6.2.3 (C)"},
+{b:"FALTAS",q:"A percebe que pode vencer por desclassificação e movimenta-se intencionalmente de modo a colocar B em uma posição ilegal. Essa conduta de A é:",o:["Falta grave de A","Falta gravíssima de B, que ficou na posição ilegal","Falta gravíssima de A","Movimento legítimo de armadilha técnica"],c:2,r:"Livro de Regras, Art. 6º, 6.2.3 (D)"},
+{b:"POSIÇÕES DE PONTUAÇÃO",q:"A está por cima executando uma chave de braço, cai por baixo e não usa as pernas para impedir que B alcance o controle lateral. Quanto à passagem de guarda, B recebe:",o:["3 pontos, pois alcançou o controle lateral","Uma vantagem de passagem","3 pontos apenas se estabilizar 3 segundos","Nem pontos nem vantagem de passagem, pois não havia guarda"],c:3,r:"Livro de Regras, Art. 4º, 4.2"},
+{b:"PONTUAÇÃO",q:"A e B puxam para a guarda exatamente ao mesmo tempo. A é o primeiro a ir para cima e sobe diretamente para a imobilização lateral. A recebe:",o:["Uma vantagem por ir para cima primeiro, sem pontos ou vantagem de passagem","Uma vantagem por ir para cima primeiro e 3 pontos pela passagem","Apenas os 3 pontos da passagem","Nada, pois a puxada foi simultânea"],c:0,r:"Livro de Regras, Art. 3º, 3.5, Obs"},
+{b:"PONTUAÇÃO",q:"B aplica uma finalização e A, ao executar o movimento correto de defesa, acaba levando os dois para fora da área de luta. O árbitro deve assinalar:",o:["2 pontos para A, que se defendeu corretamente","2 pontos para B, que aplicava a finalização","Uma vantagem para B","Nada, apenas reiniciar no centro"],c:1,r:"Livro de Regras, Art. 3º, 3.1.1"}
+];
 const BELTS=[
  {min:0 ,n:'Branca',c:'#EDEDED',t:'#141414'},
  {min:40,n:'Azul'  ,c:'#1E5FBF',t:'#141414'},
@@ -685,9 +758,9 @@ const BELTS=[
  {min:95,n:'Coral' ,c:'#C0392B',t:'#EDEDED'}
 ];
 const LETTERS=['a','b','c','d'];
-const QTIME=30;
+let QTIME=30;
 
-let cfg={size:50,shuffleQ:true,shuffleO:true,timer:true,dq:false};
+let cfg={size:50,shuffleQ:true,shuffleO:true,timer:true,dq:false,mode:'padrao'};
 let deck=[],idx=0,pts=0,hits=0,streak=0,best=0,pun=0,locked=false,log=[],tLeft=0,tHandle=null,qAt=0,timeSum=0;
 
 const $=id=>document.getElementById(id);
@@ -699,11 +772,24 @@ const paintBelt=(el,b)=>{el.style.background=b.c;el.style.boxShadow='inset -6px 
 $('bankN').textContent=BANK.length;
 document.querySelectorAll('#modes .mode').forEach(m=>m.addEventListener('click',()=>{
   document.querySelectorAll('#modes .mode').forEach(x=>x.classList.remove('on'));
-  m.classList.add('on');cfg.size=+m.dataset.size;showRecord();showRank();
+  m.classList.add('on');cfg.size=+m.dataset.size;cfg.mode=m.dataset.mode||'padrao';
+  applyMode();showRecord();showRank();
 }));
 document.querySelectorAll('.tog').forEach(t=>t.addEventListener('click',()=>{
+  if(t.classList.contains('locked'))return;
   t.classList.toggle('on');cfg[t.dataset.k]=t.classList.contains('on');
 }));
+function tog(k){return document.querySelector('.tog[data-k="'+k+'"]');}
+function applyMode(){
+  const banca=cfg.mode==='banca';
+  // na banca a desclassificação e o embaralhamento de alternativas são obrigatorios
+  [['dq',banca],['shuffleO',banca]].forEach(([k,trava])=>{
+    const el=tog(k);
+    el.classList.toggle('locked',trava);
+    if(trava){el.classList.add('on');cfg[k]=true;}
+  });
+  if(!banca)cfg.dq=tog('dq').classList.contains('on');
+}
 $('startBtn').addEventListener('click',start);
 $('nextBtn').addEventListener('click',next);
 $('againBtn').addEventListener('click',reset);
@@ -713,9 +799,11 @@ $('revBtn').addEventListener('click',()=>{
   $('revBtn').textContent=open?'Ver o que você errou':'Ocultar revisão';
 });
 
+function slot(){return cfg.mode==='banca'?'banca':cfg.size;}
+function slotName(){return cfg.mode==='banca'?'a Banca':'a rodada de '+cfg.size+' perguntas';}
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
 function showRecord(){
-  const r=store('braga_rec_'+cfg.size);
+  const r=store('braga_rec_'+slot());
   $('record').innerHTML=r?('Seu recorde nesta rodada: <b>'+r+' pts</b>'):'Nenhuma partida registrada nesta rodada.';
 }
 
@@ -760,14 +848,14 @@ function renderCareer(){
 }
 
 /* ---------- ranking ---------- */
-function rkKey(){return 'braga_rank_'+cfg.size;}
+function rkKey(){return 'braga_rank_'+slot();}
 function loadRank(){
   try{const a=JSON.parse(store(rkKey())||'[]');return Array.isArray(a)?a:[];}catch(e){return [];}
 }
 function drawRank(el,me){
   const a=loadRank();
-  if(!a.length){el.innerHTML='<div class="rank-empty">Ainda não há placar nesta rodada. '+
-    'Termine uma partida de '+cfg.size+' perguntas para abrir o ranking.</div>';return;}
+  if(!a.length){el.innerHTML='<div class="rank-empty">Ainda não há placar aqui. '+
+    'Termine uma partida d'+slotName().slice(1)+' para abrir o ranking.</div>';return;}
   el.innerHTML=a.map((e,n)=>
    '<div class="rrow'+(n<3?' top':'')+(me===n?' me':'')+'">'+
    '<span class="rpos">'+(n+1)+'</span>'+
@@ -776,7 +864,7 @@ function drawRank(el,me){
 }
 function showRank(){
   drawRank($('rankList'),-1);
-  $('rankTitle').textContent='Melhores colocados · '+cfg.size+' perguntas';
+  $('rankTitle').textContent='Melhores colocados · '+(cfg.mode==='banca'?'Banca':cfg.size+' perguntas');
   $('rankClear').classList.toggle('hidden',!loadRank().length);
 }
 let pending=null;
@@ -797,7 +885,7 @@ function saveEntry(){
 $('saveRank').addEventListener('click',saveEntry);
 $('nameIn').addEventListener('keydown',e=>{if(e.key==='Enter')saveEntry();});
 $('rankClear').addEventListener('click',()=>{
-  if(!confirm('Apagar o ranking da rodada de '+cfg.size+' perguntas? Não dá para desfazer.'))return;
+  if(!confirm('Apagar o ranking d'+slotName().slice(1)+'? Não dá para desfazer.'))return;
   store(rkKey(),'[]');showRank();
 });
 
@@ -805,7 +893,10 @@ showRecord();renderCareer();showRank();
 
 /* ---------- game ---------- */
 function start(){
-  const pool=cfg.shuffleQ?shuffle(BANK.slice()):BANK.slice();
+  const banca=cfg.mode==='banca';
+  QTIME=banca?45:30;   // casos exigem leitura, o tempo acompanha
+  const fonte=banca?CASES:BANK;
+  const pool=cfg.shuffleQ?shuffle(fonte.slice()):fonte.slice();
   deck=pool.slice(0,Math.min(cfg.size,pool.length)).map(q=>{
     let o=q.o.map((t,i)=>({t,i}));
     if(cfg.shuffleO)shuffle(o);
@@ -878,7 +969,7 @@ function pick(i){
   if(ok){
     hits++;streak++;if(streak>best)best=streak;
     const bonus=cfg.timer?Math.round(tLeft/QTIME*50):0;
-    gain=Math.round((100+bonus)*mult());
+    gain=Math.round(((cfg.mode==='banca'?150:100)+bonus)*mult());
     pts+=gain;
   }else{
     streak=0;pun++;
@@ -934,7 +1025,10 @@ function finish(dq){
   const b=beltFor(acc);
   paintBelt($('resBelt'),b);
   $('resBelt').style.boxShadow='inset -46px 0 0 '+b.t+',0 0 22px rgba(217,164,65,.18)';
-  $('resBeltName').textContent=dq?'DESCLASSIFICADO':'FAIXA '+b.n.toUpperCase();
+  const aprovado=!dq&&acc>=80;
+  $('resBeltName').textContent=cfg.mode==='banca'
+    ?(aprovado?'APROVADO NA BANCA':'REPROVADO NA BANCA')
+    :(dq?'DESCLASSIFICADO':'FAIXA '+b.n.toUpperCase());
 
   let msg;
   if(dq)msg='Quatro punições e a luta acabou. Você respondeu '+total+' de '+deck.length+' perguntas antes da desclassificação.';
@@ -944,6 +1038,17 @@ function finish(dq){
   else if(acc>=55)msg='Você entende a lógica do regulamento, mas erra nos detalhes que decidem luta. Volte aos artigos indicados.';
   else if(acc>=40)msg='Base em formação. Priorize pontuação, vantagens e faltas, que são os blocos que mais aparecem no tatame.';
   else msg='Hora de reler o Livro de Regras do começo. Comece pelos Artigos 3º, 4º e 5º, que definem o placar.';
+  if(cfg.mode==='banca'){
+    if(dq)msg='Quatro punições e a banca encerrou o exame. Você interpretou '+total+' de '+deck.length+' casos.';
+    else if(acc>=95)msg='Interpretação de caso em nível de banca examinadora. Você lê a situação, '+
+      'identifica o artigo e decide sem hesitar.';
+    else if(acc>=80)msg='Aprovado. O domínio da regra sobrevive à pressão do caso concreto, que é onde '+
+      'a maioria dos candidatos cai.';
+    else if(acc>=60)msg='Reprovado por pouco. Você sabe a regra, mas ainda hesita quando o caso combina '+
+      'dois artigos. Revise os blocos abaixo e volte à banca.';
+    else msg='Reprovado. Decorar o artigo não basta na banca: o exame cobra a aplicação ao caso. '+
+      'Volte às rodadas normais antes de tentar de novo.';
+  }
   $('resMsg').textContent=msg;
 
   $('cScore').textContent=pts;
@@ -951,7 +1056,7 @@ function finish(dq){
   $('cHit').textContent=hits+'/'+total;
   $('cStreak').textContent=best;
 
-  const rk='braga_rec_'+cfg.size;
+  const rk='braga_rec_'+slot();
   const prev=parseInt(store(rk)||'0',10);
   if(!dq&&pts>prev)store(rk,String(pts));
 
@@ -977,7 +1082,7 @@ function finish(dq){
     $('nameIn').value=store('braga_name')||'';
     $('newrec').classList.remove('hidden');
   }
-  $('rankTitleRes').textContent='Melhores colocados · '+cfg.size+' perguntas';
+  $('rankTitleRes').textContent='Melhores colocados · '+(cfg.mode==='banca'?'Banca':cfg.size+' perguntas');
   drawRank($('rankResult'),-1);
 
   /* blocos */
