@@ -130,7 +130,10 @@ sub('<div class="app">\r\n',
     "topbar")
 
 sub("</style>",
-    R('.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;\n'
+    R('/* O body do quiz e flex em linha: a barra precisa sair do fluxo, senao\n'
+      '   vira um item flex ao lado do app em vez de ficar acima dele. */\n'
+      'body{padding-top:40px;}\n'
+      '.topbar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:12px;\n'
       '  padding:9px 16px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:12.5px;}\n'
       '.topbar .quem{color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}\n'
       '.topbar .acoes{margin-left:auto;display:flex;align-items:center;gap:14px;flex:0 0 auto;}\n'

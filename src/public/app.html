@@ -265,7 +265,10 @@ button{font-family:inherit;}
 .banca-tag{display:inline-block;font-family:var(--head);font-weight:700;font-size:11px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--err);border:1px solid var(--err);border-radius:4px;
   padding:3px 8px;margin-bottom:12px;}
-.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;
+/* O body do quiz e flex em linha: a barra precisa sair do fluxo, senao
+   vira um item flex ao lado do app em vez de ficar acima dele. */
+body{padding-top:40px;}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:12px;
   padding:9px 16px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:12.5px;}
 .topbar .quem{color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .topbar .acoes{margin-left:auto;display:flex;align-items:center;gap:14px;flex:0 0 auto;}
