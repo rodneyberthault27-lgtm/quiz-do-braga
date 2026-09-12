@@ -27,10 +27,18 @@ jobs:
       - name: Configurar Pages
         uses: actions/configure-pages@v5
 
+      # Publica so a pagina do quiz e suas imagens. Enviar a raiz inteira
+      # expunha o seed SQL, o backend e os arquivos de configuracao.
+      - name: Montar site
+        run: |
+          mkdir _site
+          cp index.html _site/
+          cp -r assets _site/
+
       - name: Enviar artefato
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Publicar
         id: deployment
