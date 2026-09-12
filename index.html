@@ -392,6 +392,98 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.22;
   .challenge-panel .modes{grid-template-columns:1fr;}
   .challenge-panel .mode{min-height:112px;}
 }
+
+/* ---------- ANIMACOES DO COMBATE ---------- */
+/* Entrada da pergunta: cabeçalho e enunciado deslizam, alternativas sobem em cascata.
+   "backwards" em vez de "both" para não travar o transform do :active depois. */
+.stage.enter .qhead{animation:qIn .4s cubic-bezier(.2,.8,.2,1) backwards;}
+.stage.enter .question{animation:qIn .45s cubic-bezier(.2,.8,.2,1) .05s backwards;}
+.stage.enter .opt{animation:optIn .42s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(.14s + var(--i,0) * .07s);}
+.stage.leave{animation:qOut .19s ease-in forwards;}
+@keyframes qIn{from{opacity:0;transform:translateX(28px);}to{opacity:1;transform:none;}}
+@keyframes optIn{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:none;}}
+@keyframes qOut{to{opacity:0;transform:translateX(-28px);}}
+
+/* Faixa dourada lateral ao passar o mouse */
+.opt{position:relative;overflow:hidden;}
+.opt::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);
+  transform:scaleY(0);transition:transform .22s cubic-bezier(.2,.8,.2,1);}
+@media (hover:hover){.opt:hover::before{transform:scaleY(1);}}
+.opt .k{transition:transform .2s;}
+@media (hover:hover){.opt:hover .k{transform:translateX(3px);}}
+
+/* Resposta: acerto pulsa, erro treme, o resto recua */
+.opt.off:not(.correct):not(.wrong){transform:scale(.985);transition:opacity .3s,transform .3s;}
+.opt.correct{animation:hit .6s cubic-bezier(.2,.8,.2,1);}
+.opt.correct::before{background:var(--ok);transform:scaleY(1);}
+.opt.wrong{animation:shake .45s cubic-bezier(.36,.07,.19,.97);}
+.opt.wrong::before{background:var(--err);transform:scaleY(1);}
+.opt.correct::after,.opt.wrong::after{margin-left:auto;padding-left:8px;font-weight:700;font-size:16px;line-height:1.35;
+  animation:mark .38s cubic-bezier(.3,1.6,.5,1) .12s backwards;}
+.opt.correct::after{content:'\2713';color:var(--ok);}
+.opt.wrong::after{content:'\2715';color:var(--err);}
+@keyframes hit{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(76,169,122,.55);}
+  30%{transform:scale(1.025);}100%{transform:scale(1);box-shadow:0 0 0 16px rgba(76,169,122,0);}}
+@keyframes shake{10%,90%{transform:translateX(-2px);}20%,80%{transform:translateX(4px);}
+  30%,50%,70%{transform:translateX(-7px);}40%,60%{transform:translateX(7px);}}
+@keyframes mark{from{opacity:0;transform:scale(.2) rotate(-25deg);}to{opacity:1;transform:none;}}
+
+/* Veredito carimbado e ganho de pontos */
+.fb.show .verdict{display:inline-block;animation:stamp .42s cubic-bezier(.3,1.5,.5,1) .06s backwards;}
+.fb.show .gain{display:inline-block;animation:gainIn .5s cubic-bezier(.3,1.5,.5,1) .18s backwards;}
+@keyframes stamp{from{opacity:0;transform:scale(1.7);}to{opacity:1;transform:none;}}
+@keyframes gainIn{from{opacity:0;transform:translateY(10px) scale(.7);}to{opacity:1;transform:none;}}
+
+/* Placar: pontos voando e contador saltando */
+.pts{position:relative;}
+.pts.bump #ptsVal{display:inline-block;animation:bump .45s cubic-bezier(.3,1.6,.5,1);}
+.pts .fly{position:absolute;left:0;top:0;font-family:var(--head);font-weight:700;font-size:19px;color:var(--gold2);
+  white-space:nowrap;pointer-events:none;text-shadow:0 0 14px rgba(240,195,107,.6);animation:fly 1s cubic-bezier(.2,.8,.2,1) forwards;}
+@keyframes bump{40%{transform:scale(1.28);color:var(--gold2);}}
+@keyframes fly{0%{opacity:0;transform:translate(30px,10px) scale(.7);}
+  20%{opacity:1;transform:translate(34px,-4px) scale(1.12);}100%{opacity:0;transform:translate(40px,-30px) scale(1);}}
+
+/* Sequência acesa */
+.streak.live{text-shadow:0 0 12px rgba(240,195,107,.55);animation:glow 1.6s ease-in-out infinite;}
+@keyframes glow{50%{text-shadow:0 0 20px rgba(240,195,107,.9),0 0 3px rgba(240,195,107,.8);}}
+.combo{position:fixed;left:50%;top:30%;z-index:40;pointer-events:none;text-align:center;padding:34px 70px;
+  background:radial-gradient(closest-side,rgba(11,15,19,.92),rgba(11,15,19,.6) 60%,transparent);
+  animation:combo 1.25s cubic-bezier(.2,.8,.2,1) forwards;}
+.combo b{display:block;font-family:var(--head);font-weight:700;font-size:clamp(46px,13vw,72px);line-height:.9;
+  color:var(--gold2);letter-spacing:.02em;text-transform:uppercase;text-shadow:0 0 34px rgba(217,164,65,.55),0 6px 0 rgba(0,0,0,.35);}
+.combo span{display:block;margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text);}
+@keyframes combo{0%{opacity:0;transform:translate(-50%,0) scale(.4) rotate(-6deg);}
+  18%{opacity:1;transform:translate(-50%,0) scale(1.08) rotate(0);}30%{transform:translate(-50%,0) scale(1);}
+  75%{opacity:1;transform:translate(-50%,-10px) scale(1);}100%{opacity:0;transform:translate(-50%,-44px) scale(.96);}}
+
+/* Erro: borda da tela avermelha por um instante; punição acende com estalo */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:35;opacity:0;
+  box-shadow:inset 0 0 90px rgba(204,87,68,.45);}
+body.hurt::after{animation:hurt .55s ease-out;}
+@keyframes hurt{15%{opacity:1;}100%{opacity:0;}}
+.pun i.on{animation:mark .35s cubic-bezier(.3,1.6,.5,1);}
+
+/* Tempo acabando e barra de progresso com brilho */
+.timer.warn{animation:tick .5s ease-in-out infinite alternate;}
+@keyframes tick{to{transform:scaleY(1.7);box-shadow:0 0 10px rgba(204,87,68,.6);}}
+.track i{position:relative;overflow:hidden;}
+.track i::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  transform:translateX(-100%);animation:shine 2.6s ease-in-out infinite;}
+@keyframes shine{60%,100%{transform:translateX(100%);}}
+.next.show{animation:nudge 2.2s ease-in-out 1.6s infinite;}
+@keyframes nudge{50%{box-shadow:0 0 0 7px rgba(217,164,65,.16);}}
+
+/* Resultado entra em cascata */
+#result .res-head{animation:optIn .5s cubic-bezier(.2,.8,.2,1) backwards;}
+#result .cell{animation:optIn .45s cubic-bezier(.2,.8,.2,1) backwards;}
+#result .cell:nth-child(1){animation-delay:.15s;}
+#result .cell:nth-child(2){animation-delay:.22s;}
+#result .cell:nth-child(3){animation-delay:.29s;}
+#result .cell:nth-child(4){animation-delay:.36s;}
+#result .badge{animation:mark .4s cubic-bezier(.3,1.6,.5,1) .5s backwards;}
+#result .brow .bl i{transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) .3s backwards;}
+@keyframes grow{from{transform:scaleX(0);}}
 </style>
 
 </head>
@@ -1095,7 +1187,7 @@ function render(){
   $('tag').textContent=d.b;
   $('qText').textContent=d.q;
   $('qCount').textContent='Pergunta '+(idx+1)+' de '+deck.length;
-  $('ptsVal').textContent=pts;
+  countTo($('ptsVal'),pts,0);
   $('trackFill').style.width=(idx/deck.length*100)+'%';
   const acc=idx?Math.round(hits/idx*100):0;
   $('acc').textContent=idx?acc+'% de acerto':'Comece pelo básico';
@@ -1110,17 +1202,54 @@ function render(){
   d.opts.forEach((t,i)=>{
     const btn=document.createElement('button');
     btn.className='opt';
+    btn.style.setProperty('--i',i);
     btn.innerHTML='<span class="k">'+LETTERS[i]+'</span><span>'+t+'</span>';
     btn.addEventListener('click',()=>pick(i));
     w.appendChild(btn);
   });
   $('nextBtn').classList.remove('show');
+  replay(stage(),'enter');
   window.scrollTo({top:0,behavior:'instant'});
   qAt=Date.now();
   startTimer();
 }
 
 function mult(){return streak>=10?3:streak>=6?2:streak>=3?1.5:1;}
+
+/* ---------- animacoes ---------- */
+const CALM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const counters=new WeakMap();
+function stage(){return document.querySelector('#quiz .stage');}
+// Reinicia uma animação CSS removendo a classe e forçando reflow antes de recolocar.
+function replay(el,cls){el.classList.remove(cls);void el.offsetWidth;el.classList.add(cls);}
+function countTo(el,to,dur,suf){
+  suf=suf||'';
+  cancelAnimationFrame(counters.get(el));
+  const from=parseInt(el.textContent,10)||0;
+  if(CALM||!dur||from===to){el.textContent=to+suf;return;}
+  const t0=performance.now();
+  const step=t=>{
+    const k=Math.min(1,(t-t0)/dur);
+    el.textContent=Math.round(from+(to-from)*(1-Math.pow(1-k,3)))+suf;
+    if(k<1)counters.set(el,requestAnimationFrame(step));
+  };
+  counters.set(el,requestAnimationFrame(step));
+}
+function flyPts(gain){
+  if(CALM)return;
+  const p=document.querySelector('.pts'),s=document.createElement('span');
+  s.className='fly';s.textContent='+'+gain;
+  s.addEventListener('animationend',()=>s.remove());
+  p.appendChild(s);replay(p,'bump');
+}
+function combo(){
+  if(CALM)return;
+  const c=document.createElement('div');
+  c.className='combo';
+  c.innerHTML='<b>Combo ×'+mult().toFixed(mult()%1?1:0)+'</b><span>'+streak+' acertos seguidos</span>';
+  c.addEventListener('animationend',()=>c.remove());
+  document.body.appendChild(c);
+}
 
 function startTimer(){
   clearInterval(tHandle);
@@ -1154,13 +1283,21 @@ function pick(i){
   }
   log.push({b:d.b,q:d.q,ok:ok,pick:i,c:d.c,opts:d.opts,r:d.r});
 
+  // Sem a classe de entrada, as animações de acerto/erro assumem as alternativas.
+  stage().classList.remove('enter');
   document.querySelectorAll('.opt').forEach((el,n)=>{
     el.classList.add('off');
     if(n===d.c)el.classList.add('correct');
     if(n===i&&!ok)el.classList.add('wrong');
   });
 
-  $('ptsVal').textContent=pts;
+  if(ok){
+    countTo($('ptsVal'),pts,650);
+    flyPts(gain);
+    if(streak===3||streak===6||streak===10)combo();
+  }else if(!CALM){
+    replay(document.body,'hurt');
+  }
   const st=$('streak');
   st.textContent='×'+mult().toFixed(mult()%1?1:0);
   st.classList.toggle('live',streak>=3);
@@ -1186,8 +1323,17 @@ function pick(i){
 }
 
 function next(){
-  if(cfg.dq&&pun>=4)return finish(true);
-  if(idx<deck.length-1){idx++;render();}else finish(false);
+  const s=stage();
+  if(s.classList.contains('leave'))return;   // clique duplo durante a saída
+  const go=()=>{
+    s.classList.remove('leave');
+    if(cfg.dq&&pun>=4)return finish(true);
+    if(idx<deck.length-1){idx++;render();}else finish(false);
+  };
+  if(CALM)return go();
+  $('nextBtn').classList.remove('show');
+  s.classList.add('leave');
+  setTimeout(go,190);
 }
 
 /* ---------- result ---------- */
@@ -1229,10 +1375,12 @@ function finish(dq){
   }
   $('resMsg').textContent=msg;
 
-  $('cScore').textContent=pts;
-  $('cAcc').textContent=acc+'%';
+  // Placar final contando a partir de zero, junto com a cascata de entrada.
+  ['cScore','cAcc','cStreak'].forEach(k=>$(k).textContent='0');
+  countTo($('cScore'),pts,1100);
+  countTo($('cAcc'),acc,1100,'%');
   $('cHit').textContent=hits+'/'+total;
-  $('cStreak').textContent=best;
+  countTo($('cStreak'),best,900);
 
   const rk='braga_rec_'+slot();
   const prev=parseInt(store(rk)||'0',10);
