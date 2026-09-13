@@ -44,6 +44,7 @@ input:focus{outline:none;border-color:var(--gold);}
 .btn.ghost{background:transparent;color:var(--dim);border:1px solid var(--line2);}
 .btn.ghost:hover{color:var(--err);border-color:var(--err);}
 .err{min-height:1em;font-size:12.5px;color:#E8735C;}
+.troca{margin:16px 0 0;text-align:center;}
 .err.ok{color:var(--ok);}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 14px;}
@@ -92,6 +93,14 @@ input:focus{outline:none;border-color:var(--gold);}
       <div class="err" id="loginErr"></div>
       <button class="btn" type="submit">Entrar</button>
     </form>
+    <form id="criarForm" class="hidden">
+      <label>E-mail do ADM<input name="email" type="email" required autocomplete="username"></label>
+      <label>Crie uma senha (mínimo 8 caracteres)<input name="senha" type="password" required minlength="8" autocomplete="new-password"></label>
+      <label>Repita a senha<input name="senha2" type="password" required minlength="8" autocomplete="new-password"></label>
+      <div class="err" id="criarErr"></div>
+      <button class="btn" type="submit">Criar senha e entrar</button>
+    </form>
+    <p class="troca"><button class="link" id="modoCriar" type="button">Primeiro acesso? Criar a senha do ADM</button></p>
   </section>
 
   <section class="hidden" id="painel">
@@ -154,6 +163,7 @@ async function iniciar(){
   if(!admin){
     await sb.auth.signOut();mostrar(false);
     aviso('loginErr','Esta conta não é a do controlador.');
+    aviso('criarErr','Esta conta não é a do controlador.');
     return;
   }
   mostrar(true);
@@ -210,6 +220,33 @@ $('loginForm').addEventListener('submit',async e=>{
   btn.disabled=false;
   if(error){aviso('loginErr','E-mail ou senha incorretos.');return;}
   f.reset();
+  iniciar();
+});
+
+// Primeiro acesso: o próprio ADM cria a senha. O banco só reconhece como ADM o e-mail cadastrado para isso.
+let criando=false;
+$('modoCriar').addEventListener('click',()=>{
+  criando=!criando;
+  $('loginForm').classList.toggle('hidden',criando);
+  $('criarForm').classList.toggle('hidden',!criando);
+  $('modoCriar').textContent=criando?'Já tenho senha? Entrar':'Primeiro acesso? Criar a senha do ADM';
+  aviso('loginErr','');aviso('criarErr','');
+});
+$('criarForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!sb){aviso('criarErr','O config.js ainda não tem os dados do Supabase.');return;}
+  const f=e.target.elements,btn=e.target.querySelector('button');
+  if(f.senha.value!==f.senha2.value){aviso('criarErr','As duas senhas não são iguais.');return;}
+  btn.disabled=true;aviso('criarErr','');
+  const {data,error}=await sb.auth.signUp({email:f.email.value.trim(),password:f.senha.value,options:{data:{nome:'Controlador'}}});
+  btn.disabled=false;
+  if(error){
+    aviso('criarErr',/already|registered|exists/i.test(error.message)
+      ?'Esse e-mail já tem senha. Clique em "Já tenho senha? Entrar".':error.message);
+    return;
+  }
+  if(!data.session){aviso('criarErr','Senha criada. Agora entre com ela em "Já tenho senha? Entrar".');return;}
+  e.target.reset();
   iniciar();
 });
 
