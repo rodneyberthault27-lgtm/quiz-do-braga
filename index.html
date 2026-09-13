@@ -606,6 +606,17 @@ body.hurt::after{animation:hurt .55s ease-out;}
 .cta p{margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#C9D0D5;}
 .cta p b{color:var(--text);}
 .cta-vagas{display:inline-block;margin-bottom:12px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);}
+.pw-ganhos{list-style:none;margin:0 0 18px;padding:12px 14px;border:1px solid rgba(217,164,65,.28);border-radius:12px;
+  background:rgba(217,164,65,.06);display:flex;flex-direction:column;gap:7px;}
+.pw-ganhos li{position:relative;padding-left:24px;font-size:13.5px;color:var(--text);line-height:1.4;}
+.pw-ganhos li::before{content:'✓';position:absolute;left:2px;top:0;color:var(--ok);font-weight:700;}
+.pw-progresso li.feito::before{content:'✓';background:var(--ok);border-color:var(--ok);color:#06210F;}
+.pw-progresso li.feito b{color:var(--dim);}
+.pw-progresso li.agora::before{background:var(--gold);border-color:var(--gold);color:#150F04;animation:pulsoPasso 1.8s ease-in-out infinite;}
+.pw-progresso li.agora b{color:var(--gold2);}
+@keyframes pulsoPasso{0%{box-shadow:0 0 0 0 rgba(217,164,65,.5);}70%,100%{box-shadow:0 0 0 10px rgba(217,164,65,0);}}
+.pw-seguro{display:block;text-align:center;font-size:11.5px;color:var(--dim);margin:-2px 0 14px;}
+.pw-pix{font-size:12.5px;color:var(--dim);margin:0 0 12px;}
 .offer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 14px;padding:13px 15px;
   border:1px solid var(--gold);border-radius:12px;background:linear-gradient(180deg,rgba(217,164,65,.16),rgba(217,164,65,.04));}
 .offer b{display:block;font-family:var(--head);font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);line-height:1.1;}
@@ -1610,31 +1621,39 @@ async function abrirAcesso(aba){
     $('pwForm').onsubmit=e=>{e.preventDefault();enviarConta(criar,e.target);};
   }else if(!pago){
     const cheio=vagas!=null&&vagas<=0,email=conta.email;
+    const nome=((perfil&&perfil.nome)||'').trim().split(' ')[0];
+    const quem=(nome?' Meu nome é '+nome+'.':'')+' E-mail de cadastro: '+email+'.';
     const texto=cheio
-      ?'Olá! Quero entrar na lista de espera do Quiz do Braga. Meu e-mail de cadastro é '+email+'.'
-      :'Olá! Paguei o acesso ao Quiz do Braga ('+conf.preco+'). Segue o comprovante. Meu e-mail de cadastro é '+email+'.';
+      ?'Olá, Braga! Quero garantir uma vaga na próxima turma do Quiz do Braga.'+quem
+      :'Olá, Braga! Quero ter acesso total ao Quiz do Braga e finalizar minha compra de '+conf.preco+'.'+quem+' Pode me passar o Pix?';
     const wa='https://wa.me/'+String(conf.whatsapp).replace(/\D/g,'')+'?text='+encodeURIComponent(texto);
     if(cheio){
       const {data:pos}=await sb.rpc('posicao_espera');
       box.innerHTML='<span class="pw-kicker">Vagas esgotadas</span>'+
-        '<h2 id="pwTitle">Você está na lista de espera</h2>'+
-        '<p>'+(conf.vagas===1?'A única vaga':'As '+conf.vagas+' vagas')+' de <b>'+esc(conf.preco)+'</b> '+(conf.vagas===1?'foi preenchida.':'foram preenchidas.')+(pos?' Sua posição na fila: <b>'+pos+'º</b>.':'')+
-        ' Avise pelo WhatsApp para ser chamado quando abrirem novas vagas.</p>'+
-        '<a class="start-btn wa" href="'+wa+'" target="_blank" rel="noopener">Entrar na lista pelo WhatsApp</a>'+
+        '<h2 id="pwTitle">Garanta a próxima vaga</h2>'+
+        '<p>As vagas de <b>'+esc(conf.preco)+'</b> desta turma foram preenchidas.'+(pos?' Sua posição na fila: <b>'+pos+'º</b>.':'')+
+        ' Fale com o Braga no WhatsApp para reservar seu lugar na próxima turma.</p>'+
+        '<a class="start-btn wa" href="'+wa+'" target="_blank" rel="noopener">Chamar o Braga no WhatsApp</a>'+
         '<button class="ghost" id="pwCheck">Atualizar</button>';
     }else{
-      box.innerHTML='<span class="pw-kicker">'+vagasTxt()+'</span>'+
-        '<h2 id="pwTitle">Falta só o pagamento</h2>'+
-        '<p>Um único pagamento de <b>'+esc(conf.preco)+'</b> libera todos os modos do quiz.</p>'+
-        '<ol class="pw-steps">'+
-          '<li><b>Pague '+esc(conf.preco)+' via Pix, uma única vez</b>'+(conf.pix_chave
-            ?'Chave Pix:<span class="pix"><code>'+esc(conf.pix_chave)+'</code><button type="button" id="pixCopy">Copiar</button></span>'
-            :'A chave Pix é enviada pelo WhatsApp.')+'</li>'+
-          '<li><b>Envie o comprovante pelo WhatsApp</b>A mensagem já vai com o seu e-mail: '+esc(email)+'.</li>'+
-          '<li><b>Aguarde a liberação</b>Conferido o pagamento, todos os modos são abertos na sua conta.</li>'+
+      box.innerHTML='<span class="pw-kicker">🔥 '+vagasTxt()+' por '+esc(conf.preco)+'</span>'+
+        '<h2 id="pwTitle">Seu acesso total está a um passo</h2>'+
+        '<p>Fale com o <b>Braga</b> no WhatsApp e finalize sua compra. Pagamento único de <b>'+esc(conf.preco)+'</b>.</p>'+
+        '<ul class="pw-ganhos">'+
+          '<li>'+conf.total_perguntas+' perguntas com o artigo de cada regra</li>'+
+          '<li>Modo Banca com casos de arbitragem</li>'+
+          '<li>Super Hard, Desafio do dia e ranking</li>'+
+        '</ul>'+
+        '<ol class="pw-steps pw-progresso">'+
+          '<li class="feito"><b>Conta criada</b>'+esc(email)+'</li>'+
+          '<li class="agora"><b>Fale com o Braga e finalize a compra</b>A mensagem já vai pronta, é só enviar.</li>'+
+          '<li><b>Acesso total liberado</b>Todos os modos abertos na sua conta.</li>'+
         '</ol>'+
-        '<a class="start-btn wa" href="'+wa+'" target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>'+
-        '<button class="ghost" id="pwCheck">Já fui liberado? Atualizar</button>';
+        '<a class="start-btn wa" href="'+wa+'" target="_blank" rel="noopener">Chamar o Braga no WhatsApp</a>'+
+        '<span class="pw-seguro">Pagamento único · sem mensalidade · atendimento direto com o Braga</span>'+
+        (conf.pix_chave?'<div class="pw-pix">Quer adiantar o Pix? Chave:<span class="pix"><code>'+esc(conf.pix_chave)+
+          '</code><button type="button" id="pixCopy">Copiar</button></span></div>':'')+
+        '<button class="ghost" id="pwCheck">Já paguei? Atualizar meu acesso</button>';
       const cp=$('pixCopy');
       if(cp)cp.onclick=()=>{
         navigator.clipboard.writeText(conf.pix_chave).then(()=>{cp.textContent='Copiada';},()=>{cp.textContent='Copie manualmente';});
@@ -1668,7 +1687,11 @@ async function enviarConta(criar,form){
   if(r.error){err.textContent=traduzErro(r.error.message);return;}
   if(criar&&!r.data.session){err.textContent='Conta criada. Confirme o e-mail que enviamos e depois entre.';return;}
   await carregarAcesso();
-  if(pago){fecharAcesso();toast('🥋','Bem-vindo de volta','Seu acesso completo está ativo.');}
+  if(pago){
+    fecharAcesso();
+    if(criar){toast('🥋','Acesso total liberado','Seu e-mail já estava liberado pelo Braga. Bom treino!');confetti();}
+    else toast('🥋','Bem-vindo de volta','Seu acesso completo está ativo.');
+  }
   else abrirAcesso();
 }
 
