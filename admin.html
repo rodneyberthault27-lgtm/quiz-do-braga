@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel do controlador · Quiz do Braga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F13; --bg2:#12181E; --panel:#161E26; --panel2:#1D2831;
+  --line:#2A3742; --line2:#3A4B58;
+  --gold:#D9A441; --gold2:#F0C36B; --gold-dim:#8A6C33;
+  --text:#EDF2F5; --dim:#8D9BA6;
+  --ok:#4CA97A; --ok-bg:#15271D; --err:#CC5744;
+  --head:'Barlow Condensed',Impact,sans-serif;
+  --body:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:14px;min-height:100vh;
+  background-image:radial-gradient(800px 460px at 90% -10%,rgba(217,164,65,.1),transparent 65%);}
+.hidden{display:none !important;}
+button,input{font-family:inherit;}
+.wrap{max-width:880px;margin:0 auto;padding:22px 18px 60px;}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px;}
+.brand{font-family:var(--head);font-weight:700;font-size:21px;letter-spacing:.05em;text-transform:uppercase;}
+.brand em{font-style:normal;color:var(--gold);}
+.brand span{display:block;font-family:var(--body);font-size:11px;letter-spacing:.14em;color:var(--dim);font-weight:700;margin-top:2px;}
+.link{background:none;border:none;color:var(--dim);text-decoration:underline;cursor:pointer;font-size:13px;}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px;}
+.login{max-width:380px;margin:40px auto;}
+.login h1{font-family:var(--head);font-size:32px;text-transform:uppercase;margin:0 0 6px;}
+.login p{color:var(--dim);margin:0 0 18px;}
+form{display:flex;flex-direction:column;gap:12px;}
+label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:600;color:var(--dim);}
+input{background:var(--bg);border:1px solid var(--line2);border-radius:9px;color:var(--text);font-size:15px;padding:11px 12px;}
+input:focus{outline:none;border-color:var(--gold);}
+.btn{background:var(--gold);color:#150F04;border:none;border-radius:9px;padding:11px 16px;font-family:var(--head);
+  font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
+.btn:hover{filter:brightness(1.07);}
+.btn:disabled{opacity:.5;cursor:default;}
+.btn.ghost{background:transparent;color:var(--dim);border:1px solid var(--line2);}
+.btn.ghost:hover{color:var(--err);border-color:var(--err);}
+.err{min-height:1em;font-size:12.5px;color:#E8735C;}
+.err.ok{color:var(--ok);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 14px;}
+.stat b{display:block;font-family:var(--head);font-size:30px;line-height:1;color:var(--gold2);margin-bottom:4px;}
+.stat span{font-size:10.5px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px;}
+.tabs{display:flex;gap:4px;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:4px;}
+.tabs button{background:none;border:none;color:var(--dim);font-weight:600;font-size:13px;padding:8px 12px;border-radius:7px;cursor:pointer;}
+.tabs button.on{background:var(--panel2);color:var(--text);}
+.bar input{flex:1;min-width:200px;}
+.hint{font-size:12px;color:var(--dim);margin:0 0 10px;}
+.lista{display:flex;flex-direction:column;}
+.pessoa{display:flex;align-items:center;gap:14px;justify-content:space-between;padding:12px 4px;border-top:1px solid var(--line);}
+.quem{display:flex;gap:12px;align-items:flex-start;min-width:0;}
+.quem b{display:block;font-size:14.5px;}
+.quem span{display:block;font-size:12px;color:var(--dim);line-height:1.5;overflow-wrap:anywhere;}
+.quem a{color:#4FD17F;text-decoration:none;font-weight:600;}
+.pos{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--bg2);
+  border:1px solid var(--line2);font-family:var(--head);font-weight:700;color:var(--gold2);font-size:14px;}
+.pessoa.lib .quem b::after{content:'LIBERADO';margin-left:8px;font-size:10px;letter-spacing:.1em;color:var(--ok);
+  border:1px solid var(--ok);border-radius:4px;padding:1px 5px;vertical-align:2px;}
+.vazio{padding:22px 4px;color:var(--dim);border-top:1px solid var(--line);}
+.cfg summary{cursor:pointer;font-family:var(--head);font-size:18px;letter-spacing:.05em;text-transform:uppercase;}
+.cfg form{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.cfg .err,.cfg .btn{grid-column:1/-1;}
+@media (max-width:640px){
+  .stats{grid-template-columns:1fr 1fr;}
+  .pessoa{flex-direction:column;align-items:stretch;}
+  .cfg form{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="brand">Quiz do <em>Braga</em><span>Painel do controlador</span></div>
+    <button class="link hidden" id="sair">Sair</button>
+  </header>
+
+  <section class="card login" id="login">
+    <h1>Entrar</h1>
+    <p>Acesso restrito ao controlador das liberações.</p>
+    <form id="loginForm">
+      <label>E-mail<input name="email" type="email" required autocomplete="username"></label>
+      <label>Senha<input name="senha" type="password" required autocomplete="current-password"></label>
+      <div class="err" id="loginErr"></div>
+      <button class="btn" type="submit">Entrar</button>
+    </form>
+  </section>
+
+  <section class="hidden" id="painel">
+    <div class="stats">
+      <div class="stat"><b id="sVagas">–</b><span>Vagas restantes</span></div>
+      <div class="stat"><b id="sLib">–</b><span>Liberados</span></div>
+      <div class="stat"><b id="sPend">–</b><span>Aguardando</span></div>
+      <div class="stat"><b id="sTotal">–</b><span>Cadastros</span></div>
+    </div>
+
+    <div class="card">
+      <div class="bar">
+        <div class="tabs" id="tabs">
+          <button data-f="pendente" class="on">Aguardando</button>
+          <button data-f="liberado">Liberados</button>
+          <button data-f="todos">Todos</button>
+        </div>
+        <input id="busca" type="search" placeholder="Buscar nome, e-mail ou WhatsApp">
+      </div>
+      <p class="hint">Libere só depois de conferir o valor no extrato do banco. Quem está aguardando aparece por ordem de cadastro, que também é a ordem da lista de espera.</p>
+      <div class="lista" id="lista"></div>
+    </div>
+
+    <details class="card cfg">
+      <summary>Configurações da venda</summary>
+      <form id="cfgForm">
+        <label>Número de vagas<input name="vagas" type="number" min="0" required></label>
+        <label>Preço exibido<input name="preco" required></label>
+        <label>Chave Pix<input name="pix_chave" placeholder="CPF, e-mail, telefone ou chave aleatória"></label>
+        <label>WhatsApp do controlador (DDI + DDD + número)<input name="whatsapp" required inputmode="tel"></label>
+        <div class="err" id="cfgErr"></div>
+        <button class="btn" type="submit">Salvar configurações</button>
+      </form>
+    </details>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const QC=window.QUIZ_CONFIG||{};
+const sb=window.supabase&&QC.supabaseUrl?window.supabase.createClient(QC.supabaseUrl,QC.supabaseKey):null;
+let pessoas=[],filtro='pendente';
+
+function aviso(id,texto,ok){$(id).textContent=texto;$(id).classList.toggle('ok',!!ok);}
+function mostrar(logado){
+  $('login').classList.toggle('hidden',logado);
+  $('painel').classList.toggle('hidden',!logado);
+  $('sair').classList.toggle('hidden',!logado);
+}
+const quando=d=>d?new Date(d).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit'}):'';
+function zapBonito(z){return z.length===11?'('+z.slice(0,2)+') '+z.slice(2,7)+'-'+z.slice(7):z;}
+
+async function iniciar(){
+  const {data:{session}}=await sb.auth.getSession();
+  if(!session){mostrar(false);return;}
+  const {data:admin}=await sb.rpc('is_admin');
+  if(!admin){
+    await sb.auth.signOut();mostrar(false);
+    aviso('loginErr','Esta conta não é a do controlador.');
+    return;
+  }
+  mostrar(true);
+  await carregar();
+}
+
+async function carregar(){
+  const [ps,v,cfg,adm]=await Promise.all([
+    sb.from('profiles').select('*').order('criado_em',{ascending:true}),
+    sb.rpc('vagas_restantes'),
+    sb.from('config').select('*').single(),
+    sb.from('admins').select('id')
+  ]);
+  if(ps.error){alert('Erro ao carregar cadastros: '+ps.error.message);return;}
+  const admins=new Set((adm.data||[]).map(a=>a.id));
+  pessoas=(ps.data||[]).filter(p=>!admins.has(p.id));   // o próprio controlador não entra na fila
+  $('sVagas').textContent=v.data;
+  $('sLib').textContent=pessoas.filter(p=>p.status==='liberado').length;
+  $('sPend').textContent=pessoas.filter(p=>p.status!=='liberado').length;
+  $('sTotal').textContent=pessoas.length;
+  if(cfg.data){const f=$('cfgForm');['vagas','preco','pix_chave','whatsapp'].forEach(k=>{f.elements[k].value=cfg.data[k]==null?'':cfg.data[k];});}
+  desenhar();
+}
+
+function desenhar(){
+  const busca=$('busca').value.trim().toLowerCase();
+  const fila=pessoas.filter(p=>p.status!=='liberado');
+  const lista=pessoas
+    .filter(p=>filtro==='todos'||(filtro==='liberado'?p.status==='liberado':p.status!=='liberado'))
+    .filter(p=>!busca||[p.nome,p.email,p.whatsapp].join(' ').toLowerCase().includes(busca));
+  if(!lista.length){$('lista').innerHTML='<div class="vazio">Ninguém por aqui.</div>';return;}
+  $('lista').innerHTML=lista.map(p=>{
+    const lib=p.status==='liberado';
+    const zap=String(p.whatsapp||'').replace(/\D/g,'');
+    const pos=lib?0:fila.indexOf(p)+1;
+    return '<div class="pessoa'+(lib?' lib':'')+'">'+
+      '<div class="quem">'+(pos?'<span class="pos">'+pos+'º</span>':'')+
+        '<div><b>'+esc(p.nome||'(sem nome)')+'</b>'+
+        '<span>'+esc(p.email)+'</span>'+
+        '<span>'+(zap?'<a href="https://wa.me/'+(zap.length<=11?'55'+zap:zap)+'" target="_blank" rel="noopener">WhatsApp '+esc(zapBonito(zap))+'</a> · ':'')+
+          'cadastro '+quando(p.criado_em)+(lib&&p.liberado_em?' · liberado '+quando(p.liberado_em):'')+'</span></div>'+
+      '</div>'+
+      '<button class="btn'+(lib?' ghost':'')+'" data-id="'+esc(p.id)+'" data-liberar="'+(lib?'0':'1')+'">'+(lib?'Revogar':'Liberar acesso')+'</button>'+
+    '</div>';
+  }).join('');
+}
+
+$('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!sb){aviso('loginErr','O config.js ainda não tem os dados do Supabase.');return;}
+  const f=e.target,btn=f.querySelector('button');
+  btn.disabled=true;aviso('loginErr','');
+  const {error}=await sb.auth.signInWithPassword({email:f.elements.email.value.trim(),password:f.elements.senha.value});
+  btn.disabled=false;
+  if(error){aviso('loginErr','E-mail ou senha incorretos.');return;}
+  f.reset();
+  iniciar();
+});
+
+$('lista').addEventListener('click',async e=>{
+  const b=e.target.closest('button[data-id]');
+  if(!b)return;
+  const p=pessoas.find(x=>x.id===b.dataset.id),liberar=b.dataset.liberar==='1',quem=p.nome||p.email;
+  const pergunta=liberar?'Você conferiu no extrato o pagamento de '+quem+'?':'Revogar o acesso de '+quem+'?';
+  if(!confirm(pergunta))return;
+  b.disabled=true;
+  const {error}=await sb.rpc('definir_acesso',{usuario:p.id,liberar});
+  if(error){alert(error.message);b.disabled=false;return;}
+  await carregar();
+});
+
+$('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('button[data-f]');
+  if(!b)return;
+  filtro=b.dataset.f;
+  $('tabs').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  desenhar();
+});
+$('busca').addEventListener('input',desenhar);
+
+$('cfgForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=e.target.elements;
+  const dados={vagas:parseInt(f.vagas.value,10),preco:f.preco.value.trim(),
+               pix_chave:f.pix_chave.value.trim(),whatsapp:f.whatsapp.value.replace(/\D/g,'')};
+  const {error}=await sb.from('config').update(dados).eq('id',1);
+  aviso('cfgErr',error?'Não salvou: '+error.message:'Configurações salvas.',!error);
+  if(!error)carregar();
+});
+
+$('sair').addEventListener('click',async()=>{await sb.auth.signOut();mostrar(false);});
+
+if(sb)iniciar();
+else aviso('loginErr','O config.js ainda não tem os dados do Supabase.');
+</script>
+</body>
+</html>
