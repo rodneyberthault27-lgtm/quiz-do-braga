@@ -1543,12 +1543,37 @@ function renderConta(){
   el.innerHTML='<span class="acc-name">'+esc((perfil&&perfil.nome)||conta.email)+
     '<small class="'+(pago?'ok':'')+'">'+(pago?'Acesso completo':'Aguardando liberação')+'</small></span>'+
     (pago?'':'<button class="acc-btn" id="accPay">Liberar acesso</button>')+
+    '<button class="acc-link" id="accPwd">Trocar senha</button>'+
     '<button class="acc-link" id="accOut">Sair</button>';
   if(!pago)$('accPay').onclick=()=>abrirAcesso();
+  $('accPwd').onclick=abrirTrocaSenha;
   $('accOut').onclick=async()=>{await sb.auth.signOut();location.reload();};
 }
 
 function fecharAcesso(){$('paywall').classList.add('hidden');}
+
+function abrirTrocaSenha(){
+  $('pwBody').innerHTML='<span class="pw-kicker">Sua conta</span><h2 id="pwTitle">Trocar senha</h2>'+
+    '<p>Conta: <b>'+esc(conta.email)+'</b></p>'+
+    '<form class="pw-form" id="pwSenhaForm">'+
+      '<label>Nova senha<input name="senha" type="password" required minlength="8" autocomplete="new-password"></label>'+
+      '<label>Repita a nova senha<input name="senha2" type="password" required minlength="8" autocomplete="new-password"></label>'+
+      '<div class="pw-err" id="pwErr"></div>'+
+      '<button class="start-btn" type="submit">Salvar nova senha</button>'+
+    '</form>';
+  $('pwSenhaForm').onsubmit=async e=>{
+    e.preventDefault();
+    const f=e.target.elements,btn=e.target.querySelector('button');
+    if(f.senha.value!==f.senha2.value){$('pwErr').textContent='As duas senhas não são iguais.';return;}
+    btn.disabled=true;
+    const {error}=await sb.auth.updateUser({password:f.senha.value});
+    btn.disabled=false;
+    if(error){$('pwErr').textContent=traduzErro(error.message);return;}
+    fecharAcesso();
+    toast('🔑','Senha alterada','Use a nova senha no próximo acesso.');
+  };
+  $('paywall').classList.remove('hidden');
+}
 
 async function abrirAcesso(aba){
   if(!sb){
@@ -1653,6 +1678,7 @@ function traduzErro(m){
   if(/at least 6|password should/i.test(m))return 'A senha precisa de pelo menos 6 caracteres.';
   if(/rate limit|too many/i.test(m))return 'Muitas tentativas seguidas. Aguarde alguns minutos.';
   if(/invalid.*email|email.*invalid/i.test(m))return 'Confira o e-mail digitado.';
+  if(/different from the old|same.*password/i.test(m))return 'A nova senha precisa ser diferente da atual.';
   return m;
 }
 

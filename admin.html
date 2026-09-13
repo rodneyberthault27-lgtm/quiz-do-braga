@@ -70,6 +70,16 @@ input:focus{outline:none;border-color:var(--gold);}
 .cfg summary{cursor:pointer;font-family:var(--head);font-size:18px;letter-spacing:.05em;text-transform:uppercase;}
 .cfg form{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .cfg .err,.cfg .btn{grid-column:1/-1;}
+.cfg .hint{margin:10px 0 0;}
+.cfg .check{grid-column:1/-1;flex-direction:row;align-items:center;gap:9px;font-size:13px;color:var(--text);cursor:pointer;}
+.cfg .check input{width:18px;height:18px;padding:0;accent-color:var(--gold);}
+.senha-linha{display:flex;gap:8px;}
+.senha-linha input{flex:1;min-width:0;}
+.senha-linha .btn{padding:0 14px;font-size:14px;}
+.ok-box{margin-top:14px;padding:14px;border:1px solid var(--ok);border-radius:10px;background:var(--ok-bg);line-height:1.5;}
+.ok-box b{display:block;margin-bottom:4px;}
+.ok-box .aviso-lib{display:block;color:#E8735C;font-size:12.5px;margin-bottom:6px;}
+.btn.wa{display:block;margin-top:10px;text-align:center;text-decoration:none;background:#25D366;color:#06210F;}
 @media (max-width:640px){
   .stats{grid-template-columns:1fr 1fr;}
   .pessoa{flex-direction:column;align-items:stretch;}
@@ -123,6 +133,23 @@ input:focus{outline:none;border-color:var(--gold);}
       <p class="hint">Libere só depois de conferir o valor no extrato do banco. Quem está aguardando aparece por ordem de cadastro, que também é a ordem da lista de espera.</p>
       <div class="lista" id="lista"></div>
     </div>
+
+    <details class="card cfg" id="manualCard">
+      <summary>Cadastro manual de aluno</summary>
+      <p class="hint">Para quem pagou por fora ou não conseguiu se cadastrar no site. A pessoa entra no site com este e-mail e a senha provisória, e pode trocar a senha depois.</p>
+      <form id="manualForm">
+        <label>Nome<input name="nome" required maxlength="60" autocomplete="off"></label>
+        <label>WhatsApp com DDD<input name="whatsapp" required inputmode="tel" placeholder="(11) 90000-0000" autocomplete="off"></label>
+        <label>E-mail do aluno<input name="email" type="email" required autocomplete="off"></label>
+        <label>Senha provisória (mínimo 8 caracteres)
+          <span class="senha-linha"><input name="senha" required minlength="8" autocomplete="off"><button type="button" class="btn ghost" id="gerarSenha">Gerar</button></span>
+        </label>
+        <label class="check"><input type="checkbox" name="liberar" checked> Pagamento conferido no extrato: liberar o acesso agora</label>
+        <div class="err" id="manualErr"></div>
+        <button class="btn" type="submit">Cadastrar aluno</button>
+      </form>
+      <div class="hidden" id="manualOk"></div>
+    </details>
 
     <details class="card cfg">
       <summary>Configurações da venda</summary>
@@ -248,6 +275,57 @@ $('criarForm').addEventListener('submit',async e=>{
   if(!data.session){aviso('criarErr','Senha criada. Agora entre com ela em "Já tenho senha? Entrar".');return;}
   e.target.reset();
   iniciar();
+});
+
+// Cadastro manual. Usa um cliente separado, sem guardar sessão, para criar a conta do aluno
+// sem derrubar o login do ADM. A liberação passa pela mesma regra de vagas do banco.
+const SITE=location.href.replace(/admin\.html.*$/,'');
+function clienteAvulso(){
+  return window.supabase.createClient(QC.supabaseUrl,QC.supabaseKey,{auth:{persistSession:false,autoRefreshToken:false,
+    detectSessionInUrl:false,storageKey:'quiz-cadastro-manual'}});
+}
+$('gerarSenha').addEventListener('click',()=>{
+  const abc='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';
+  const r=crypto.getRandomValues(new Uint32Array(10));
+  $('manualForm').elements.senha.value=Array.from(r,n=>abc[n%abc.length]).join('');
+});
+$('manualForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const form=e.target,f=form.elements,btn=form.querySelector('button[type=submit]');
+  const nome=f.nome.value.trim(),email=f.email.value.trim().toLowerCase(),senha=f.senha.value;
+  const zap=f.whatsapp.value.replace(/\D/g,'');
+  if(zap.length<10||zap.length>13){aviso('manualErr','Informe o WhatsApp com DDD.');return;}
+  btn.disabled=true;aviso('manualErr','Cadastrando...',true);$('manualOk').classList.add('hidden');
+  let r;
+  try{r=await clienteAvulso().auth.signUp({email,password:senha,options:{data:{nome,whatsapp:zap}}});}
+  catch(err){r={error:{message:'sem conexão com o servidor'}};}
+  if(r.error||!r.data.user){
+    btn.disabled=false;
+    const m=r.error?r.error.message:'resposta vazia';
+    aviso('manualErr',/already|registered|exists/i.test(m)
+      ?'Esse e-mail já tem conta. Procure a pessoa na lista acima e clique em Liberar acesso.'
+      :'Não cadastrou: '+m);
+    return;
+  }
+  let liberado=false,falhaLib='';
+  if(f.liberar.checked){
+    const lib=await sb.rpc('definir_acesso',{usuario:r.data.user.id,liberar:true});
+    if(lib.error)falhaLib='A conta foi criada, mas o acesso não foi liberado: '+lib.error.message;
+    else liberado=true;
+  }
+  btn.disabled=false;
+  const texto='Olá, '+nome.split(' ')[0]+'! Seu acesso ao Quiz do Braga está '+(liberado?'liberado':'criado')+'.\n'+
+    'Site: '+SITE+'\nE-mail: '+email+'\nSenha provisória: '+senha+'\n'+
+    'Entre em "Entrar ou criar conta" > "Já tenho conta". Depois você pode trocar a senha em "Trocar senha".';
+  $('manualOk').innerHTML='<div class="ok-box"><b>'+esc(nome)+' cadastrado'+(liberado?' e liberado':' (aguardando liberação)')+'.</b>'+
+    (falhaLib?'<span class="aviso-lib">'+esc(falhaLib)+'</span>':'')+
+    'E-mail: '+esc(email)+'<br>Senha provisória: '+esc(senha)+
+    '<a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/'+(zap.length<=11?'55'+zap:zap)+
+    '?text='+encodeURIComponent(texto)+'">Enviar acesso pelo WhatsApp</a></div>';
+  $('manualOk').classList.remove('hidden');
+  aviso('manualErr','');
+  form.reset();f.liberar.checked=true;
+  await carregar();
 });
 
 $('lista').addEventListener('click',async e=>{
