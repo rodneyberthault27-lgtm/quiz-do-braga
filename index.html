@@ -1552,8 +1552,8 @@ function renderConta(){
     return;
   }
   el.innerHTML='<span class="acc-name">'+esc((perfil&&perfil.nome)||conta.email)+
-    '<small class="'+(pago?'ok':'')+'">'+(pago?'Acesso completo':'Aguardando liberação')+'</small></span>'+
-    (pago?'':'<button class="acc-btn" id="accPay">Liberar acesso</button>')+
+    '<small class="'+(pago?'ok':'')+'">'+(pago?'Acesso completo':'Plano gratuito')+'</small></span>'+
+    (pago?'':'<button class="acc-btn" id="accPay">Acesso total</button>')+
     '<button class="acc-link" id="accPwd">Trocar senha</button>'+
     '<button class="acc-link" id="accOut">Sair</button>';
   if(!pago)$('accPay').onclick=()=>abrirAcesso();
@@ -1691,8 +1691,11 @@ async function enviarConta(criar,form){
     fecharAcesso();
     if(criar){toast('🥋','Acesso total liberado','Seu e-mail já estava liberado pelo Braga. Bom treino!');confetti();}
     else toast('🥋','Bem-vindo de volta','Seu acesso completo está ativo.');
+  }else{
+    fecharAcesso();
+    toast('👋',criar?'Conta criada':'Você entrou','Sua conta está no plano gratuito. Para liberar tudo, toque em "Acesso total".');
+    document.getElementById('modes').scrollIntoView({behavior:CALM?'auto':'smooth',block:'center'});
   }
-  else abrirAcesso();
 }
 
 function traduzErro(m){
@@ -1707,6 +1710,11 @@ function traduzErro(m){
 
 $('paywall').addEventListener('click',e=>{if(e.target.id==='paywall'||e.target.id==='pwClose')fecharAcesso();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('paywall').classList.contains('hidden'))fecharAcesso();});
+document.addEventListener('visibilitychange',async()=>{
+  if(document.hidden||!sb||!conta||pago||!$('quiz').classList.contains('hidden'))return;
+  await carregarAcesso();
+  if(pago){fecharAcesso();toast('🥋','Acesso total liberado','Bom treino! Todos os modos estão abertos.');confetti();}
+});
 carregarAcesso();
 </script>
 
