@@ -606,7 +606,14 @@ body.hurt::after{animation:hurt .55s ease-out;}
 .cta p{margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#C9D0D5;}
 .cta p b{color:var(--text);}
 .cta-vagas{display:inline-block;margin-bottom:12px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);}
+.offer{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 14px;padding:13px 15px;
+  border:1px solid var(--gold);border-radius:12px;background:linear-gradient(180deg,rgba(217,164,65,.16),rgba(217,164,65,.04));}
+.offer b{display:block;font-family:var(--head);font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:var(--gold2);line-height:1.1;}
+.offer span{display:block;font-size:12.5px;color:#C9D0D5;line-height:1.45;margin-top:3px;}
+.offer .acc-btn{background:var(--gold);color:#150F04;border-color:var(--gold);}
+.offer .acc-btn:hover{background:var(--gold2);}
 @media (max-width:560px){
+  .offer{flex-direction:column;align-items:stretch;text-align:left;}
   .acc-name{max-width:120px;}
   .account .acc-btn{padding:7px 11px;}
 }
@@ -656,6 +663,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
     <div class="setup-grid">
       <div class="challenge-panel">
         <h2 class="sec-title">Escolha a rodada</h2>
+        <div class="offer hidden" id="offer"></div>
         <div class="modes" id="modes">
           <button class="mode sample on" data-size="10" data-mode="amostra">
             <span class="num">10</span>
@@ -1201,7 +1209,7 @@ function renderExtras(){
     let lk=el.querySelector('.lock');
     if(!lk){lk=document.createElement('span');lk.className='lock';el.appendChild(lk);}
     lk.innerHTML=paywall
-      ?'<b>🔒 Acesso completo</b><span>'+esc(conf.preco)+(vagas==null?'':' · '+vagasTxt())+'</span>'
+      ?'<b>🔒 Incluso no acesso completo</b>'
       :'<b>🔒 Bloqueado</b><span>Faixa azul na carreira ('+Math.min(h,SUPER_META)+'/'+SUPER_META+
        ' acertos) ou aprovação na Banca.</span>';
   });
@@ -1511,7 +1519,18 @@ function aplicarAcesso(){
   am.classList.toggle('hidden',pago);
   if(!pago&&on!==am)selectMode(am);
   if(pago&&on===am)selectMode(document.querySelector('#modes .mode[data-size="50"]'));
-  renderExtras();renderConta();
+  renderOferta();renderExtras();renderConta();
+}
+
+function renderOferta(){
+  const el=$('offer');
+  el.classList.toggle('hidden',pago);
+  if(pago)return;
+  el.innerHTML='<div><b>Acesso completo · '+esc(conf.preco)+'</b>'+
+    '<span>Um único pagamento libera todos os modos abaixo: '+conf.total_perguntas+' perguntas, Modo Banca, '+
+    'Super Hard e Desafio do dia.'+(vagas==null?'':' '+vagasTxt()+'.')+'</span></div>'+
+    '<button class="acc-btn" id="offerBtn">Liberar tudo</button>';
+  $('offerBtn').onclick=()=>abrirAcesso();
 }
 
 function renderConta(){
@@ -1537,7 +1556,7 @@ async function abrirAcesso(aba){
       encodeURIComponent('Olá! Quero ser avisado quando abrir o acesso completo ao Quiz do Braga.');
     $('pwBody').innerHTML='<span class="pw-kicker">Em breve</span>'+
       '<h2 id="pwTitle">Acesso completo abrindo</h2>'+
-      '<p>Estamos preparando as primeiras <b>'+conf.vagas+' vagas</b> por <b>'+esc(conf.preco)+'</b>, com as '+
+      '<p>Estamos preparando as primeiras <b>'+conf.vagas+' vagas</b>: um único pagamento de <b>'+esc(conf.preco)+'</b> libera as '+
       conf.total_perguntas+' perguntas, o Modo Banca e o Super Hard. Enquanto isso, jogue a amostra grátis à vontade.</p>'+
       '<a class="start-btn wa" href="'+aviso+'" target="_blank" rel="noopener">Quero ser avisado pelo WhatsApp</a>';
     $('paywall').classList.remove('hidden');
@@ -1549,7 +1568,8 @@ async function abrirAcesso(aba){
     box.innerHTML=
       (vagas==null?'':'<span class="pw-kicker">'+vagasTxt()+'</span>')+
       '<h2 id="pwTitle">'+(criar?'Libere as '+conf.total_perguntas+' perguntas':'Entrar na sua conta')+'</h2>'+
-      (criar?'<p>Crie sua conta e pague <b>'+esc(conf.preco)+'</b> uma única vez. O acesso é liberado assim que o '+
+      (criar?'<p>Um único pagamento de <b>'+esc(conf.preco)+'</b> libera tudo: as '+conf.total_perguntas+' perguntas, o Modo Banca, '+
+             'o Super Hard e o Desafio do dia. Crie sua conta; o acesso é liberado assim que o '+
              'comprovante for conferido.</p>':'<p>Use o e-mail e a senha do seu cadastro.</p>')+
       '<div class="pw-tabs"><button type="button" data-aba="criar" class="'+(criar?'on':'')+'">Criar conta</button>'+
       '<button type="button" data-aba="entrar" class="'+(criar?'':'on')+'">Já tenho conta</button></div>'+
@@ -1580,8 +1600,9 @@ async function abrirAcesso(aba){
     }else{
       box.innerHTML='<span class="pw-kicker">'+vagasTxt()+'</span>'+
         '<h2 id="pwTitle">Falta só o pagamento</h2>'+
+        '<p>Um único pagamento de <b>'+esc(conf.preco)+'</b> libera todos os modos do quiz.</p>'+
         '<ol class="pw-steps">'+
-          '<li><b>Pague '+esc(conf.preco)+' via Pix</b>'+(conf.pix_chave
+          '<li><b>Pague '+esc(conf.preco)+' via Pix, uma única vez</b>'+(conf.pix_chave
             ?'Chave Pix:<span class="pix"><code>'+esc(conf.pix_chave)+'</code><button type="button" id="pixCopy">Copiar</button></span>'
             :'A chave Pix é enviada pelo WhatsApp.')+'</li>'+
           '<li><b>Envie o comprovante pelo WhatsApp</b>A mensagem já vai com o seu e-mail: '+esc(email)+'.</li>'+
