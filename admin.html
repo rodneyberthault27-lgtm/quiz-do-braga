@@ -350,7 +350,7 @@ $('busca').addEventListener('input',desenhar);
 $('cfgForm').addEventListener('submit',async e=>{
   e.preventDefault();
   const f=e.target.elements;
-  const dados={vagas:parseInt(f.vagas.value,10),preco:(v=>/^R$/.test(v)?v:'R$ '+v)(f.preco.value.trim()),
+  const dados={vagas:parseInt(f.vagas.value,10),preco:(v=>v.startsWith('R$')?v:'R$ '+v)(f.preco.value.trim()),
                pix_chave:f.pix_chave.value.trim(),whatsapp:f.whatsapp.value.replace(/\D/g,'')};
   const {error}=await sb.from('config').update(dados).eq('id',1);
   aviso('cfgErr',error?'Não salvou: '+error.message:'Configurações salvas.',!error);

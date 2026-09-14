@@ -1498,7 +1498,7 @@ async function carregarAcesso(){
     const [c,v,s]=await Promise.all([sb.from('config').select('*').single(),sb.rpc('vagas_restantes'),sb.auth.getSession()]);
     if(c.data)conf=c.data;
     // o ADM pode digitar só o número ("49,90"); o site sempre mostra com R$
-    conf.preco=/^s*R$/.test(String(conf.preco))?String(conf.preco).trim():'R$ '+String(conf.preco).trim();
+    conf.preco=String(conf.preco).trim().startsWith('R$')?String(conf.preco).trim():'R$ '+String(conf.preco).trim();
     vagas=v.error?null:v.data;
     conta=s.data.session?s.data.session.user:null;
     perfil=null;pago=false;
