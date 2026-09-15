@@ -600,6 +600,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
 .pw-card a.start-btn{display:block;text-align:center;text-decoration:none;margin-bottom:10px;}
 .start-btn.wa{background:#25D366;color:#06210F;}
 .pw-card .ghost{margin-bottom:0;}
+.pw-card .pw-semconta{margin-top:10px;}
 .cta{border:1px solid var(--gold);background:linear-gradient(180deg,rgba(217,164,65,.17),rgba(217,164,65,.04));
   border-radius:14px;padding:18px 18px 16px;margin-bottom:24px;text-align:center;animation:gradIn .5s ease both;}
 .cta h3{margin:0 0 6px;font-family:var(--head);font-size:24px;letter-spacing:.05em;text-transform:uppercase;color:var(--gold2);}
@@ -678,7 +679,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
         <div class="modes" id="modes">
           <button class="mode sample on" data-size="10" data-mode="amostra">
             <span class="num">10</span>
-            <span class="meta"><b>Amostra grátis</b><span>Sem cadastro · experimente o quiz agora.</span></span>
+            <span class="meta"><b>Amostra grátis</b><span>Crie sua conta grátis ou jogue sem cadastro.</span></span>
             <span class="tick"></span>
           </button>
           <button class="mode" data-size="50">
@@ -861,6 +862,7 @@ document.querySelectorAll('#modes .mode').forEach((m,i)=>{
   m.setAttribute('aria-pressed',i===0?'true':'false');
   m.addEventListener('click',()=>{
   if(!pago&&m.dataset.mode!=='amostra'){replay(m,'nope');abrirAcesso();return;}
+  if(m.dataset.mode==='amostra'&&!conta&&sb){selectMode(m);abrirAcesso('amostra');return;}
   if(m.dataset.mode==='super'&&!superOpen()){
     replay(m,'nope');
     toast('🔒','Super Hard bloqueado','Chegue à faixa azul ('+SUPER_META+' acertos) ou seja aprovado na Banca.');
@@ -1563,7 +1565,8 @@ function renderConta(){
   $('accOut').onclick=async()=>{await sb.auth.signOut();location.reload();};
 }
 
-function fecharAcesso(){$('paywall').classList.add('hidden');}
+let origemCadastro=null;   // 'amostra' enquanto a janela aberta pelo card da amostra estiver na tela
+function fecharAcesso(){$('paywall').classList.add('hidden');origemCadastro=null;}
 
 function abrirTrocaSenha(){
   $('pwBody').innerHTML='<span class="pw-kicker">Sua conta</span><h2 id="pwTitle">Trocar senha</h2>'+
@@ -1602,11 +1605,14 @@ async function abrirAcesso(aba){
   }
   const box=$('pwBody');
   if(!conta){
-    const criar=aba!=='entrar';
+    if(aba==='amostra')origemCadastro='amostra';
+    const criar=aba!=='entrar',daAmostra=criar&&origemCadastro==='amostra';
     box.innerHTML=
-      (vagas==null?'':'<span class="pw-kicker">'+vagasTxt()+'</span>')+
-      '<h2 id="pwTitle">'+(criar?'Libere as '+conf.total_perguntas+' perguntas':'Entrar na sua conta')+'</h2>'+
-      (criar?'<p>Um único pagamento de <b>'+esc(conf.preco)+'</b> libera tudo: as '+conf.total_perguntas+' perguntas, o Modo Banca, '+
+      (daAmostra?'<span class="pw-kicker">Grátis</span>':vagas==null?'':'<span class="pw-kicker">'+vagasTxt()+'</span>')+
+      '<h2 id="pwTitle">'+(daAmostra?'Crie sua conta grátis':criar?'Libere as '+conf.total_perguntas+' perguntas':'Entrar na sua conta')+'</h2>'+
+      (daAmostra?'<p>Leva menos de um minuto. Com a conta você joga a amostra e, quando quiser, libera o acesso total '+
+                 'com um único pagamento de <b>'+esc(conf.preco)+'</b>.</p>':
+       criar?'<p>Um único pagamento de <b>'+esc(conf.preco)+'</b> libera tudo: as '+conf.total_perguntas+' perguntas, o Modo Banca, '+
              'o Super Hard e o Desafio do dia. Crie sua conta; o acesso é liberado assim que o '+
              'comprovante for conferido.</p>':'<p>Use o e-mail e a senha do seu cadastro.</p>')+
       '<div class="pw-tabs"><button type="button" data-aba="criar" class="'+(criar?'on':'')+'">Criar conta</button>'+
@@ -1618,8 +1624,10 @@ async function abrirAcesso(aba){
         '<label>Senha<input name="senha" type="password" required minlength="6" autocomplete="'+(criar?'new-password':'current-password')+'"></label>'+
         '<div class="pw-err" id="pwErr"></div>'+
         '<button class="start-btn" type="submit">'+(criar?'Criar conta':'Entrar')+'</button>'+
-      '</form>';
+      '</form>'+
+      (daAmostra?'<button class="ghost pw-semconta" type="button" id="pwSemConta">Jogar a amostra sem cadastro</button>':'');
     box.querySelectorAll('[data-aba]').forEach(b=>b.onclick=()=>abrirAcesso(b.dataset.aba));
+    if(daAmostra)$('pwSemConta').onclick=()=>{fecharAcesso();start();};
     $('pwForm').onsubmit=e=>{e.preventDefault();enviarConta(criar,e.target);};
   }else if(!pago){
     const cheio=vagas!=null&&vagas<=0,email=conta.email;
