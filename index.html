@@ -651,7 +651,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
         <p class="hero-lead">Transforme o Livro de Regras em reflexo de competição. Teste decisões de arbitragem, pontuação e punições com <b>resposta comentada e artigo de referência.</b></p>
         <div class="hero-actions">
           <a class="hero-cta" href="#modes">Escolher desafio</a>
-          <span class="hero-note">5 perguntas grátis, sem cadastro</span>
+          <span class="hero-note">10 perguntas grátis, sem cadastro</span>
         </div>
         <div class="hero-stats" aria-label="Destaques do quiz">
           <div class="hero-stat"><b id="bankN">495</b><span>Perguntas</span></div>
@@ -679,8 +679,8 @@ body.hurt::after{animation:hurt .55s ease-out;}
         <h2 class="sec-title">Escolha a rodada</h2>
         <div class="offer hidden" id="offer"></div>
         <div class="modes" id="modes">
-          <button class="mode sample on" data-size="5" data-mode="amostra">
-            <span class="num">5</span>
+          <button class="mode sample on" data-size="10" data-mode="amostra">
+            <span class="num">10</span>
             <span class="meta"><b>Amostra grátis</b><span>Crie sua conta grátis ou jogue sem cadastro.</span></span>
             <span class="tick"></span>
           </button>
@@ -839,7 +839,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
 let BANK=[],CASES=[],SUPER=[],SAMPLE=[],pago=false,conta=null,perfil=null,vagas=null,
     conf={vagas:100,preco:'R$ 49,90',pix_chave:'',whatsapp:'5511959385861',total_perguntas:495};
 // Reserva da amostra grátis, usada se o servidor estiver fora do ar ou ainda não configurado.
-const SAMPLE_LOCAL=[{"tipo":"banco","b":"UNIFORME E HIGIENE","q":"Qual é a folga mínima da manga do kimono em toda a sua extensão?","o":["5 cm","7 cm","10 cm","6 cm"],"c":1,"r":"Livro de Regras, Art. 8º, 8.1.12"},{"tipo":"banco","b":"FORMATAÇÃO DO EVENTO","q":"Quem faz a escala dos árbitros e a rotação durante o evento?","o":["O Supervisor dos Coordenadores de Ringue","O Coordenador de Mesa Central","O Diretor Geral de Arbitragem","O Diretor Geral de Competição"],"c":2,"r":"Manual de Formatação, Art. 2º, 2.3"},{"tipo":"banco","b":"PUNIÇÕES","q":"As faltas graves entre si são:","o":["Cumulativas, e infrações diferentes incidem na sequência crescente de punições","Zeradas a cada interrupção","Independentes","Contadas apenas por tipo"],"c":0,"r":"Livro de Regras, Art. 7º, 7.2.2"},{"tipo":"banco","b":"FALTAS","q":"Sair da área de tatames ao final do combate antes da proclamação do resultado é:","o":["Falta grave","Punição administrativa","Permitido","Falta gravíssima"],"c":0,"r":"Livro de Regras, Art. 6º, 6.2.2 (L)"},{"tipo":"banco","b":"PONTUAÇÃO","q":"Quando a contagem é interrompida por finalização encaixada do adversário, o atleta recebe:","o":["Uma vantagem para cada posição alcançada","Apenas os pontos da última posição","Metade dos pontos","Nada"],"c":0,"r":"Livro de Regras, Art. 3º, 3.3.2"}];
+const SAMPLE_LOCAL=[{"tipo":"banco","b":"UNIFORME E HIGIENE","q":"Qual é a folga mínima da manga do kimono em toda a sua extensão?","o":["5 cm","7 cm","10 cm","6 cm"],"c":1,"r":"Livro de Regras, Art. 8º, 8.1.12"},{"tipo":"banco","b":"FORMATAÇÃO DO EVENTO","q":"Quem faz a escala dos árbitros e a rotação durante o evento?","o":["O Supervisor dos Coordenadores de Ringue","O Coordenador de Mesa Central","O Diretor Geral de Arbitragem","O Diretor Geral de Competição"],"c":2,"r":"Manual de Formatação, Art. 2º, 2.3"},{"tipo":"banco","b":"PUNIÇÕES","q":"As faltas graves entre si são:","o":["Cumulativas, e infrações diferentes incidem na sequência crescente de punições","Zeradas a cada interrupção","Independentes","Contadas apenas por tipo"],"c":0,"r":"Livro de Regras, Art. 7º, 7.2.2"},{"tipo":"banco","b":"FALTAS","q":"Sair da área de tatames ao final do combate antes da proclamação do resultado é:","o":["Falta grave","Punição administrativa","Permitido","Falta gravíssima"],"c":0,"r":"Livro de Regras, Art. 6º, 6.2.2 (L)"},{"tipo":"banco","b":"PONTUAÇÃO","q":"Quando a contagem é interrompida por finalização encaixada do adversário, o atleta recebe:","o":["Uma vantagem para cada posição alcançada","Apenas os pontos da última posição","Metade dos pontos","Nada"],"c":0,"r":"Livro de Regras, Art. 3º, 3.3.2"},{"tipo":"banco","b":"CATEGORIAS E TEMPO","q":"Qual é o tempo regulamentar de luta para adulto faixa-azul?","o":["7 minutos","8 minutos","5 minutos","6 minutos"],"c":3,"r":"Regulamento Geral, Art. 1º, 1.3"},{"tipo":"banco","b":"ARBITRAGEM","q":"Como o árbitro sinaliza uma vantagem?","o":["Braço esticado paralelo ao ombro, mão aberta e palma virada para o solo","Punho fechado à altura do ombro","Dois dedos levantados","Mão espalmada balançando na altura da cabeça"],"c":0,"r":"Livro de Regras, Art. 1º, 1.4.1"},{"tipo":"banco","b":"POSIÇÕES DE PONTUAÇÃO","q":"O atleta por baixo fica em pé mantendo as pegadas da raspagem e derruba o adversário. Ele pontua se:","o":["Apenas derrubar","Passar a guarda","Encaixar uma finalização","Estabilizar a posição por cima por 3 segundos"],"c":3,"r":"Livro de Regras, Art. 4º, 4.6.3"},{"tipo":"banco","b":"CHAVES E PREMIAÇÃO","q":"Na chave de três atletas, o que acontece com o perdedor da primeira luta?","o":["Enfrenta o terceiro atleta da chave","Vai direto para a final","É eliminado","Recebe bronze automaticamente"],"c":0,"r":"Regulamento Geral, Art. 2º, 2.3.1"},{"tipo":"banco","b":"DECISÃO DAS LUTAS","q":"Quando um atleta dá duas batidas com a palma da mão no adversário, no chão ou em si próprio, isso caracteriza:","o":["Vantagem","Falta grave","Interrupção","Desistência"],"c":3,"r":"Livro de Regras, Art. 2º, 2.1.1"}];
 const BELTS=[
  {min:0 ,n:'Branca',c:'#EDEDED',t:'#141414'},
  {min:40,n:'Azul'  ,c:'#1E5FBF',t:'#141414'},
@@ -851,7 +851,7 @@ const BELTS=[
 const LETTERS=['a','b','c','d'];
 let QTIME=30;
 
-let cfg={size:5,shuffleQ:true,shuffleO:true,timer:true,dq:false,mode:'amostra'};
+let cfg={size:10,shuffleQ:true,shuffleO:true,timer:true,dq:false,mode:'amostra'};
 let deck=[],idx=0,pts=0,hits=0,streak=0,best=0,pun=0,locked=false,log=[],tLeft=0,tHandle=null,qAt=0,timeSum=0;
 
 const $=id=>document.getElementById(id);
