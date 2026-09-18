@@ -291,8 +291,9 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.22;
 .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(217,164,65,.28);background:rgba(217,164,65,.07);
   color:var(--gold2);border-radius:100px;padding:7px 12px;font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin-bottom:20px;}
 .eyebrow::before{content:'';width:18px;height:2px;background:var(--gold);}
-.intro h1{font-size:clamp(62px,8.2vw,105px);line-height:.82;letter-spacing:-.025em;margin-bottom:23px;max-width:7ch;text-transform:uppercase;}
-.intro h1 span{display:block;font-size:.48em;line-height:.9;letter-spacing:.15em;color:var(--text);}
+.intro h1{font-size:clamp(58px,6.6vw,92px);line-height:.82;letter-spacing:-.025em;margin-bottom:23px;max-width:none;text-transform:uppercase;}
+.intro h1 span{display:block;font-size:.48em;line-height:.95;letter-spacing:.08em;color:var(--text);max-width:14ch;}
+.intro h1 em{max-width:7ch;}
 .intro h1 em{display:block;text-shadow:0 12px 40px rgba(217,164,65,.18);}
 .hero-lead{font-size:17px;line-height:1.65;color:#B8C2C9;max-width:54ch;margin:0 0 24px;}
 .hero-lead b{color:var(--text);}
@@ -626,7 +627,27 @@ body.hurt::after{animation:hurt .55s ease-out;}
 .offer span{display:block;font-size:12.5px;color:#C9D0D5;line-height:1.45;margin-top:3px;}
 .offer .acc-btn{background:var(--gold);color:#150F04;border-color:var(--gold);}
 .offer .acc-btn:hover{background:var(--gold2);}
+/* imagens dos cards presas ao modo, não à posição (a oferta entra no meio da lista) */
+.challenge-panel .mode[data-mode="amostra"]::before,.challenge-panel .mode[data-size="100"]::before,
+.challenge-panel .mode[data-mode="banca"]::before{background-image:url('assets/bjj-training.jpg');}
+.challenge-panel .mode[data-size="50"]::before,.challenge-panel .mode[data-size="150"]::before,
+.challenge-panel .mode[data-mode="diario"]::before,.challenge-panel .mode[data-mode="super"]::before{background-image:url('assets/bjj-arena.jpg');}
+/* plano gratuito: amostra em destaque, modos pagos compactos */
+body.gratis .challenge-panel .mode.sample{grid-column:1/-1;min-height:150px;}
+body.gratis .challenge-panel .mode.sample .num{font-size:52px;}
+body.gratis #modes .offer{grid-column:1/-1;margin:8px 0 0;}
+body.gratis .challenge-panel .mode.locked.pay{min-height:0;padding:14px 14px 14px;flex-direction:column;align-items:flex-start;gap:4px;}
+body.gratis .challenge-panel .mode.locked.pay .num{font-size:28px;min-width:0;}
+body.gratis .challenge-panel .mode.locked.pay .meta b{font-size:16px;}
+body.gratis .challenge-panel .mode.locked.pay .tick{display:none;}
+body.gratis .mode.locked.pay .lock{inset:10px 10px auto auto;padding:0;background:none;border:none;backdrop-filter:none;}
+body.gratis .mode.locked.pay .lock b{font-size:13px;opacity:.75;}
+body.gratis .opts-title,body.gratis .opts-list{display:none;}
+.photo-isca b{max-width:58%;font-size:19px;line-height:1.15;}
+.photo-isca b small{display:block;margin-top:6px;font-family:var(--body);font-size:11px;letter-spacing:.1em;color:var(--gold2);}
 @media (max-width:560px){
+  body.gratis .challenge-panel .modes{grid-template-columns:1fr 1fr;}
+  body.gratis .challenge-panel .mode.locked.pay .meta span{font-size:11.5px;}
   .offer{flex-direction:column;align-items:stretch;text-align:left;}
   .acc-name{max-width:120px;}
   .account .acc-btn{padding:7px 11px;}
@@ -662,7 +683,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
       <div class="hero-visual" aria-label="Atletas de jiu-jítsu em combate">
         <figure class="photo-main">
           <img src="assets/bjj-arena.jpg" alt="Dois atletas de quimono disputando posição no tatame">
-          <figcaption class="photo-caption"><b>Conhecimento também vence luta.</b><span>Leia. Decida.<br>Aprenda.</span></figcaption>
+          <figcaption class="photo-caption photo-isca"><b>Fugiu da área para não bater no armlock. O que você marca?<small>Resposta no Modo Banca</small></b></figcaption>
         </figure>
         <figure class="photo-mini"><img src="assets/bjj-training.jpg" alt="Atletas em uma disputa de grappling diante do público"></figure>
         <span class="seal"><span><strong>80%</strong>para passar na Banca</span></span>
@@ -722,7 +743,7 @@ body.hurt::after{animation:hurt .55s ease-out;}
         <h2 class="sec-title">Sua graduação</h2>
         <div class="career" id="career"></div>
         <div class="daystreak" id="dayStreak"></div>
-        <h2 class="sec-title">Regras da partida</h2>
+        <h2 class="sec-title opts-title">Regras da partida</h2>
         <div class="opts-list">
           <div class="tog on" data-k="shuffleQ" role="switch" aria-checked="true" tabindex="0"><span class="txt"><b>Ordem aleatória</b><span>Perguntas diferentes a cada partida.</span></span><span class="sw"></span></div>
           <div class="tog on" data-k="shuffleO" role="switch" aria-checked="true" tabindex="0"><span class="txt"><b>Alternativas embaralhadas</b><span>A resposta certa muda de posição.</span></span><span class="sw"></span></div>
@@ -1224,7 +1245,7 @@ function renderExtras(){
     let lk=el.querySelector('.lock');
     if(!lk){lk=document.createElement('span');lk.className='lock';el.appendChild(lk);}
     lk.innerHTML=paywall
-      ?'<b>🔒 Incluso no acesso completo</b>'
+      ?'<b>🔒</b>'
       :'<b>🔒 Bloqueado</b><span>Faixa azul na carreira ('+Math.min(h,SUPER_META)+'/'+SUPER_META+
        ' acertos) ou aprovação na Banca.</span>';
   });
@@ -1559,6 +1580,7 @@ function aplicarAcesso(){
   $('bankN').textContent=conf.total_perguntas||495;
   const am=document.querySelector('#modes .mode.sample'),on=document.querySelector('#modes .mode.on');
   am.classList.toggle('hidden',pago);
+  document.body.classList.toggle('gratis',!pago);
   if(!pago&&on!==am)selectMode(am);
   if(pago&&on===am)selectMode(document.querySelector('#modes .mode[data-size="50"]'));
   renderOferta();renderExtras();renderConta();
@@ -1568,6 +1590,8 @@ function renderOferta(){
   const el=$('offer');
   el.classList.toggle('hidden',pago);
   if(pago)return;
+  // no plano gratuito a oferta fica logo abaixo da amostra, abrindo o bloco dos modos pagos
+  document.querySelector('#modes .mode.sample').after(el);
   el.innerHTML='<div><b>Acesso completo · '+esc(conf.preco)+'</b>'+
     '<span>Um único pagamento libera todos os modos abaixo: '+conf.total_perguntas+' perguntas, Modo Banca, '+
     'Super Hard e Desafio do dia.'+(vagas==null?'':' '+vagasTxt()+'.')+'</span></div>'+
