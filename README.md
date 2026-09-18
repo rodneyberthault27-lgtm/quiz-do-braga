@@ -5,7 +5,7 @@ elas ficam no Supabase, protegidas por regras de acesso no banco.
 
 | Quem | O que recebe |
 |---|---|
-| Visitante | Amostra grátis (30 perguntas fixas, 10 por partida) |
+| Visitante | Amostra grátis (5 perguntas fixas, sempre as mesmas e na mesma ordem) |
 | Cadastrado aguardando | A mesma amostra + instruções de Pix e WhatsApp |
 | Liberado pelo controlador | Banco completo, Banca, Super Hard e Desafio do dia |
 
