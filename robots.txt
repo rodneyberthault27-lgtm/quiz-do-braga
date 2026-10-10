@@ -1,0 +1,7 @@
+# Quiz do Braga — quizdobraga.com.br
+User-agent: *
+Allow: /
+# O painel do controlador não deve aparecer na busca
+Disallow: /admin.html
+
+Sitemap: https://quizdobraga.com.br/sitemap.xml
