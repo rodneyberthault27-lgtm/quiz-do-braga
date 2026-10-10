@@ -1,0 +1,28 @@
+# Mantém o projeto do Supabase ativo.
+# No plano grátis, o Supabase pausa o projeto após alguns dias sem nenhum acesso,
+# e o site passa a mostrar "Failed to fetch" no cadastro e no login.
+# Este robô do GitHub faz uma consulta simples a cada 3 dias, de graça.
+name: Manter Supabase ativo
+
+on:
+  schedule:
+    - cron: '17 9 */3 * *'   # a cada 3 dias, 09:17 UTC (06:17 em Brasília)
+  workflow_dispatch:          # permite rodar na mão pelo site do GitHub
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Consultar o servidor do quiz
+        run: |
+          URL="https://bvvhainpayauxwvkpdpe.supabase.co/rest/v1/config?select=vagas"
+          # Chave publishable: é pública por design, a mesma que o site usa.
+          CHAVE="sb_publishable_FbKtCVC-RvxQUowpym9Nrw_CaWr12YE"
+          CODIGO=$(curl -s -o resposta.txt -w '%{http_code}' --max-time 30 \
+            "$URL" -H "apikey: $CHAVE" -H "Authorization: Bearer $CHAVE")
+          echo "Resposta do servidor: $CODIGO"
+          cat resposta.txt
+          if [ "$CODIGO" != "200" ]; then
+            echo "::error::O servidor do quiz não respondeu (código $CODIGO). Verifique no painel do Supabase se o projeto foi pausado."
+            exit 1
+          fi
